@@ -1,2 +1,0 @@
-# VirtualGarage
-Virtual Garage

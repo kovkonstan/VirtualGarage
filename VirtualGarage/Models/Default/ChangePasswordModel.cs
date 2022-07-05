@@ -6,6 +6,7 @@ using VirtualGarage.Models.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Web.Mvc;
+using CompareAttribute = System.ComponentModel.DataAnnotations.CompareAttribute;
 
 namespace VirtualGarage.Models
 {

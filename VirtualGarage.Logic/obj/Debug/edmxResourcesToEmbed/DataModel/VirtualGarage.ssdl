@@ -1,132 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="VirtualGarageModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-  <EntityContainer Name="VirtualGarageModelStoreContainer">
-    <EntitySet Name="CarcaseTypes" EntityType="VirtualGarageModel.Store.CarcaseTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CarInGarage" EntityType="VirtualGarageModel.Store.CarInGarage" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CarMarks" EntityType="VirtualGarageModel.Store.CarMarks" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CarModels" EntityType="VirtualGarageModel.Store.CarModels" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cars" EntityType="VirtualGarageModel.Store.Cars" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Colors" EntityType="VirtualGarageModel.Store.Colors" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Currencies" EntityType="VirtualGarageModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Events" EntityType="VirtualGarageModel.Store.Events" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="EventTypes" EntityType="VirtualGarageModel.Store.EventTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Fillings" EntityType="VirtualGarageModel.Store.Fillings" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FuelTypes" EntityType="VirtualGarageModel.Store.FuelTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GearBoxTypes" EntityType="VirtualGarageModel.Store.GearBoxTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Messages" EntityType="VirtualGarageModel.Store.Messages" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Places" EntityType="VirtualGarageModel.Store.Places" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Reminders" EntityType="VirtualGarageModel.Store.Reminders" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Repairs" EntityType="VirtualGarageModel.Store.Repairs" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="SparePartTypes" EntityType="VirtualGarageModel.Store.SparePartTypes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="UserRoles" EntityType="VirtualGarageModel.Store.UserRoles" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Users" EntityType="VirtualGarageModel.Store.Users" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_CarInGarage_Cars" Association="VirtualGarageModel.Store.FK_CarInGarage_Cars">
-      <End Role="Cars" EntitySet="Cars" />
-      <End Role="CarInGarage" EntitySet="CarInGarage" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CarInGarage_Users" Association="VirtualGarageModel.Store.FK_CarInGarage_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="CarInGarage" EntitySet="CarInGarage" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CarModels_CarMarks" Association="VirtualGarageModel.Store.FK_CarModels_CarMarks">
-      <End Role="CarMarks" EntitySet="CarMarks" />
-      <End Role="CarModels" EntitySet="CarModels" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cars_CarcaseTypes" Association="VirtualGarageModel.Store.FK_Cars_CarcaseTypes">
-      <End Role="CarcaseTypes" EntitySet="CarcaseTypes" />
-      <End Role="Cars" EntitySet="Cars" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cars_CarModels" Association="VirtualGarageModel.Store.FK_Cars_CarModels">
-      <End Role="CarModels" EntitySet="CarModels" />
-      <End Role="Cars" EntitySet="Cars" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cars_Colors" Association="VirtualGarageModel.Store.FK_Cars_Colors">
-      <End Role="Colors" EntitySet="Colors" />
-      <End Role="Cars" EntitySet="Cars" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cars_Currencies" Association="VirtualGarageModel.Store.FK_Cars_Currencies">
-      <End Role="Currencies" EntitySet="Currencies" />
-      <End Role="Cars" EntitySet="Cars" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cars_FuelTypes" Association="VirtualGarageModel.Store.FK_Cars_FuelTypes">
-      <End Role="FuelTypes" EntitySet="FuelTypes" />
-      <End Role="Cars" EntitySet="Cars" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cars_GearBoxTypes" Association="VirtualGarageModel.Store.FK_Cars_GearBoxTypes">
-      <End Role="GearBoxTypes" EntitySet="GearBoxTypes" />
-      <End Role="Cars" EntitySet="Cars" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Events_Cars" Association="VirtualGarageModel.Store.FK_Events_Cars">
-      <End Role="Cars" EntitySet="Cars" />
-      <End Role="Events" EntitySet="Events" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Events_Currencies" Association="VirtualGarageModel.Store.FK_Events_Currencies">
-      <End Role="Currencies" EntitySet="Currencies" />
-      <End Role="Events" EntitySet="Events" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Events_EventTypes" Association="VirtualGarageModel.Store.FK_Events_EventTypes">
-      <End Role="EventTypes" EntitySet="EventTypes" />
-      <End Role="Events" EntitySet="Events" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Events_Places" Association="VirtualGarageModel.Store.FK_Events_Places">
-      <End Role="Places" EntitySet="Places" />
-      <End Role="Events" EntitySet="Events" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Events_Users" Association="VirtualGarageModel.Store.FK_Events_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Events" EntitySet="Events" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EventTypes_Users" Association="VirtualGarageModel.Store.FK_EventTypes_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="EventTypes" EntitySet="EventTypes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Fillings_Events" Association="VirtualGarageModel.Store.FK_Fillings_Events">
-      <End Role="Events" EntitySet="Events" />
-      <End Role="Fillings" EntitySet="Fillings" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Fillings_FuelTypes" Association="VirtualGarageModel.Store.FK_Fillings_FuelTypes">
-      <End Role="FuelTypes" EntitySet="FuelTypes" />
-      <End Role="Fillings" EntitySet="Fillings" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Messages_Users" Association="VirtualGarageModel.Store.FK_Messages_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Messages" EntitySet="Messages" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Messages_Users1" Association="VirtualGarageModel.Store.FK_Messages_Users1">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Messages" EntitySet="Messages" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Places_Users" Association="VirtualGarageModel.Store.FK_Places_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Places" EntitySet="Places" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reminders_Cars" Association="VirtualGarageModel.Store.FK_Reminders_Cars">
-      <End Role="Cars" EntitySet="Cars" />
-      <End Role="Reminders" EntitySet="Reminders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reminders_Users" Association="VirtualGarageModel.Store.FK_Reminders_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Reminders" EntitySet="Reminders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Repairs_Events" Association="VirtualGarageModel.Store.FK_Repairs_Events">
-      <End Role="Events" EntitySet="Events" />
-      <End Role="Repairs" EntitySet="Repairs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Repairs_SparePartTypes" Association="VirtualGarageModel.Store.FK_Repairs_SparePartTypes">
-      <End Role="SparePartTypes" EntitySet="SparePartTypes" />
-      <End Role="Repairs" EntitySet="Repairs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Users_UserRoles" Association="VirtualGarageModel.Store.FK_Users_UserRoles">
-      <End Role="UserRoles" EntitySet="UserRoles" />
-      <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
-  </EntityContainer>
+<Schema Namespace="VirtualGarageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CarcaseTypes">
     <Key>
       <PropertyRef Name="CarcaseTypeID" />
     </Key>
-    <Property Name="CarcaseTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CarcaseTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CarcaseTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarcaseTypeName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="CarInGarage">
     <Key>
@@ -141,16 +20,16 @@
     <Key>
       <PropertyRef Name="CarMarkID" />
     </Key>
-    <Property Name="CarMarkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CarMarkName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CarMarkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarMarkName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="IsUserMark" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="CarModels">
     <Key>
       <PropertyRef Name="CarModelID" />
     </Key>
-    <Property Name="CarModelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CarModelName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CarModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarModelName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="CarMarkID" Type="int" Nullable="false" />
     <Property Name="IsUserModel" Type="bit" Nullable="false" />
   </EntityType>
@@ -158,7 +37,7 @@
     <Key>
       <PropertyRef Name="CarID" />
     </Key>
-    <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CarModelID" Type="int" Nullable="false" />
     <Property Name="Year" Type="int" Nullable="false" />
     <Property Name="ColorID" Type="int" />
@@ -180,22 +59,22 @@
     <Key>
       <PropertyRef Name="ColorID" />
     </Key>
-    <Property Name="ColorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="ColorName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ColorName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Currencies">
     <Key>
       <PropertyRef Name="CurrencyID" />
     </Key>
-    <Property Name="CurrencyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CurrencyName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CurrencyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrencyName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="CultureName" Type="char" MaxLength="10" />
   </EntityType>
   <EntityType Name="Events">
     <Key>
       <PropertyRef Name="EventID" />
     </Key>
-    <Property Name="EventID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EventTypeID" Type="int" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Mileage" Type="int" />
@@ -210,15 +89,15 @@
     <Key>
       <PropertyRef Name="EventTypeID" />
     </Key>
-    <Property Name="EventTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="EventTypeName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="EventTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventTypeName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="UserID" Type="int" />
   </EntityType>
   <EntityType Name="Fillings">
     <Key>
       <PropertyRef Name="FillingID" />
     </Key>
-    <Property Name="FillingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FillingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FuelTypeID" Type="int" Nullable="false" />
     <Property Name="FuelCount" Type="real" />
     <Property Name="UnitCost" Type="money" />
@@ -230,36 +109,36 @@
     <Key>
       <PropertyRef Name="FuelTypeID" />
     </Key>
-    <Property Name="FuelTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="FuelTypeName" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="FuelMeasure" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FuelTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FuelTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FuelMeasure" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="GearBoxTypes">
     <Key>
       <PropertyRef Name="GearBoxID" />
     </Key>
-    <Property Name="GearBoxID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="GearBoxName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="GearBoxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GearBoxName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Messages">
     <Key>
       <PropertyRef Name="MessageID" />
     </Key>
     <Property Name="MessageID" Type="int" Nullable="false" />
-    <Property Name="Theme" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Theme" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="ChainID" Type="int" Nullable="false" />
     <Property Name="SenderID" Type="int" Nullable="false" />
     <Property Name="IsDeleteBySender" Type="bit" Nullable="false" />
     <Property Name="RecipientID" Type="int" Nullable="false" />
     <Property Name="IsDeleteByRecipient" Type="bit" Nullable="false" />
-    <Property Name="Text" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Text" Type="varchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="Places">
     <Key>
       <PropertyRef Name="PlaceID" />
     </Key>
-    <Property Name="PlaceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="PlaceName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="PlaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="IsFillingStation" Type="bit" Nullable="false" />
     <Property Name="UserID" Type="int" />
   </EntityType>
@@ -267,11 +146,11 @@
     <Key>
       <PropertyRef Name="ReminderID" />
     </Key>
-    <Property Name="ReminderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReminderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="StartDateTime" Type="datetime" Nullable="false" />
     <Property Name="FinishDateTime" Type="datetime" Nullable="false" />
-    <Property Name="ReminderName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ReminderName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="IsRemindByEmail" Type="bit" Nullable="false" />
     <Property Name="ReminderCountOfMileage" Type="int" />
     <Property Name="ReminderCountOfDays" Type="int" />
@@ -282,7 +161,7 @@
     <Key>
       <PropertyRef Name="RepairID" />
     </Key>
-    <Property Name="RepairID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RepairID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SparePartTypeID" Type="int" Nullable="false" />
     <Property Name="SparePartProducer" Type="varchar" MaxLength="100" />
     <Property Name="SparePartModel" Type="varchar" MaxLength="100" />
@@ -295,32 +174,31 @@
     <Key>
       <PropertyRef Name="SparePartTypeID" />
     </Key>
-    <Property Name="SparePartTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="SparePartTypeName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="SparePartTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SparePartTypeName" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="UserRoles">
     <Key>
       <PropertyRef Name="UserRoleID" />
     </Key>
-    <Property Name="UserRoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="UserRoleName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserRoleName" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="UserNick" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="UserEmail" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="UserPassword" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserNick" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="UserRoleID" Type="int" Nullable="false" />
-    <Property Name="IsCorporativeAccount" Type="bit" />
   </EntityType>
   <Association Name="FK_CarInGarage_Cars">
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="1">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="CarInGarage" Type="VirtualGarageModel.Store.CarInGarage" Multiplicity="*" />
+    <End Role="CarInGarage" Type="Self.CarInGarage" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cars">
         <PropertyRef Name="CarID" />
@@ -331,8 +209,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CarInGarage_Users">
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-    <End Role="CarInGarage" Type="VirtualGarageModel.Store.CarInGarage" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="CarInGarage" Type="Self.CarInGarage" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
@@ -343,8 +221,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CarModels_CarMarks">
-    <End Role="CarMarks" Type="VirtualGarageModel.Store.CarMarks" Multiplicity="1" />
-    <End Role="CarModels" Type="VirtualGarageModel.Store.CarModels" Multiplicity="*" />
+    <End Role="CarMarks" Type="Self.CarMarks" Multiplicity="1" />
+    <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CarMarks">
         <PropertyRef Name="CarMarkID" />
@@ -355,8 +233,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cars_CarcaseTypes">
-    <End Role="CarcaseTypes" Type="VirtualGarageModel.Store.CarcaseTypes" Multiplicity="0..1" />
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+    <End Role="CarcaseTypes" Type="Self.CarcaseTypes" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CarcaseTypes">
         <PropertyRef Name="CarcaseTypeID" />
@@ -367,8 +245,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cars_CarModels">
-    <End Role="CarModels" Type="VirtualGarageModel.Store.CarModels" Multiplicity="1" />
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+    <End Role="CarModels" Type="Self.CarModels" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CarModels">
         <PropertyRef Name="CarModelID" />
@@ -379,8 +257,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cars_Colors">
-    <End Role="Colors" Type="VirtualGarageModel.Store.Colors" Multiplicity="0..1" />
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+    <End Role="Colors" Type="Self.Colors" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Colors">
         <PropertyRef Name="ColorID" />
@@ -391,8 +269,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cars_Currencies">
-    <End Role="Currencies" Type="VirtualGarageModel.Store.Currencies" Multiplicity="1" />
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+    <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Currencies">
         <PropertyRef Name="CurrencyID" />
@@ -403,8 +281,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cars_FuelTypes">
-    <End Role="FuelTypes" Type="VirtualGarageModel.Store.FuelTypes" Multiplicity="1" />
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+    <End Role="FuelTypes" Type="Self.FuelTypes" Multiplicity="1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="FuelTypes">
         <PropertyRef Name="FuelTypeID" />
@@ -415,8 +293,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cars_GearBoxTypes">
-    <End Role="GearBoxTypes" Type="VirtualGarageModel.Store.GearBoxTypes" Multiplicity="0..1" />
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+    <End Role="GearBoxTypes" Type="Self.GearBoxTypes" Multiplicity="0..1" />
+    <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="GearBoxTypes">
         <PropertyRef Name="GearBoxID" />
@@ -427,10 +305,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Events_Cars">
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="1">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+    <End Role="Events" Type="Self.Events" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cars">
         <PropertyRef Name="CarID" />
@@ -441,8 +319,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Events_Currencies">
-    <End Role="Currencies" Type="VirtualGarageModel.Store.Currencies" Multiplicity="1" />
-    <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+    <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
+    <End Role="Events" Type="Self.Events" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Currencies">
         <PropertyRef Name="CurrencyID" />
@@ -453,8 +331,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Events_EventTypes">
-    <End Role="EventTypes" Type="VirtualGarageModel.Store.EventTypes" Multiplicity="1" />
-    <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+    <End Role="EventTypes" Type="Self.EventTypes" Multiplicity="1" />
+    <End Role="Events" Type="Self.Events" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EventTypes">
         <PropertyRef Name="EventTypeID" />
@@ -465,8 +343,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Events_Places">
-    <End Role="Places" Type="VirtualGarageModel.Store.Places" Multiplicity="1" />
-    <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+    <End Role="Places" Type="Self.Places" Multiplicity="1" />
+    <End Role="Events" Type="Self.Events" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Places">
         <PropertyRef Name="PlaceID" />
@@ -477,8 +355,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Events_Users">
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-    <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Events" Type="Self.Events" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
@@ -489,8 +367,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_EventTypes_Users">
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="0..1" />
-    <End Role="EventTypes" Type="VirtualGarageModel.Store.EventTypes" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="EventTypes" Type="Self.EventTypes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
@@ -501,10 +379,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Fillings_Events">
-    <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="1">
+    <End Role="Events" Type="Self.Events" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Fillings" Type="VirtualGarageModel.Store.Fillings" Multiplicity="*" />
+    <End Role="Fillings" Type="Self.Fillings" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Events">
         <PropertyRef Name="EventID" />
@@ -515,8 +393,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Fillings_FuelTypes">
-    <End Role="FuelTypes" Type="VirtualGarageModel.Store.FuelTypes" Multiplicity="1" />
-    <End Role="Fillings" Type="VirtualGarageModel.Store.Fillings" Multiplicity="*" />
+    <End Role="FuelTypes" Type="Self.FuelTypes" Multiplicity="1" />
+    <End Role="Fillings" Type="Self.Fillings" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="FuelTypes">
         <PropertyRef Name="FuelTypeID" />
@@ -527,8 +405,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Messages_Users">
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-    <End Role="Messages" Type="VirtualGarageModel.Store.Messages" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
@@ -539,8 +417,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Messages_Users1">
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-    <End Role="Messages" Type="VirtualGarageModel.Store.Messages" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
@@ -551,8 +429,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Places_Users">
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="0..1" />
-    <End Role="Places" Type="VirtualGarageModel.Store.Places" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Places" Type="Self.Places" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
@@ -563,10 +441,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Reminders_Cars">
-    <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="1">
+    <End Role="Cars" Type="Self.Cars" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Reminders" Type="VirtualGarageModel.Store.Reminders" Multiplicity="*" />
+    <End Role="Reminders" Type="Self.Reminders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cars">
         <PropertyRef Name="CarID" />
@@ -577,8 +455,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Reminders_Users">
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-    <End Role="Reminders" Type="VirtualGarageModel.Store.Reminders" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Reminders" Type="Self.Reminders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserID" />
@@ -589,10 +467,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Repairs_Events">
-    <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="1">
+    <End Role="Events" Type="Self.Events" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Repairs" Type="VirtualGarageModel.Store.Repairs" Multiplicity="*" />
+    <End Role="Repairs" Type="Self.Repairs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Events">
         <PropertyRef Name="EventID" />
@@ -603,8 +481,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Repairs_SparePartTypes">
-    <End Role="SparePartTypes" Type="VirtualGarageModel.Store.SparePartTypes" Multiplicity="1" />
-    <End Role="Repairs" Type="VirtualGarageModel.Store.Repairs" Multiplicity="*" />
+    <End Role="SparePartTypes" Type="Self.SparePartTypes" Multiplicity="1" />
+    <End Role="Repairs" Type="Self.Repairs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SparePartTypes">
         <PropertyRef Name="SparePartTypeID" />
@@ -615,8 +493,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Users_UserRoles">
-    <End Role="UserRoles" Type="VirtualGarageModel.Store.UserRoles" Multiplicity="1" />
-    <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="*" />
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserRoles">
         <PropertyRef Name="UserRoleID" />
@@ -626,4 +504,125 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="VirtualGarageModelStoreContainer">
+    <EntitySet Name="CarcaseTypes" EntityType="Self.CarcaseTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarInGarage" EntityType="Self.CarInGarage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarMarks" EntityType="Self.CarMarks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarModels" EntityType="Self.CarModels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cars" EntityType="Self.Cars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colors" EntityType="Self.Colors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currencies" EntityType="Self.Currencies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventTypes" EntityType="Self.EventTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fillings" EntityType="Self.Fillings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FuelTypes" EntityType="Self.FuelTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GearBoxTypes" EntityType="Self.GearBoxTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reminders" EntityType="Self.Reminders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Repairs" EntityType="Self.Repairs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SparePartTypes" EntityType="Self.SparePartTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CarInGarage_Cars" Association="Self.FK_CarInGarage_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="CarInGarage" EntitySet="CarInGarage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarInGarage_Users" Association="Self.FK_CarInGarage_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="CarInGarage" EntitySet="CarInGarage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarModels_CarMarks" Association="Self.FK_CarModels_CarMarks">
+      <End Role="CarMarks" EntitySet="CarMarks" />
+      <End Role="CarModels" EntitySet="CarModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_CarcaseTypes" Association="Self.FK_Cars_CarcaseTypes">
+      <End Role="CarcaseTypes" EntitySet="CarcaseTypes" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_CarModels" Association="Self.FK_Cars_CarModels">
+      <End Role="CarModels" EntitySet="CarModels" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Colors" Association="Self.FK_Cars_Colors">
+      <End Role="Colors" EntitySet="Colors" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_Currencies" Association="Self.FK_Cars_Currencies">
+      <End Role="Currencies" EntitySet="Currencies" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_FuelTypes" Association="Self.FK_Cars_FuelTypes">
+      <End Role="FuelTypes" EntitySet="FuelTypes" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cars_GearBoxTypes" Association="Self.FK_Cars_GearBoxTypes">
+      <End Role="GearBoxTypes" EntitySet="GearBoxTypes" />
+      <End Role="Cars" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_Cars" Association="Self.FK_Events_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="Events" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_Currencies" Association="Self.FK_Events_Currencies">
+      <End Role="Currencies" EntitySet="Currencies" />
+      <End Role="Events" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_EventTypes" Association="Self.FK_Events_EventTypes">
+      <End Role="EventTypes" EntitySet="EventTypes" />
+      <End Role="Events" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_Places" Association="Self.FK_Events_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="Events" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_Users" Association="Self.FK_Events_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Events" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventTypes_Users" Association="Self.FK_EventTypes_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="EventTypes" EntitySet="EventTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fillings_Events" Association="Self.FK_Fillings_Events">
+      <End Role="Events" EntitySet="Events" />
+      <End Role="Fillings" EntitySet="Fillings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fillings_FuelTypes" Association="Self.FK_Fillings_FuelTypes">
+      <End Role="FuelTypes" EntitySet="FuelTypes" />
+      <End Role="Fillings" EntitySet="Fillings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users1" Association="Self.FK_Messages_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Places_Users" Association="Self.FK_Places_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Places" EntitySet="Places" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reminders_Cars" Association="Self.FK_Reminders_Cars">
+      <End Role="Cars" EntitySet="Cars" />
+      <End Role="Reminders" EntitySet="Reminders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reminders_Users" Association="Self.FK_Reminders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Reminders" EntitySet="Reminders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repairs_Events" Association="Self.FK_Repairs_Events">
+      <End Role="Events" EntitySet="Events" />
+      <End Role="Repairs" EntitySet="Repairs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Repairs_SparePartTypes" Association="Self.FK_Repairs_SparePartTypes">
+      <End Role="SparePartTypes" EntitySet="SparePartTypes" />
+      <End Role="Repairs" EntitySet="Repairs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_UserRoles" Association="Self.FK_Users_UserRoles">
+      <End Role="UserRoles" EntitySet="UserRoles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

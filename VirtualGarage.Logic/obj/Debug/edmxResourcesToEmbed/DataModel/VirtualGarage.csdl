@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="VirtualGarageModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityContainer Name="VirtualGarageEntities" annotation:LazyLoadingEnabled="true">
+<Schema Namespace="VirtualGarageModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="VirtualGarageEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
     <EntitySet Name="CarcaseTypes" EntityType="VirtualGarageModel.CarcaseType" />
     <EntitySet Name="CarInGarages" EntityType="VirtualGarageModel.CarInGarage" />
     <EntitySet Name="CarMarks" EntityType="VirtualGarageModel.CarMark" />
@@ -125,7 +125,7 @@
     <Key>
       <PropertyRef Name="CarcaseTypeID" />
     </Key>
-    <Property Name="CarcaseTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarcaseTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="CarcaseTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_CarcaseTypes" FromRole="CarcaseTypes" ToRole="Cars" />
   </EntityType>
@@ -144,7 +144,7 @@
     <Key>
       <PropertyRef Name="CarMarkID" />
     </Key>
-    <Property Name="CarMarkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarMarkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="CarMarkName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="IsUserMark" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="CarModels" Relationship="VirtualGarageModel.FK_CarModels_CarMarks" FromRole="CarMarks" ToRole="CarModels" />
@@ -153,7 +153,7 @@
     <Key>
       <PropertyRef Name="CarModelID" />
     </Key>
-    <Property Name="CarModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="CarModelName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="CarMarkID" Type="Int32" Nullable="false" />
     <Property Name="IsUserModel" Type="Boolean" Nullable="false" />
@@ -164,7 +164,7 @@
     <Key>
       <PropertyRef Name="CarID" />
     </Key>
-    <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="CarModelID" Type="Int32" Nullable="false" />
     <Property Name="Year" Type="Int32" Nullable="false" />
     <Property Name="ColorID" Type="Int32" />
@@ -195,7 +195,7 @@
     <Key>
       <PropertyRef Name="ColorID" />
     </Key>
-    <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ColorName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_Colors" FromRole="Colors" ToRole="Cars" />
   </EntityType>
@@ -203,7 +203,7 @@
     <Key>
       <PropertyRef Name="CurrencyID" />
     </Key>
-    <Property Name="CurrencyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrencyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="CurrencyName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="CultureName" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
     <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_Currencies" FromRole="Currencies" ToRole="Cars" />
@@ -213,7 +213,7 @@
     <Key>
       <PropertyRef Name="EventID" />
     </Key>
-    <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="EventTypeID" Type="Int32" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Mileage" Type="Int32" />
@@ -235,7 +235,7 @@
     <Key>
       <PropertyRef Name="EventTypeID" />
     </Key>
-    <Property Name="EventTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="EventTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="UserID" Type="Int32" />
     <NavigationProperty Name="Events" Relationship="VirtualGarageModel.FK_Events_EventTypes" FromRole="EventTypes" ToRole="Events" />
@@ -245,7 +245,7 @@
     <Key>
       <PropertyRef Name="FillingID" />
     </Key>
-    <Property Name="FillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="FuelTypeID" Type="Int32" Nullable="false" />
     <Property Name="FuelCount" Type="Single" />
     <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="4" />
@@ -259,7 +259,7 @@
     <Key>
       <PropertyRef Name="FuelTypeID" />
     </Key>
-    <Property Name="FuelTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FuelTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="FuelTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="FuelMeasure" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_FuelTypes" FromRole="FuelTypes" ToRole="Cars" />
@@ -269,7 +269,7 @@
     <Key>
       <PropertyRef Name="GearBoxID" />
     </Key>
-    <Property Name="GearBoxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GearBoxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="GearBoxName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_GearBoxTypes" FromRole="GearBoxTypes" ToRole="Cars" />
   </EntityType>
@@ -292,7 +292,7 @@
     <Key>
       <PropertyRef Name="PlaceID" />
     </Key>
-    <Property Name="PlaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="PlaceName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="IsFillingStation" Type="Boolean" Nullable="false" />
     <Property Name="UserID" Type="Int32" />
@@ -303,7 +303,7 @@
     <Key>
       <PropertyRef Name="ReminderID" />
     </Key>
-    <Property Name="ReminderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReminderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="UserID" Type="Int32" Nullable="false" />
     <Property Name="StartDateTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="FinishDateTime" Type="DateTime" Nullable="false" Precision="3" />
@@ -320,7 +320,7 @@
     <Key>
       <PropertyRef Name="RepairID" />
     </Key>
-    <Property Name="RepairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RepairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="SparePartTypeID" Type="Int32" Nullable="false" />
     <Property Name="SparePartProducer" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <Property Name="SparePartModel" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
@@ -335,7 +335,7 @@
     <Key>
       <PropertyRef Name="SparePartTypeID" />
     </Key>
-    <Property Name="SparePartTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SparePartTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="SparePartTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Repairs" Relationship="VirtualGarageModel.FK_Repairs_SparePartTypes" FromRole="SparePartTypes" ToRole="Repairs" />
   </EntityType>
@@ -343,7 +343,7 @@
     <Key>
       <PropertyRef Name="UserRoleID" />
     </Key>
-    <Property Name="UserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="UserRoleName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Users" Relationship="VirtualGarageModel.FK_Users_UserRoles" FromRole="UserRoles" ToRole="Users" />
   </EntityType>
@@ -351,7 +351,7 @@
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="UserNick" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -364,7 +364,6 @@
     <NavigationProperty Name="Places" Relationship="VirtualGarageModel.FK_Places_Users" FromRole="Users" ToRole="Places" />
     <NavigationProperty Name="Reminders" Relationship="VirtualGarageModel.FK_Reminders_Users" FromRole="Users" ToRole="Reminders" />
     <NavigationProperty Name="UserRole" Relationship="VirtualGarageModel.FK_Users_UserRoles" FromRole="Users" ToRole="UserRoles" />
-    <Property Type="Boolean" Name="IsCorporativeAccount" />
   </EntityType>
   <Association Name="FK_Cars_CarcaseTypes">
     <End Role="CarcaseTypes" Type="VirtualGarageModel.CarcaseType" Multiplicity="0..1" />

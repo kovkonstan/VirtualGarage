@@ -1,137 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VirtualGarageModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="VirtualGarageModelStoreContainer">
-          <EntitySet Name="CarcaseTypes" EntityType="VirtualGarageModel.Store.CarcaseTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CarInGarage" EntityType="VirtualGarageModel.Store.CarInGarage" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CarMarks" EntityType="VirtualGarageModel.Store.CarMarks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CarModels" EntityType="VirtualGarageModel.Store.CarModels" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Cars" EntityType="VirtualGarageModel.Store.Cars" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Colors" EntityType="VirtualGarageModel.Store.Colors" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Currencies" EntityType="VirtualGarageModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Events" EntityType="VirtualGarageModel.Store.Events" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="EventTypes" EntityType="VirtualGarageModel.Store.EventTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Fillings" EntityType="VirtualGarageModel.Store.Fillings" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FuelTypes" EntityType="VirtualGarageModel.Store.FuelTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="GearBoxTypes" EntityType="VirtualGarageModel.Store.GearBoxTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Messages" EntityType="VirtualGarageModel.Store.Messages" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Places" EntityType="VirtualGarageModel.Store.Places" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Reminders" EntityType="VirtualGarageModel.Store.Reminders" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Repairs" EntityType="VirtualGarageModel.Store.Repairs" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SparePartTypes" EntityType="VirtualGarageModel.Store.SparePartTypes" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserRoles" EntityType="VirtualGarageModel.Store.UserRoles" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="VirtualGarageModel.Store.Users" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_CarInGarage_Cars" Association="VirtualGarageModel.Store.FK_CarInGarage_Cars">
-            <End Role="Cars" EntitySet="Cars" />
-            <End Role="CarInGarage" EntitySet="CarInGarage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CarInGarage_Users" Association="VirtualGarageModel.Store.FK_CarInGarage_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="CarInGarage" EntitySet="CarInGarage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CarModels_CarMarks" Association="VirtualGarageModel.Store.FK_CarModels_CarMarks">
-            <End Role="CarMarks" EntitySet="CarMarks" />
-            <End Role="CarModels" EntitySet="CarModels" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cars_CarcaseTypes" Association="VirtualGarageModel.Store.FK_Cars_CarcaseTypes">
-            <End Role="CarcaseTypes" EntitySet="CarcaseTypes" />
-            <End Role="Cars" EntitySet="Cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cars_CarModels" Association="VirtualGarageModel.Store.FK_Cars_CarModels">
-            <End Role="CarModels" EntitySet="CarModels" />
-            <End Role="Cars" EntitySet="Cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cars_Colors" Association="VirtualGarageModel.Store.FK_Cars_Colors">
-            <End Role="Colors" EntitySet="Colors" />
-            <End Role="Cars" EntitySet="Cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cars_Currencies" Association="VirtualGarageModel.Store.FK_Cars_Currencies">
-            <End Role="Currencies" EntitySet="Currencies" />
-            <End Role="Cars" EntitySet="Cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cars_FuelTypes" Association="VirtualGarageModel.Store.FK_Cars_FuelTypes">
-            <End Role="FuelTypes" EntitySet="FuelTypes" />
-            <End Role="Cars" EntitySet="Cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cars_GearBoxTypes" Association="VirtualGarageModel.Store.FK_Cars_GearBoxTypes">
-            <End Role="GearBoxTypes" EntitySet="GearBoxTypes" />
-            <End Role="Cars" EntitySet="Cars" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Events_Cars" Association="VirtualGarageModel.Store.FK_Events_Cars">
-            <End Role="Cars" EntitySet="Cars" />
-            <End Role="Events" EntitySet="Events" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Events_Currencies" Association="VirtualGarageModel.Store.FK_Events_Currencies">
-            <End Role="Currencies" EntitySet="Currencies" />
-            <End Role="Events" EntitySet="Events" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Events_EventTypes" Association="VirtualGarageModel.Store.FK_Events_EventTypes">
-            <End Role="EventTypes" EntitySet="EventTypes" />
-            <End Role="Events" EntitySet="Events" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Events_Places" Association="VirtualGarageModel.Store.FK_Events_Places">
-            <End Role="Places" EntitySet="Places" />
-            <End Role="Events" EntitySet="Events" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Events_Users" Association="VirtualGarageModel.Store.FK_Events_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Events" EntitySet="Events" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EventTypes_Users" Association="VirtualGarageModel.Store.FK_EventTypes_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="EventTypes" EntitySet="EventTypes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Fillings_Events" Association="VirtualGarageModel.Store.FK_Fillings_Events">
-            <End Role="Events" EntitySet="Events" />
-            <End Role="Fillings" EntitySet="Fillings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Fillings_FuelTypes" Association="VirtualGarageModel.Store.FK_Fillings_FuelTypes">
-            <End Role="FuelTypes" EntitySet="FuelTypes" />
-            <End Role="Fillings" EntitySet="Fillings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Messages_Users" Association="VirtualGarageModel.Store.FK_Messages_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Messages" EntitySet="Messages" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Messages_Users1" Association="VirtualGarageModel.Store.FK_Messages_Users1">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Messages" EntitySet="Messages" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Places_Users" Association="VirtualGarageModel.Store.FK_Places_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Places" EntitySet="Places" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Reminders_Cars" Association="VirtualGarageModel.Store.FK_Reminders_Cars">
-            <End Role="Cars" EntitySet="Cars" />
-            <End Role="Reminders" EntitySet="Reminders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Reminders_Users" Association="VirtualGarageModel.Store.FK_Reminders_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Reminders" EntitySet="Reminders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Repairs_Events" Association="VirtualGarageModel.Store.FK_Repairs_Events">
-            <End Role="Events" EntitySet="Events" />
-            <End Role="Repairs" EntitySet="Repairs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Repairs_SparePartTypes" Association="VirtualGarageModel.Store.FK_Repairs_SparePartTypes">
-            <End Role="SparePartTypes" EntitySet="SparePartTypes" />
-            <End Role="Repairs" EntitySet="Repairs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Users_UserRoles" Association="VirtualGarageModel.Store.FK_Users_UserRoles">
-            <End Role="UserRoles" EntitySet="UserRoles" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="VirtualGarageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CarcaseTypes">
           <Key>
             <PropertyRef Name="CarcaseTypeID" />
           </Key>
-          <Property Name="CarcaseTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CarcaseTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CarcaseTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarcaseTypeName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CarInGarage">
           <Key>
@@ -146,16 +25,16 @@
           <Key>
             <PropertyRef Name="CarMarkID" />
           </Key>
-          <Property Name="CarMarkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CarMarkName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CarMarkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarMarkName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="IsUserMark" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="CarModels">
           <Key>
             <PropertyRef Name="CarModelID" />
           </Key>
-          <Property Name="CarModelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CarModelName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CarModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarModelName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CarMarkID" Type="int" Nullable="false" />
           <Property Name="IsUserModel" Type="bit" Nullable="false" />
         </EntityType>
@@ -163,7 +42,7 @@
           <Key>
             <PropertyRef Name="CarID" />
           </Key>
-          <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CarModelID" Type="int" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="ColorID" Type="int" />
@@ -185,22 +64,22 @@
           <Key>
             <PropertyRef Name="ColorID" />
           </Key>
-          <Property Name="ColorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ColorName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColorName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Currencies">
           <Key>
             <PropertyRef Name="CurrencyID" />
           </Key>
-          <Property Name="CurrencyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CurrencyName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CurrencyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrencyName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CultureName" Type="char" MaxLength="10" />
         </EntityType>
         <EntityType Name="Events">
           <Key>
             <PropertyRef Name="EventID" />
           </Key>
-          <Property Name="EventID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EventTypeID" Type="int" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
           <Property Name="Mileage" Type="int" />
@@ -215,15 +94,15 @@
           <Key>
             <PropertyRef Name="EventTypeID" />
           </Key>
-          <Property Name="EventTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="EventTypeName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="EventTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventTypeName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="Fillings">
           <Key>
             <PropertyRef Name="FillingID" />
           </Key>
-          <Property Name="FillingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FillingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FuelTypeID" Type="int" Nullable="false" />
           <Property Name="FuelCount" Type="real" />
           <Property Name="UnitCost" Type="money" />
@@ -235,36 +114,36 @@
           <Key>
             <PropertyRef Name="FuelTypeID" />
           </Key>
-          <Property Name="FuelTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="FuelTypeName" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="FuelMeasure" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FuelTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FuelTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FuelMeasure" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="GearBoxTypes">
           <Key>
             <PropertyRef Name="GearBoxID" />
           </Key>
-          <Property Name="GearBoxID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="GearBoxName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="GearBoxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GearBoxName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Messages">
           <Key>
             <PropertyRef Name="MessageID" />
           </Key>
           <Property Name="MessageID" Type="int" Nullable="false" />
-          <Property Name="Theme" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Theme" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ChainID" Type="int" Nullable="false" />
           <Property Name="SenderID" Type="int" Nullable="false" />
           <Property Name="IsDeleteBySender" Type="bit" Nullable="false" />
           <Property Name="RecipientID" Type="int" Nullable="false" />
           <Property Name="IsDeleteByRecipient" Type="bit" Nullable="false" />
-          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Text" Type="varchar" MaxLength="1000" Nullable="false" />
         </EntityType>
         <EntityType Name="Places">
           <Key>
             <PropertyRef Name="PlaceID" />
           </Key>
-          <Property Name="PlaceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="PlaceName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="PlaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlaceName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="IsFillingStation" Type="bit" Nullable="false" />
           <Property Name="UserID" Type="int" />
         </EntityType>
@@ -272,11 +151,11 @@
           <Key>
             <PropertyRef Name="ReminderID" />
           </Key>
-          <Property Name="ReminderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReminderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="StartDateTime" Type="datetime" Nullable="false" />
           <Property Name="FinishDateTime" Type="datetime" Nullable="false" />
-          <Property Name="ReminderName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ReminderName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="IsRemindByEmail" Type="bit" Nullable="false" />
           <Property Name="ReminderCountOfMileage" Type="int" />
           <Property Name="ReminderCountOfDays" Type="int" />
@@ -287,7 +166,7 @@
           <Key>
             <PropertyRef Name="RepairID" />
           </Key>
-          <Property Name="RepairID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RepairID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SparePartTypeID" Type="int" Nullable="false" />
           <Property Name="SparePartProducer" Type="varchar" MaxLength="100" />
           <Property Name="SparePartModel" Type="varchar" MaxLength="100" />
@@ -300,32 +179,31 @@
           <Key>
             <PropertyRef Name="SparePartTypeID" />
           </Key>
-          <Property Name="SparePartTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="SparePartTypeName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SparePartTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SparePartTypeName" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="UserRoles">
           <Key>
             <PropertyRef Name="UserRoleID" />
           </Key>
-          <Property Name="UserRoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="UserRoleName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserRoleName" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="UserNick" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="UserEmail" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="UserPassword" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserNick" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UserRoleID" Type="int" Nullable="false" />
-          <Property Name="IsCorporativeAccount" Type="bit" />
         </EntityType>
         <Association Name="FK_CarInGarage_Cars">
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="1">
+          <End Role="Cars" Type="Self.Cars" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="CarInGarage" Type="VirtualGarageModel.Store.CarInGarage" Multiplicity="*" />
+          <End Role="CarInGarage" Type="Self.CarInGarage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cars">
               <PropertyRef Name="CarID" />
@@ -336,8 +214,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CarInGarage_Users">
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-          <End Role="CarInGarage" Type="VirtualGarageModel.Store.CarInGarage" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="CarInGarage" Type="Self.CarInGarage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -348,8 +226,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CarModels_CarMarks">
-          <End Role="CarMarks" Type="VirtualGarageModel.Store.CarMarks" Multiplicity="1" />
-          <End Role="CarModels" Type="VirtualGarageModel.Store.CarModels" Multiplicity="*" />
+          <End Role="CarMarks" Type="Self.CarMarks" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CarMarks">
               <PropertyRef Name="CarMarkID" />
@@ -360,8 +238,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cars_CarcaseTypes">
-          <End Role="CarcaseTypes" Type="VirtualGarageModel.Store.CarcaseTypes" Multiplicity="0..1" />
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+          <End Role="CarcaseTypes" Type="Self.CarcaseTypes" Multiplicity="0..1" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CarcaseTypes">
               <PropertyRef Name="CarcaseTypeID" />
@@ -372,8 +250,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cars_CarModels">
-          <End Role="CarModels" Type="VirtualGarageModel.Store.CarModels" Multiplicity="1" />
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="1" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CarModels">
               <PropertyRef Name="CarModelID" />
@@ -384,8 +262,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cars_Colors">
-          <End Role="Colors" Type="VirtualGarageModel.Store.Colors" Multiplicity="0..1" />
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+          <End Role="Colors" Type="Self.Colors" Multiplicity="0..1" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Colors">
               <PropertyRef Name="ColorID" />
@@ -396,8 +274,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cars_Currencies">
-          <End Role="Currencies" Type="VirtualGarageModel.Store.Currencies" Multiplicity="1" />
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+          <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currencies">
               <PropertyRef Name="CurrencyID" />
@@ -408,8 +286,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cars_FuelTypes">
-          <End Role="FuelTypes" Type="VirtualGarageModel.Store.FuelTypes" Multiplicity="1" />
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+          <End Role="FuelTypes" Type="Self.FuelTypes" Multiplicity="1" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FuelTypes">
               <PropertyRef Name="FuelTypeID" />
@@ -420,8 +298,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cars_GearBoxTypes">
-          <End Role="GearBoxTypes" Type="VirtualGarageModel.Store.GearBoxTypes" Multiplicity="0..1" />
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="*" />
+          <End Role="GearBoxTypes" Type="Self.GearBoxTypes" Multiplicity="0..1" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GearBoxTypes">
               <PropertyRef Name="GearBoxID" />
@@ -432,10 +310,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Events_Cars">
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="1">
+          <End Role="Cars" Type="Self.Cars" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cars">
               <PropertyRef Name="CarID" />
@@ -446,8 +324,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Events_Currencies">
-          <End Role="Currencies" Type="VirtualGarageModel.Store.Currencies" Multiplicity="1" />
-          <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+          <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currencies">
               <PropertyRef Name="CurrencyID" />
@@ -458,8 +336,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Events_EventTypes">
-          <End Role="EventTypes" Type="VirtualGarageModel.Store.EventTypes" Multiplicity="1" />
-          <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+          <End Role="EventTypes" Type="Self.EventTypes" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EventTypes">
               <PropertyRef Name="EventTypeID" />
@@ -470,8 +348,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Events_Places">
-          <End Role="Places" Type="VirtualGarageModel.Store.Places" Multiplicity="1" />
-          <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+          <End Role="Places" Type="Self.Places" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Places">
               <PropertyRef Name="PlaceID" />
@@ -482,8 +360,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Events_Users">
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-          <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -494,8 +372,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EventTypes_Users">
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="0..1" />
-          <End Role="EventTypes" Type="VirtualGarageModel.Store.EventTypes" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="EventTypes" Type="Self.EventTypes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -506,10 +384,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fillings_Events">
-          <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="1">
+          <End Role="Events" Type="Self.Events" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Fillings" Type="VirtualGarageModel.Store.Fillings" Multiplicity="*" />
+          <End Role="Fillings" Type="Self.Fillings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -520,8 +398,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fillings_FuelTypes">
-          <End Role="FuelTypes" Type="VirtualGarageModel.Store.FuelTypes" Multiplicity="1" />
-          <End Role="Fillings" Type="VirtualGarageModel.Store.Fillings" Multiplicity="*" />
+          <End Role="FuelTypes" Type="Self.FuelTypes" Multiplicity="1" />
+          <End Role="Fillings" Type="Self.Fillings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FuelTypes">
               <PropertyRef Name="FuelTypeID" />
@@ -532,8 +410,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Messages_Users">
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-          <End Role="Messages" Type="VirtualGarageModel.Store.Messages" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -544,8 +422,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Messages_Users1">
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-          <End Role="Messages" Type="VirtualGarageModel.Store.Messages" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -556,8 +434,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Places_Users">
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="0..1" />
-          <End Role="Places" Type="VirtualGarageModel.Store.Places" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Places" Type="Self.Places" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -568,10 +446,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reminders_Cars">
-          <End Role="Cars" Type="VirtualGarageModel.Store.Cars" Multiplicity="1">
+          <End Role="Cars" Type="Self.Cars" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Reminders" Type="VirtualGarageModel.Store.Reminders" Multiplicity="*" />
+          <End Role="Reminders" Type="Self.Reminders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cars">
               <PropertyRef Name="CarID" />
@@ -582,8 +460,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reminders_Users">
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="1" />
-          <End Role="Reminders" Type="VirtualGarageModel.Store.Reminders" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Reminders" Type="Self.Reminders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -594,10 +472,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Repairs_Events">
-          <End Role="Events" Type="VirtualGarageModel.Store.Events" Multiplicity="1">
+          <End Role="Events" Type="Self.Events" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Repairs" Type="VirtualGarageModel.Store.Repairs" Multiplicity="*" />
+          <End Role="Repairs" Type="Self.Repairs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -608,8 +486,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Repairs_SparePartTypes">
-          <End Role="SparePartTypes" Type="VirtualGarageModel.Store.SparePartTypes" Multiplicity="1" />
-          <End Role="Repairs" Type="VirtualGarageModel.Store.Repairs" Multiplicity="*" />
+          <End Role="SparePartTypes" Type="Self.SparePartTypes" Multiplicity="1" />
+          <End Role="Repairs" Type="Self.Repairs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SparePartTypes">
               <PropertyRef Name="SparePartTypeID" />
@@ -620,8 +498,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_UserRoles">
-          <End Role="UserRoles" Type="VirtualGarageModel.Store.UserRoles" Multiplicity="1" />
-          <End Role="Users" Type="VirtualGarageModel.Store.Users" Multiplicity="*" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserRoles">
               <PropertyRef Name="UserRoleID" />
@@ -631,11 +509,132 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="VirtualGarageModelStoreContainer">
+          <EntitySet Name="CarcaseTypes" EntityType="Self.CarcaseTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarInGarage" EntityType="Self.CarInGarage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarMarks" EntityType="Self.CarMarks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarModels" EntityType="Self.CarModels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cars" EntityType="Self.Cars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colors" EntityType="Self.Colors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Currencies" EntityType="Self.Currencies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventTypes" EntityType="Self.EventTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fillings" EntityType="Self.Fillings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FuelTypes" EntityType="Self.FuelTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GearBoxTypes" EntityType="Self.GearBoxTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reminders" EntityType="Self.Reminders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Repairs" EntityType="Self.Repairs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SparePartTypes" EntityType="Self.SparePartTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CarInGarage_Cars" Association="Self.FK_CarInGarage_Cars">
+            <End Role="Cars" EntitySet="Cars" />
+            <End Role="CarInGarage" EntitySet="CarInGarage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarInGarage_Users" Association="Self.FK_CarInGarage_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CarInGarage" EntitySet="CarInGarage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarModels_CarMarks" Association="Self.FK_CarModels_CarMarks">
+            <End Role="CarMarks" EntitySet="CarMarks" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cars_CarcaseTypes" Association="Self.FK_Cars_CarcaseTypes">
+            <End Role="CarcaseTypes" EntitySet="CarcaseTypes" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cars_CarModels" Association="Self.FK_Cars_CarModels">
+            <End Role="CarModels" EntitySet="CarModels" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cars_Colors" Association="Self.FK_Cars_Colors">
+            <End Role="Colors" EntitySet="Colors" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cars_Currencies" Association="Self.FK_Cars_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cars_FuelTypes" Association="Self.FK_Cars_FuelTypes">
+            <End Role="FuelTypes" EntitySet="FuelTypes" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cars_GearBoxTypes" Association="Self.FK_Cars_GearBoxTypes">
+            <End Role="GearBoxTypes" EntitySet="GearBoxTypes" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Cars" Association="Self.FK_Events_Cars">
+            <End Role="Cars" EntitySet="Cars" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Currencies" Association="Self.FK_Events_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_EventTypes" Association="Self.FK_Events_EventTypes">
+            <End Role="EventTypes" EntitySet="EventTypes" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Places" Association="Self.FK_Events_Places">
+            <End Role="Places" EntitySet="Places" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Users" Association="Self.FK_Events_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventTypes_Users" Association="Self.FK_EventTypes_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="EventTypes" EntitySet="EventTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fillings_Events" Association="Self.FK_Fillings_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Fillings" EntitySet="Fillings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fillings_FuelTypes" Association="Self.FK_Fillings_FuelTypes">
+            <End Role="FuelTypes" EntitySet="FuelTypes" />
+            <End Role="Fillings" EntitySet="Fillings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Messages_Users" Association="Self.FK_Messages_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Messages_Users1" Association="Self.FK_Messages_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Places_Users" Association="Self.FK_Places_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Places" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reminders_Cars" Association="Self.FK_Reminders_Cars">
+            <End Role="Cars" EntitySet="Cars" />
+            <End Role="Reminders" EntitySet="Reminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reminders_Users" Association="Self.FK_Reminders_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reminders" EntitySet="Reminders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Repairs_Events" Association="Self.FK_Repairs_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Repairs" EntitySet="Repairs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Repairs_SparePartTypes" Association="Self.FK_Repairs_SparePartTypes">
+            <End Role="SparePartTypes" EntitySet="SparePartTypes" />
+            <End Role="Repairs" EntitySet="Repairs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserRoles" Association="Self.FK_Users_UserRoles">
+            <End Role="UserRoles" EntitySet="UserRoles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="VirtualGarageModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="VirtualGarageEntities" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="VirtualGarageModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="VirtualGarageEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="CarcaseTypes" EntityType="VirtualGarageModel.CarcaseType" />
           <EntitySet Name="CarInGarages" EntityType="VirtualGarageModel.CarInGarage" />
           <EntitySet Name="CarMarks" EntityType="VirtualGarageModel.CarMark" />
@@ -760,7 +759,7 @@
           <Key>
             <PropertyRef Name="CarcaseTypeID" />
           </Key>
-          <Property Name="CarcaseTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarcaseTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CarcaseTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_CarcaseTypes" FromRole="CarcaseTypes" ToRole="Cars" />
         </EntityType>
@@ -779,7 +778,7 @@
           <Key>
             <PropertyRef Name="CarMarkID" />
           </Key>
-          <Property Name="CarMarkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarMarkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CarMarkName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="IsUserMark" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="CarModels" Relationship="VirtualGarageModel.FK_CarModels_CarMarks" FromRole="CarMarks" ToRole="CarModels" />
@@ -788,7 +787,7 @@
           <Key>
             <PropertyRef Name="CarModelID" />
           </Key>
-          <Property Name="CarModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CarModelName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="CarMarkID" Type="Int32" Nullable="false" />
           <Property Name="IsUserModel" Type="Boolean" Nullable="false" />
@@ -799,7 +798,7 @@
           <Key>
             <PropertyRef Name="CarID" />
           </Key>
-          <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CarModelID" Type="Int32" Nullable="false" />
           <Property Name="Year" Type="Int32" Nullable="false" />
           <Property Name="ColorID" Type="Int32" />
@@ -830,7 +829,7 @@
           <Key>
             <PropertyRef Name="ColorID" />
           </Key>
-          <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="ColorName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_Colors" FromRole="Colors" ToRole="Cars" />
         </EntityType>
@@ -838,7 +837,7 @@
           <Key>
             <PropertyRef Name="CurrencyID" />
           </Key>
-          <Property Name="CurrencyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="CurrencyName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="CultureName" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
           <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_Currencies" FromRole="Currencies" ToRole="Cars" />
@@ -848,7 +847,7 @@
           <Key>
             <PropertyRef Name="EventID" />
           </Key>
-          <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="EventTypeID" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Mileage" Type="Int32" />
@@ -870,7 +869,7 @@
           <Key>
             <PropertyRef Name="EventTypeID" />
           </Key>
-          <Property Name="EventTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="EventTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="UserID" Type="Int32" />
           <NavigationProperty Name="Events" Relationship="VirtualGarageModel.FK_Events_EventTypes" FromRole="EventTypes" ToRole="Events" />
@@ -880,7 +879,7 @@
           <Key>
             <PropertyRef Name="FillingID" />
           </Key>
-          <Property Name="FillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="FuelTypeID" Type="Int32" Nullable="false" />
           <Property Name="FuelCount" Type="Single" />
           <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="4" />
@@ -894,7 +893,7 @@
           <Key>
             <PropertyRef Name="FuelTypeID" />
           </Key>
-          <Property Name="FuelTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FuelTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="FuelTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="FuelMeasure" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_FuelTypes" FromRole="FuelTypes" ToRole="Cars" />
@@ -904,7 +903,7 @@
           <Key>
             <PropertyRef Name="GearBoxID" />
           </Key>
-          <Property Name="GearBoxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GearBoxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="GearBoxName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Cars" Relationship="VirtualGarageModel.FK_Cars_GearBoxTypes" FromRole="GearBoxTypes" ToRole="Cars" />
         </EntityType>
@@ -927,7 +926,7 @@
           <Key>
             <PropertyRef Name="PlaceID" />
           </Key>
-          <Property Name="PlaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="PlaceName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="IsFillingStation" Type="Boolean" Nullable="false" />
           <Property Name="UserID" Type="Int32" />
@@ -938,7 +937,7 @@
           <Key>
             <PropertyRef Name="ReminderID" />
           </Key>
-          <Property Name="ReminderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReminderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="StartDateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="FinishDateTime" Type="DateTime" Nullable="false" Precision="3" />
@@ -955,7 +954,7 @@
           <Key>
             <PropertyRef Name="RepairID" />
           </Key>
-          <Property Name="RepairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RepairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="SparePartTypeID" Type="Int32" Nullable="false" />
           <Property Name="SparePartProducer" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="SparePartModel" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
@@ -970,7 +969,7 @@
           <Key>
             <PropertyRef Name="SparePartTypeID" />
           </Key>
-          <Property Name="SparePartTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SparePartTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="SparePartTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Repairs" Relationship="VirtualGarageModel.FK_Repairs_SparePartTypes" FromRole="SparePartTypes" ToRole="Repairs" />
         </EntityType>
@@ -978,7 +977,7 @@
           <Key>
             <PropertyRef Name="UserRoleID" />
           </Key>
-          <Property Name="UserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="UserRoleName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Users" Relationship="VirtualGarageModel.FK_Users_UserRoles" FromRole="UserRoles" ToRole="Users" />
         </EntityType>
@@ -986,7 +985,7 @@
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="UserNick" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -999,7 +998,6 @@
           <NavigationProperty Name="Places" Relationship="VirtualGarageModel.FK_Places_Users" FromRole="Users" ToRole="Places" />
           <NavigationProperty Name="Reminders" Relationship="VirtualGarageModel.FK_Reminders_Users" FromRole="Users" ToRole="Reminders" />
           <NavigationProperty Name="UserRole" Relationship="VirtualGarageModel.FK_Users_UserRoles" FromRole="Users" ToRole="UserRoles" />
-          <Property Type="Boolean" Name="IsCorporativeAccount" />
         </EntityType>
         <Association Name="FK_Cars_CarcaseTypes">
           <End Role="CarcaseTypes" Type="VirtualGarageModel.CarcaseType" Multiplicity="0..1" />
@@ -1315,7 +1313,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="VirtualGarageModelStoreContainer" CdmEntityContainer="VirtualGarageEntities">
           <EntitySetMapping Name="CarcaseTypes"><EntityTypeMapping TypeName="VirtualGarageModel.CarcaseType"><MappingFragment StoreEntitySet="CarcaseTypes">
             <ScalarProperty Name="CarcaseTypeID" ColumnName="CarcaseTypeID" />
@@ -1447,7 +1445,6 @@
             <ScalarProperty Name="UserRoleName" ColumnName="UserRoleName" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="VirtualGarageModel.User"><MappingFragment StoreEntitySet="Users">
-            <ScalarProperty Name="IsCorporativeAccount" ColumnName="IsCorporativeAccount" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="UserNick" ColumnName="UserNick" />
             <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
@@ -1459,215 +1456,216 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
-    <Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Отсутствует" />
-      </DesignerInfoPropertySet>
-    </Options>
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="Отсутствует" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams>
-      <Diagram Name="VirtualGarage">
-        <EntityTypeShape EntityType="VirtualGarageModel.CarcaseType" Width="1.5" PointX="0.75" PointY="3.5" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.CarInGarage" Width="1.5" PointX="5.25" PointY="8.5" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.CarMark" Width="1.5" PointX="1.5" PointY="16" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.CarModel" Width="1.5" PointX="0.75" PointY="12.875" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Car" Width="1.5" PointX="3" PointY="6.5" Height="6.0186165364583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Color" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Currency" Width="1.5" PointX="0.75" PointY="8.5" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Event" Width="1.5" PointX="8.25" PointY="7.25" Height="4.2879036458333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.EventType" Width="1.5" PointX="6" PointY="12" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Filling" Width="1.5" PointX="10.5" PointY="8.125" Height="2.7494921874999996" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.FuelType" Width="1.5" PointX="0.75" PointY="19.125" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.GearBoxType" Width="1.5" PointX="0.75" PointY="21.875" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Message" Width="1.5" PointX="5.25" PointY="25" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Place" Width="1.5" PointX="6" PointY="14.75" Height="2.172587890624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Reminder" Width="1.5" PointX="5.25" PointY="3.75" Height="3.326396484374996" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.Repair" Width="1.5" PointX="13.5" PointY="8" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.SparePartType" Width="1.5" PointX="11.25" PointY="5.625" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.UserRole" Width="1.5" PointX="0.75" PointY="25.625" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="VirtualGarageModel.User" Width="1.5" PointX="3" PointY="24.75" Height="3.5186979166666674" IsExpanded="true" />
-        <AssociationConnector Association="VirtualGarageModel.FK_Cars_CarcaseTypes" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="4.297841796875" />
-          <ConnectorPoint PointX="3.2604141666666666" PointY="4.2978417968749989" />
-          <ConnectorPoint PointX="3.4270808333333336" PointY="4.297841796875" />
-          <ConnectorPoint PointX="3.75" PointY="4.297841796875" />
-          <ConnectorPoint PointX="3.75" PointY="6.5" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_CarInGarage_Cars" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="9.4901432291666659" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="9.4901432291666659" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="9.4901432291666659" />
-          <ConnectorPoint PointX="5.25" PointY="9.4901432291666659" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_CarInGarage_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="24.782306692307689" />
-          <ConnectorPoint PointX="5.03125" PointY="24.251056692307689" />
-          <ConnectorPoint PointX="5.03125" PointY="10.016466843749999" />
-          <ConnectorPoint PointX="5.25" PointY="10.016466843749999" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_CarModels_CarMarks" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.875" PointY="16" />
-          <ConnectorPoint PointX="1.875" PointY="15.047587890625" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Cars_CarModels" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="13.9612939453125" />
-          <ConnectorPoint PointX="3.2916641666666666" PointY="13.9612939453125" />
-          <ConnectorPoint PointX="3.4583308333333336" PointY="13.9612939453125" />
-          <ConnectorPoint PointX="3.75" PointY="13.9612939453125" />
-          <ConnectorPoint PointX="3.75" PointY="12.518616536458332" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Cars_Colors" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="1.5478417968749998" />
-          <ConnectorPoint PointX="3.3437475" PointY="1.5478417968749998" />
-          <ConnectorPoint PointX="3.3437475" PointY="6.5" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Cars_Currencies" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="9.4901432291666659" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="9.4901432291666659" />
-          <ConnectorPoint PointX="2.8333333333333335" PointY="9.4901432291666659" />
-          <ConnectorPoint PointX="3" PointY="9.4901432291666659" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Cars_FuelTypes" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="20.115143229166666" />
-          <ConnectorPoint PointX="3.2916641666666666" PointY="20.115143229166666" />
-          <ConnectorPoint PointX="3.4583308333333336" PointY="20.115143229166666" />
-          <ConnectorPoint PointX="3.6822916666666665" PointY="20.115143229166666" />
-          <ConnectorPoint PointX="3.8489583333333335" PointY="20.115143229166666" />
-          <ConnectorPoint PointX="4.1562525" PointY="20.115143229166666" />
-          <ConnectorPoint PointX="4.1562525" PointY="12.518616536458332" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Cars_GearBoxTypes" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="22.672841796875" />
-          <ConnectorPoint PointX="3.3749975" PointY="22.672841796875" />
-          <ConnectorPoint PointX="3.3749975" PointY="12.518616536458332" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Events_Cars" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="7.84375" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="7.8437499999999991" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="7.84375" />
-          <ConnectorPoint PointX="8.25" PointY="7.84375" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Reminders_Cars" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="6.788198242187498" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="6.7881982421874971" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="6.788198242187498" />
-          <ConnectorPoint PointX="5.25" PointY="6.788198242187498" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Events_Currencies" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="8.9638196145833327" />
-          <ConnectorPoint PointX="2.75" PointY="8.9638196145833327" />
-          <ConnectorPoint PointX="2.75" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="3.2916641666666666" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="3.4583308333333336" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="3.6666666666666665" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="3.8333333333333335" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="4.0729191666666669" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="4.2395858333333329" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="12.76861653645833" />
-          <ConnectorPoint PointX="5.114583333333333" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="5.75" PointY="12.768616536458332" />
-          <ConnectorPoint PointX="5.75" PointY="11.787903645833332" />
-          <ConnectorPoint PointX="8.3072879166666649" PointY="11.787903645833332" />
-          <ConnectorPoint PointX="8.4739545833333327" PointY="11.787903645833332" />
-          <ConnectorPoint PointX="8.5104141666666653" PointY="11.787903645833332" />
-          <ConnectorPoint PointX="8.6770808333333331" PointY="11.787903645833332" />
-          <ConnectorPoint PointX="9" PointY="11.787903645833332" />
-          <ConnectorPoint PointX="9" PointY="11.537903645833332" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Events_EventTypes" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="12.990143229166666" />
-          <ConnectorPoint PointX="8.3072879166666649" PointY="12.990143229166666" />
-          <ConnectorPoint PointX="8.4739545833333327" PointY="12.990143229166666" />
-          <ConnectorPoint PointX="8.5937475" PointY="12.990143229166666" />
-          <ConnectorPoint PointX="8.5937475" PointY="11.537903645833332" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Events_Places" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="8.3072879166666649" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="8.4739545833333327" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="9.4062525" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="9.4062525" PointY="11.537903645833332" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Events_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="28.136495768229167" />
-          <ConnectorPoint PointX="8.3906212499999988" PointY="28.136495768229167" />
-          <ConnectorPoint PointX="8.3906212499999988" PointY="11.537903645833332" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Fillings_Events" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="9.49974609375" />
-          <ConnectorPoint PointX="10.5" PointY="9.49974609375" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Repairs_Events" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="8.03125" />
-          <ConnectorPoint PointX="13.5" PointY="8.03125" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_EventTypes_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="24.788075923076921" />
-          <ConnectorPoint PointX="5.40625" PointY="23.881825923076921" />
-          <ConnectorPoint PointX="5.40625" PointY="13.374450997395833" />
-          <ConnectorPoint PointX="6" PointY="13.374450997395833" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Fillings_FuelTypes" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="3.2916641666666666" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="3.4583308333333336" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="3.6822916666666665" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="3.8489583333333335" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="4.0729191666666669" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="4.2395858333333329" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="5.114583333333333" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="5.322916666666667" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="5.489583333333333" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="8.3072879166666649" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="8.4739545833333327" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="11.25" PointY="19.58881911458333" />
-          <ConnectorPoint PointX="11.25" PointY="10.8744921875" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Messages_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="26.470896809895834" />
-          <ConnectorPoint PointX="5.25" PointY="26.470896809895834" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Messages_Users1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="25.672948404947917" />
-          <ConnectorPoint PointX="5.25" PointY="25.672948404947917" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Places_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.765625" PointY="24.75" />
-          <ConnectorPoint PointX="3.765625" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="4.0729191666666669" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="4.2395858333333329" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="15.836293945312496" />
-          <ConnectorPoint PointX="5.114583333333333" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="5.322916666666667" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="5.489583333333333" PointY="15.836293945312498" />
-          <ConnectorPoint PointX="6" PointY="15.836293945312498" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Reminders_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.4630769230769225" PointY="24.75" />
-          <ConnectorPoint PointX="4.875" PointY="24.338076923076922" />
-          <ConnectorPoint PointX="4.875" PointY="5.2378471210937558" />
-          <ConnectorPoint PointX="5.25" PointY="5.2378471210937558" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Repairs_SparePartTypes" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.40625" PointY="7.2206835937500031" />
-          <ConnectorPoint PointX="12.40625" PointY="8.015625" />
-          <ConnectorPoint PointX="13.5" PointY="8.015625" />
-        </AssociationConnector>
-        <AssociationConnector Association="VirtualGarageModel.FK_Users_UserRoles" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="26.422841796875" />
-          <ConnectorPoint PointX="3" PointY="26.422841796875" />
-        </AssociationConnector>
-      </Diagram>
-    </Diagrams>
-  </Designer>
+    <edmx:Diagrams>
+      <edmx:Diagram Name="VirtualGarage">
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.CarcaseType" Width="1.5" PointX="0.75" PointY="3.5" Height="1.5956835937499996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.CarInGarage" Width="1.5" PointX="5.25" PointY="8.5" Height="1.9802864583333317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.CarMark" Width="1.5" PointX="1.5" PointY="16" Height="1.7879850260416674" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.CarModel" Width="1.5" PointX="0.75" PointY="12.875" Height="2.1725878906249996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Car" Width="1.5" PointX="3" PointY="6.5" Height="6.0186165364583317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Color" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Currency" Width="1.5" PointX="0.75" PointY="8.5" Height="1.9802864583333317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Event" Width="1.5" PointX="8.25" PointY="7.25" Height="4.2879036458333317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.EventType" Width="1.5" PointX="6" PointY="12" Height="1.9802864583333317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Filling" Width="1.5" PointX="10.5" PointY="8.125" Height="2.7494921874999996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.FuelType" Width="1.5" PointX="0.75" PointY="19.125" Height="1.9802864583333317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.GearBoxType" Width="1.5" PointX="0.75" PointY="21.875" Height="1.5956835937500031" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Message" Width="1.5" PointX="5.25" PointY="25" Height="2.9417936197916674" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Place" Width="1.5" PointX="6" PointY="14.75" Height="2.172587890624996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Reminder" Width="1.5" PointX="5.25" PointY="3.75" Height="3.326396484374996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.Repair" Width="1.5" PointX="13.5" PointY="8" Height="2.9417936197916674" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.SparePartType" Width="1.5" PointX="11.25" PointY="5.625" Height="1.5956835937500031" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.UserRole" Width="1.5" PointX="0.75" PointY="25.625" Height="1.5956835937500031" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="VirtualGarageModel.User" Width="1.5" PointX="3" PointY="24.75" Height="3.5186979166666674" IsExpanded="true" />
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Cars_CarcaseTypes" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="4.297841796875" />
+          <edmx:ConnectorPoint PointX="3.2604141666666666" PointY="4.2978417968749989" />
+          <edmx:ConnectorPoint PointX="3.4270808333333336" PointY="4.297841796875" />
+          <edmx:ConnectorPoint PointX="3.75" PointY="4.297841796875" />
+          <edmx:ConnectorPoint PointX="3.75" PointY="6.5" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_CarInGarage_Cars" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="9.4901432291666659" />
+          <edmx:ConnectorPoint PointX="4.791666666666667" PointY="9.4901432291666659" />
+          <edmx:ConnectorPoint PointX="4.958333333333333" PointY="9.4901432291666659" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="9.4901432291666659" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_CarInGarage_Users" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="24.782306692307689" />
+          <edmx:ConnectorPoint PointX="5.03125" PointY="24.251056692307689" />
+          <edmx:ConnectorPoint PointX="5.03125" PointY="10.016466843749999" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="10.016466843749999" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_CarModels_CarMarks" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="1.875" PointY="16" />
+          <edmx:ConnectorPoint PointX="1.875" PointY="15.047587890625" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Cars_CarModels" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="13.9612939453125" />
+          <edmx:ConnectorPoint PointX="3.2916641666666666" PointY="13.9612939453125" />
+          <edmx:ConnectorPoint PointX="3.4583308333333336" PointY="13.9612939453125" />
+          <edmx:ConnectorPoint PointX="3.75" PointY="13.9612939453125" />
+          <edmx:ConnectorPoint PointX="3.75" PointY="12.518616536458332" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Cars_Colors" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="1.5478417968749998" />
+          <edmx:ConnectorPoint PointX="3.3437475" PointY="1.5478417968749998" />
+          <edmx:ConnectorPoint PointX="3.3437475" PointY="6.5" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Cars_Currencies" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="9.4901432291666659" />
+          <edmx:ConnectorPoint PointX="2.6666666666666665" PointY="9.4901432291666659" />
+          <edmx:ConnectorPoint PointX="2.8333333333333335" PointY="9.4901432291666659" />
+          <edmx:ConnectorPoint PointX="3" PointY="9.4901432291666659" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Cars_FuelTypes" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="20.115143229166666" />
+          <edmx:ConnectorPoint PointX="3.2916641666666666" PointY="20.115143229166666" />
+          <edmx:ConnectorPoint PointX="3.4583308333333336" PointY="20.115143229166666" />
+          <edmx:ConnectorPoint PointX="3.6822916666666665" PointY="20.115143229166666" />
+          <edmx:ConnectorPoint PointX="3.8489583333333335" PointY="20.115143229166666" />
+          <edmx:ConnectorPoint PointX="4.1562525" PointY="20.115143229166666" />
+          <edmx:ConnectorPoint PointX="4.1562525" PointY="12.518616536458332" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Cars_GearBoxTypes" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="22.672841796875" />
+          <edmx:ConnectorPoint PointX="3.3749975" PointY="22.672841796875" />
+          <edmx:ConnectorPoint PointX="3.3749975" PointY="12.518616536458332" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Events_Cars" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="7.84375" />
+          <edmx:ConnectorPoint PointX="4.791666666666667" PointY="7.8437499999999991" />
+          <edmx:ConnectorPoint PointX="4.958333333333333" PointY="7.84375" />
+          <edmx:ConnectorPoint PointX="8.25" PointY="7.84375" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Reminders_Cars" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="6.788198242187498" />
+          <edmx:ConnectorPoint PointX="4.791666666666667" PointY="6.7881982421874971" />
+          <edmx:ConnectorPoint PointX="4.958333333333333" PointY="6.788198242187498" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="6.788198242187498" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Events_Currencies" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="8.9638196145833327" />
+          <edmx:ConnectorPoint PointX="2.75" PointY="8.9638196145833327" />
+          <edmx:ConnectorPoint PointX="2.75" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="3.2916641666666666" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="3.4583308333333336" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="3.6666666666666665" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="3.8333333333333335" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="4.0729191666666669" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="4.2395858333333329" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="4.791666666666667" PointY="12.76861653645833" />
+          <edmx:ConnectorPoint PointX="5.114583333333333" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="5.75" PointY="12.768616536458332" />
+          <edmx:ConnectorPoint PointX="5.75" PointY="11.787903645833332" />
+          <edmx:ConnectorPoint PointX="8.3072879166666649" PointY="11.787903645833332" />
+          <edmx:ConnectorPoint PointX="8.4739545833333327" PointY="11.787903645833332" />
+          <edmx:ConnectorPoint PointX="8.5104141666666653" PointY="11.787903645833332" />
+          <edmx:ConnectorPoint PointX="8.6770808333333331" PointY="11.787903645833332" />
+          <edmx:ConnectorPoint PointX="9" PointY="11.787903645833332" />
+          <edmx:ConnectorPoint PointX="9" PointY="11.537903645833332" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Events_EventTypes" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="7.5" PointY="12.990143229166666" />
+          <edmx:ConnectorPoint PointX="8.3072879166666649" PointY="12.990143229166666" />
+          <edmx:ConnectorPoint PointX="8.4739545833333327" PointY="12.990143229166666" />
+          <edmx:ConnectorPoint PointX="8.5937475" PointY="12.990143229166666" />
+          <edmx:ConnectorPoint PointX="8.5937475" PointY="11.537903645833332" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Events_Places" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="7.5" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="8.3072879166666649" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="8.4739545833333327" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="9.4062525" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="9.4062525" PointY="11.537903645833332" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Events_Users" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="28.136495768229167" />
+          <edmx:ConnectorPoint PointX="8.3906212499999988" PointY="28.136495768229167" />
+          <edmx:ConnectorPoint PointX="8.3906212499999988" PointY="11.537903645833332" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Fillings_Events" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="9.75" PointY="9.49974609375" />
+          <edmx:ConnectorPoint PointX="10.5" PointY="9.49974609375" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Repairs_Events" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="9.75" PointY="8.03125" />
+          <edmx:ConnectorPoint PointX="13.5" PointY="8.03125" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_EventTypes_Users" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="24.788075923076921" />
+          <edmx:ConnectorPoint PointX="5.40625" PointY="23.881825923076921" />
+          <edmx:ConnectorPoint PointX="5.40625" PointY="13.374450997395833" />
+          <edmx:ConnectorPoint PointX="6" PointY="13.374450997395833" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Fillings_FuelTypes" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="3.2916641666666666" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="3.4583308333333336" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="3.6822916666666665" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="3.8489583333333335" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="4.0729191666666669" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="4.2395858333333329" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="4.791666666666667" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="5.114583333333333" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="5.322916666666667" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="5.489583333333333" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="8.3072879166666649" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="8.4739545833333327" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="11.25" PointY="19.58881911458333" />
+          <edmx:ConnectorPoint PointX="11.25" PointY="10.8744921875" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Messages_Users" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="26.470896809895834" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="26.470896809895834" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Messages_Users1" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="25.672948404947917" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="25.672948404947917" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Places_Users" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="3.765625" PointY="24.75" />
+          <edmx:ConnectorPoint PointX="3.765625" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="4.0729191666666669" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="4.2395858333333329" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="4.791666666666667" PointY="15.836293945312496" />
+          <edmx:ConnectorPoint PointX="5.114583333333333" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="5.322916666666667" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="5.489583333333333" PointY="15.836293945312498" />
+          <edmx:ConnectorPoint PointX="6" PointY="15.836293945312498" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Reminders_Users" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.4630769230769225" PointY="24.75" />
+          <edmx:ConnectorPoint PointX="4.875" PointY="24.338076923076922" />
+          <edmx:ConnectorPoint PointX="4.875" PointY="5.2378471210937558" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="5.2378471210937558" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Repairs_SparePartTypes" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="12.40625" PointY="7.2206835937500031" />
+          <edmx:ConnectorPoint PointX="12.40625" PointY="8.015625" />
+          <edmx:ConnectorPoint PointX="13.5" PointY="8.015625" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="VirtualGarageModel.FK_Users_UserRoles" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="26.422841796875" />
+          <edmx:ConnectorPoint PointX="3" PointY="26.422841796875" />
+        </edmx:AssociationConnector>
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
 </edmx:Edmx>

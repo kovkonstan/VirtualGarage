@@ -27,3 +27,13 @@ G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\bin\
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.csprojResolveAssemblyReference.cache
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.dll
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.dll.config
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.csproj.CopyComplete
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.pdb

@@ -1,0 +1,2 @@
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\obj\Release\InostudioSolutions.Data.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\InostudioSolutions.Data\obj\Release\InostudioSolutions.Data.csproj.CoreCompileInputs.cache

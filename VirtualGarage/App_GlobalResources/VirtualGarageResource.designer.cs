@@ -13,13 +13,13 @@ namespace Resources {
     
     
     /// <summary>
-    ///   Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+    ///   Класс ресурса со строгой типизацией для поиска локализованных строк и т. д.
     /// </summary>
     // Этот класс создан автоматически классом StronglyTypedResourceBuilder
-    // класс с помощью такого средства, как ResGen или Visual Studio.
-    // Чтобы добавить или удалить элемент, измените файл .ResX и снова запустите ResGen
+    // с помощью такого средства, как ResGen или Visual Studio.
+    // Чтобы добавить или удалить член, измените RESX-файл и снова запустите ResGen
     // с параметром /str или перестройте проект Visual Studio.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class VirtualGarageResource {
@@ -33,7 +33,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Возвращает кэшированный экземпляр ResourceManager, используемый этим классом.
+        ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
@@ -48,7 +48,7 @@ namespace Resources {
         
         /// <summary>
         ///   Переопределяет свойство CurrentUICulture текущего потока для всех
-        ///   подстановки ресурсов с помощью этого класса ресурса со строгой типизацией.
+        ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -61,7 +61,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, такую же, как &quot;Введенное значение {0} некорректно для поля {1}&quot;.
+        ///   Ищет локализованную строку, похожую на &quot;Введенное значение {0} некорректно для поля {1}&quot;.
         /// </summary>
         internal static string PropertyValueInvalid {
             get {

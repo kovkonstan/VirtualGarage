@@ -88,3 +88,40 @@ C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.pdb
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.csprojResolveAssemblyReference.cache
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.dll
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\VirtualGarage.dll.config
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\VirtualGarage.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\VirtualGarage.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\AutoMapper.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\EntityFramework.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\InostudioSolutions.Data.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\Recaptcha.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.Helpers.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.Mvc.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.Razor.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.WebPages.Deployment.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.WebPages.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.WebPages.Razor.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\TmpLabs.DataEngine.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\TmpLabs.WebEngine.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\VirtualGarage.Logic.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\InostudioSolutions.Data.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\InostudioSolutions.Data.dll.config
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\VirtualGarage.Logic.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\VirtualGarage.Logic.dll.config
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\EntityFramework.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.Helpers.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.Mvc.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.Razor.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.WebPages.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\TmpLabs.DataEngine.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\TmpLabs.DataEngine.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\TmpLabs.WebEngine.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\bin\TmpLabs.WebEngine.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\obj\Debug\VirtualGarage.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\obj\Debug\VirtualGarage.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\obj\Debug\VirtualGarage.csproj.CopyComplete
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\obj\Debug\VirtualGarage.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\obj\Debug\VirtualGarage.pdb

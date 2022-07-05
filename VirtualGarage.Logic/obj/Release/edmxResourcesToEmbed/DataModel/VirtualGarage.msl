@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VirtualGarageModelStoreContainer" CdmEntityContainer="VirtualGarageEntities">
+    <EntitySetMapping Name="CarcaseTypes">
+      <EntityTypeMapping TypeName="VirtualGarageModel.CarcaseType">
+        <MappingFragment StoreEntitySet="CarcaseTypes">
+          <ScalarProperty Name="CarcaseTypeID" ColumnName="CarcaseTypeID" />
+          <ScalarProperty Name="CarcaseTypeName" ColumnName="CarcaseTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarInGarages">
+      <EntityTypeMapping TypeName="VirtualGarageModel.CarInGarage">
+        <MappingFragment StoreEntitySet="CarInGarage">
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsOwner" ColumnName="IsOwner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarMarks">
+      <EntityTypeMapping TypeName="VirtualGarageModel.CarMark">
+        <MappingFragment StoreEntitySet="CarMarks">
+          <ScalarProperty Name="CarMarkID" ColumnName="CarMarkID" />
+          <ScalarProperty Name="CarMarkName" ColumnName="CarMarkName" />
+          <ScalarProperty Name="IsUserMark" ColumnName="IsUserMark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarModels">
+      <EntityTypeMapping TypeName="VirtualGarageModel.CarModel">
+        <MappingFragment StoreEntitySet="CarModels">
+          <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+          <ScalarProperty Name="CarModelName" ColumnName="CarModelName" />
+          <ScalarProperty Name="CarMarkID" ColumnName="CarMarkID" />
+          <ScalarProperty Name="IsUserModel" ColumnName="IsUserModel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Car">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+          <ScalarProperty Name="CarcaseTypeID" ColumnName="CarcaseTypeID" />
+          <ScalarProperty Name="GearBoxID" ColumnName="GearBoxID" />
+          <ScalarProperty Name="EngineVolume" ColumnName="EngineVolume" />
+          <ScalarProperty Name="BuyDate" ColumnName="BuyDate" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+          <ScalarProperty Name="MonthMileage" ColumnName="MonthMileage" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="CarPhoto" ColumnName="CarPhoto" />
+          <ScalarProperty Name="CarVisible" ColumnName="CarVisible" />
+          <ScalarProperty Name="CarIsReadOnly" ColumnName="CarIsReadOnly" />
+          <ScalarProperty Name="ImageType" ColumnName="ImageType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Color">
+        <MappingFragment StoreEntitySet="Colors">
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Currency">
+        <MappingFragment StoreEntitySet="Currencies">
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Event">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+          <ScalarProperty Name="GeneralCost" ColumnName="GeneralCost" />
+          <ScalarProperty Name="EventComments" ColumnName="EventComments" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventTypes">
+      <EntityTypeMapping TypeName="VirtualGarageModel.EventType">
+        <MappingFragment StoreEntitySet="EventTypes">
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fillings">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Filling">
+        <MappingFragment StoreEntitySet="Fillings">
+          <ScalarProperty Name="FillingID" ColumnName="FillingID" />
+          <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+          <ScalarProperty Name="FuelCount" ColumnName="FuelCount" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="IsFullTank" ColumnName="IsFullTank" />
+          <ScalarProperty Name="IsForgotPreviousFilling" ColumnName="IsForgotPreviousFilling" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelTypes">
+      <EntityTypeMapping TypeName="VirtualGarageModel.FuelType">
+        <MappingFragment StoreEntitySet="FuelTypes">
+          <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+          <ScalarProperty Name="FuelTypeName" ColumnName="FuelTypeName" />
+          <ScalarProperty Name="FuelMeasure" ColumnName="FuelMeasure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GearBoxTypes">
+      <EntityTypeMapping TypeName="VirtualGarageModel.GearBoxType">
+        <MappingFragment StoreEntitySet="GearBoxTypes">
+          <ScalarProperty Name="GearBoxID" ColumnName="GearBoxID" />
+          <ScalarProperty Name="GearBoxName" ColumnName="GearBoxName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="Theme" ColumnName="Theme" />
+          <ScalarProperty Name="ChainID" ColumnName="ChainID" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="IsDeleteBySender" ColumnName="IsDeleteBySender" />
+          <ScalarProperty Name="RecipientID" ColumnName="RecipientID" />
+          <ScalarProperty Name="IsDeleteByRecipient" ColumnName="IsDeleteByRecipient" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Place">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+          <ScalarProperty Name="IsFillingStation" ColumnName="IsFillingStation" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reminders">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Reminder">
+        <MappingFragment StoreEntitySet="Reminders">
+          <ScalarProperty Name="ReminderID" ColumnName="ReminderID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="FinishDateTime" ColumnName="FinishDateTime" />
+          <ScalarProperty Name="ReminderName" ColumnName="ReminderName" />
+          <ScalarProperty Name="IsRemindByEmail" ColumnName="IsRemindByEmail" />
+          <ScalarProperty Name="ReminderCountOfMileage" ColumnName="ReminderCountOfMileage" />
+          <ScalarProperty Name="ReminderCountOfDays" ColumnName="ReminderCountOfDays" />
+          <ScalarProperty Name="IsReminderDone" ColumnName="IsReminderDone" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repairs">
+      <EntityTypeMapping TypeName="VirtualGarageModel.Repair">
+        <MappingFragment StoreEntitySet="Repairs">
+          <ScalarProperty Name="RepairID" ColumnName="RepairID" />
+          <ScalarProperty Name="SparePartTypeID" ColumnName="SparePartTypeID" />
+          <ScalarProperty Name="SparePartProducer" ColumnName="SparePartProducer" />
+          <ScalarProperty Name="SparePartModel" ColumnName="SparePartModel" />
+          <ScalarProperty Name="SparePartCost" ColumnName="SparePartCost" />
+          <ScalarProperty Name="WorkCost" ColumnName="WorkCost" />
+          <ScalarProperty Name="IsRepair" ColumnName="IsRepair" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartTypes">
+      <EntityTypeMapping TypeName="VirtualGarageModel.SparePartType">
+        <MappingFragment StoreEntitySet="SparePartTypes">
+          <ScalarProperty Name="SparePartTypeID" ColumnName="SparePartTypeID" />
+          <ScalarProperty Name="SparePartTypeName" ColumnName="SparePartTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="VirtualGarageModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="UserRoleName" ColumnName="UserRoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="VirtualGarageModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IsCorporativeAccount" ColumnName="IsCorporativeAccount" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserNick" ColumnName="UserNick" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

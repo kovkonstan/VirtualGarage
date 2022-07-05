@@ -1,0 +1,2 @@
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\obj\Release\VirtualGarage.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage\obj\Release\VirtualGarage.csproj.CoreCompileInputs.cache

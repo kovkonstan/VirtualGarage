@@ -94,8 +94,8 @@ namespace VirtualGarage.Controllers
                             UserNick = model.UserName,
                             UserEmail = model.UserEmail,
                             UserPassword = model.Password,
-                            UserRoleID = _roleIDOfUser,
-                            IsCorporativeAccount = model.IsCorporativeAccount
+                            UserRoleID = _roleIDOfUser
+                            //IsCorporativeAccount = model.IsCorporativeAccount
                         });
 
                         String error;

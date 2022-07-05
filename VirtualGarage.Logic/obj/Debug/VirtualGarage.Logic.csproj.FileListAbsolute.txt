@@ -67,3 +67,21 @@ G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debu
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.csprojResolveAssemblyReference.cache
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.dll
 G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll.config
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.dll.config
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.xml
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.pdb
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.csproj.CopyComplete
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.dll
+C:\Users\User\Desktop\Projects\VirtualGarage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.pdb

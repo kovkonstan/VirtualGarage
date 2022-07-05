@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="VirtualGarageModelStoreContainer" CdmEntityContainer="VirtualGarageEntities">
     <EntitySetMapping Name="CarcaseTypes">
       <EntityTypeMapping TypeName="VirtualGarageModel.CarcaseType">
@@ -205,7 +205,6 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="VirtualGarageModel.User">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="IsCorporativeAccount" ColumnName="IsCorporativeAccount" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="UserNick" ColumnName="UserNick" />
           <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
