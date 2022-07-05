@@ -1,0 +1,7 @@
+﻿@model Int32
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert('Событие добавлено');
+        window.location.replace("@Url.Action("Events", "Car", new RouteValueDictionary() { {"carID", Model} })");
+    });
+</script>

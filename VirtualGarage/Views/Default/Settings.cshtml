@@ -1,0 +1,32 @@
+﻿@model VirtualGarage.Models.SettingsModel
+
+@{
+    ViewBag.Title = "Настройки";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Настройки</h2>
+
+<h3>Профиль</h3>
+
+    <div class="table_left_header">
+        <table>
+            <tr>
+                <th>Имя пользователя: </th>
+                <td>@Model.UserName</td>
+            </tr>
+            <tr>
+                <th>E-mail:</th>
+                <td>@Model.UserEmail</td>
+            </tr>            
+        </table>
+
+        <div class="actions">
+            <div class="action">
+                @Html.ActionLink("Изменить E-mail", "ChangeEmail", "Default")
+            </div>
+            <div class="action">
+                @Html.ActionLink("Изменить пароль", "ChangePassword", "Default")
+            </div>
+        </div>
+    </div>

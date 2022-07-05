@@ -1,0 +1,122 @@
+﻿@model VirtualGarage.Models.CarInfoModel
+@{
+    ViewBag.Title = "Информация об автомобиле";
+    Layout = "~/Views/Shared/_Layout_Garage.cshtml";
+}
+
+@section GarageContent
+{
+    @if (Model.UserAcces != VirtualGarage.Enums.UserAccesOnCar.Close)
+    {
+        <div class="info_photo">
+        @if (Model.ImageType != null)
+        {
+            <img class="info_img" src="@Url.Action("GetImage", "Garage", new { carID = Model.CarID })" alt="" />                
+        }
+        else
+        {
+            <img class="info_img" src="@Url.Content("/Content/Samples/sample_img.jpg")" alt="" />                
+        }
+                
+        </div>
+
+        <div id="table_left_header">
+            <table>
+                @Html.HiddenFor(model => model.CarID)
+
+                <tr>
+                    <th>Марка: </th>
+                    <td>@Html.DisplayFor(model => model.MarkName)</td>
+                </tr>
+                <tr>
+                    <th>Модель:</th>
+                    <td>@Html.DisplayFor(model => model.ModelName)</td>
+                </tr>
+                <tr>
+                    <th>Год выпуска:</th>
+                    <td>@Html.DisplayFor(model => model.Year)</td>
+                </tr>
+                @if (Model.ColorName != String.Empty)
+                {                      
+                    <tr>
+                        <th>Цвет</th>
+                        <td>@Html.DisplayFor(model => model.ColorName)</td>
+                    </tr>
+                }
+
+                <tr>
+                    <th>Тип топлива:</th>
+                    <td>@Html.DisplayFor(model => model.FuelTypeName)</td>
+                </tr>
+
+                @if (Model.CarcaseTypeName != String.Empty)
+                { 
+                    <tr>
+                        <th>Тип кузова:</th>
+                        <td>@Html.DisplayFor(model => model.CarcaseTypeName)</td>
+                    </tr>
+                }
+                
+                @if (Model.BoxTypeName != String.Empty)
+                { 
+                    <tr>
+                        <th>Тип коробки передач:</th>
+                        <td>@Html.DisplayFor(model => model.BoxTypeName)</td>
+                    </tr>
+                }
+                
+                @if (Model.EngineVolume != "0")
+                { 
+                    <tr>
+                        <th>Объем двигателя:</th>
+                        <td>@Html.DisplayFor(model => model.EngineVolume) см<sup>3</sup></td>
+                    </tr>
+                }
+                    
+                <tr>
+                    <th>Дата покупки:</th>
+                    <td>@Html.Label("BuyDate", Convert.ToDateTime(Model.BuyDate).ToString("dd/MM/yyyy­"))</td>
+                </tr>
+
+                <tr>
+                    <th>Валюта:</th>
+                    <td>@Html.DisplayFor(model => model.CurrencyName)</td>
+                </tr>
+                @if (Model.Mileage != "0")
+                { 
+                    <tr>
+                        <th>Текущий пробег:</th>
+                        <td>@Html.DisplayFor(model => model.Mileage) км.</td>
+                    </tr>
+                }
+                
+                @if (Model.MonthMileage != "0")
+                { 
+                    <tr>
+                        <th>Средний пробег в месяц:</th>
+                        <td>@Html.DisplayFor(model => model.MonthMileage) км.</td>
+                    </tr>
+                }
+                
+                @if (Model.AdditionalFeatures != null &&
+                    Model.AdditionalFeatures.Trim() != String.Empty)
+                { 
+                    <tr>
+                        <th>Дополнительные характеристики:</th>
+                        <td>@Html.DisplayFor(model => model.AdditionalFeatures)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+    else
+    {
+        <span>Доступ к этому автомобилю запрещен владельцем</span>
+    }
+}
+
+
+
+
+
+

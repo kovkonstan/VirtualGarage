@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "События автомобиля";
+    Layout = "~/Views/Shared/_Layout_Garage.cshtml";
+}
+
+@section GarageContent
+{
+    <div class="actions">
+        <div class="action">
+            @Html.ActionLink("Добавить событие", "AddEvent")
+        </div>
+    </div>
+
+    <div class="actions">   
+        <div class="action_ddl">
+            @Html.DropDownList("EventType", 
+                            new List<SelectListItem>()
+                                    {
+                                        new SelectListItem() {Text="Фильтр",Value=""},
+                                        new SelectListItem() {Text="Заправка",Value=""},
+                                        new SelectListItem() {Text="Ремонт/Обслуживание",Value=""},
+                                        new SelectListItem() {Text="Стоянка",Value=""},
+                                        new SelectListItem() {Text="Страховка",Value=""},
+                                        new SelectListItem() {Text="Кредит",Value=""},
+                                        new SelectListItem() {Text="Мойка",Value=""},
+                                        new SelectListItem() {Text="Штраф",Value=""},
+                                        new SelectListItem() {Text="Без типа",Value=""}
+                                    }
+                    ) 
+        </div>    
+    </div>
+
+    <div id="table_top_header">
+        <table>
+            <tr>
+                <th>Видимость</th>
+                <th>Дата</th>
+                <th>Название</th>
+                <th>Пробег</th>
+                <th>Стоимость</th>
+            </tr>
+            <tr>
+                <td>Не виден</td>
+                <td>03.09.2011</td>
+                <td>@Html.ActionLink("Замена масла", "EventInfo", "Garage")</td>
+                <td>20050</td>
+                <td>100 рублей</td>
+            </tr>
+            <tr>
+                <td>Виден</td>
+                <td>10  .09.2011</td>
+                <td>@Html.ActionLink("Замена масла", "EventInfo", "Garage")</td>
+                <td>20000</td>
+                <td>1000 рублей</td>
+            </tr>
+            <tr>
+                <td>Виден</td>
+                <td>02.09.2011</td>
+                <td>@Html.ActionLink("Замена масла", "EventInfo", "Garage")</td>
+                <td>20000</td>
+                <td>1000 рублей</td>
+            </tr>
+            <tr>
+                <td>Виден</td>
+                <td>02.09.2011</td>
+                <td>@Html.ActionLink("Замена масла", "EventInfo", "Garage")</td>
+                <td>20000</td>
+                <td>1000 рублей</td>
+            </tr>
+        </table>
+    </div>
+}
+

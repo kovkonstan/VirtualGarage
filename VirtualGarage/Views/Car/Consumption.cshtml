@@ -1,0 +1,47 @@
+﻿@model VirtualGarage.Models.ConsumptionModel
+
+@{
+    ViewBag.Title = "Расход топлива";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+
+@section GarageContent
+{
+    <h3>Статистика расхода топлива</h3>
+    <br />
+    @Html.HiddenFor(model => model.BaseModel.CarID)
+
+    
+
+    @if (Model.BaseModel.UserAcces != VirtualGarage.Logic.Enums.UserAccesOnCar.Close)
+    {
+        if (Model.Consumptions.Count == 0)
+        {
+            <p>Недостаточно данных для подсчета статистики</p>               
+        }
+        else
+        {
+            foreach (var item in Model.Consumptions)
+            {     
+                <h3>@item.ConsumptionName</h3>   
+                <div class="table_left_header">
+                    <table>
+                        @foreach (var row in item.ConsumtionUnit)
+                        {  
+                            <tr>
+                                <th>@row.Key</th>
+                                <td>@row.Value.ToString("F")</td>
+                            </tr>
+                        }
+               
+                    </table>
+                </div>
+                <br />
+            }
+        }
+    }
+    else
+    {
+        <span>Доступ к этому автомобилю запрещен владельцем</span>
+    }
+}

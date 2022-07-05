@@ -1,0 +1,21 @@
+﻿@model VirtualGarage.Models.CarsInGarageModel
+@using VirtualGarage.HtmlHelpers
+ 
+ @if (Model.Cars.Count != 0)
+ {
+     foreach (var car in Model.Cars)
+     {
+            @Html.Partial("CarDiv", car);
+     }
+ }
+ else
+ {
+     <p class="carsDiv_message">Ваш гараж пуст</p>
+ }
+
+
+<div class="pager">
+    @Html.Raw(Html.PageLinks(Model.CurrentPage,
+                Model.TotalPages,
+                x => Url.Action("CarsInGarage", new { page = x })))
+</div> 

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<VirtualGarage.Models.SimilarCarModel>
+
+@foreach (var item in Model) {
+<div class="left">
+    <h2>Похожие автомобили</h2>
+    @foreach (var car in Model)
+    {    
+        <div class="similar_car">
+            <img class="small_img" src="@Url.Content("~/Content/Samples/car-1.jpg")" alt="" />
+            @Html.ActionLink(car.CarName, "CarInfo", "Garage",
+                                new RouteValueDictionary 
+                                {
+                                    {"carID", car.CarID}
+                                }, null)
+            <br />
+            @Html.ActionLink(car.UserName, "UserInfo", "Default",
+                                new RouteValueDictionary 
+                                {
+                                    {"userID", car.UserID}
+                                }, null)
+        </div>
+    }    
+</div>
+}
+

@@ -1,0 +1,71 @@
+﻿@model VirtualGarage.Models.SearchModel
+@using VirtualGarage.HtmlHelpers
+
+@{
+    ViewBag.Title = "Результаты поиска";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Результаты</h2>
+<div id="cars_in_garage">
+    <div id="cars_list">
+
+         @if (Model.Cars.Count != 0)
+         {
+             foreach (var car in Model.Cars)
+             {                 
+                 <div class="car_item">                    
+                    <div class="car_img">
+
+                        @if (car.ImageType != null)
+                        {
+                            <img src="@(Url.Action("GetImage", "Car", new { car.CarID }))" alt="" />
+                        }
+                        else
+                        {
+                            <img src="@Url.Content("/Content/Samples/sample_img.jpg")" alt="" />
+                        }
+
+                    </div>
+                    <h3> @Html.ActionLink(car.MarkName + " " + car.ModelName + " " + car.Year,
+                                    "CarInfo",
+                                    "Car",
+                                    new RouteValueDictionary()
+                                    {
+                                        {"carID", car.CarID}                            
+                                    },
+                                    new Dictionary<String, Object>()
+                                    {
+                                    })
+                                    
+                    </h3>
+                    <br />
+
+                    @Html.ActionLink("События", "Events", "Car",
+                                        new RouteValueDictionary() 
+                                        {
+                                            {"carID", car.CarID}
+                                        },
+                                        null) <br />
+                    @Html.ActionLink("Статистика", "Statistics", "Car",
+                                        new RouteValueDictionary() 
+                                        {
+                                            {"carID", car.CarID}
+                                        },
+                                        null) <br />
+                </div>                    
+             }
+         }
+         else
+         {
+             <p>По вашему запросу ничего не найдено</p>
+         }
+
+@*        <div class="pager">
+            @Html.Raw(Html.PageLinks(Model.CurrentPage,
+                        Model.TotalPages,
+                        x => Url.Action("CarsInGarage", new { page = x })))
+        </div> *@
+    </div>
+</div>
+

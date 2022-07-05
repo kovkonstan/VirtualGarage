@@ -1,0 +1,44 @@
+﻿@model VirtualGarage.Models.LoginModel
+
+@if (Request.IsAuthenticated)
+{ 
+    <div id="login_user_info">
+        Здравствуйте, @Html.ActionLink(Context.User.Identity.Name, "Settings", "Default")!|
+        @Html.ActionLink("Гараж", "", "Garage")|
+        @Html.ActionLink("Выход", "LogOut", "Account")
+    </div>
+}
+else
+{
+    using (Html.BeginForm("LogOn", "Account"))
+    {
+                       
+            <div id="login">
+                @Html.ActionLink("Регистрация", "Register", "Account")|
+                @Html.ActionLink("Забыли пароль?", "ForgotPassword", "Account")
+
+                <div class="login_editor-label">
+                    @Html.LabelFor(model => model.UserName)
+                </div>
+                <div class="login_editor-field">
+                    @Html.EditorFor(model => model.UserName)
+                </div>
+
+                <div class="login_editor-label">
+                    @Html.LabelFor(model => model.Password)
+                </div>
+                <div class="login_editor-field">
+                    @Html.EditorFor(model => model.Password)
+                </div>
+
+                <div class="login_editor-label">
+                    @Html.CheckBoxFor(model => model.IsRememberMe)
+                    Запомнить меня
+                </div>
+                <input id="but_login" type="submit" value="Войти" />
+            </div>
+
+    }
+}
+
+

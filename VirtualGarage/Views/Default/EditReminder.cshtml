@@ -1,0 +1,77 @@
+﻿@model VirtualGarage.Models.EditReminderModel
+
+@{
+    ViewBag.Title = "Редактировать напоминание";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Редактировать напоминание</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.ReminderID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StartDateTime)
+            @Html.ValidationMessageFor(model => model.StartDateTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FinishDateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FinishDateTime)
+            @Html.ValidationMessageFor(model => model.FinishDateTime)
+        </div>        
+
+@*        <div class="editor-field">
+            @Html.LabelFor(model => model.ReminderCountOfDays)
+            @Html.EditorFor(model => model.ReminderCountOfDays)<span> дней</span>
+            @Html.ValidationMessageFor(model => model.ReminderCountOfDays)
+        </div>
+    
+        <div class="editor-label">
+            @Html.EditorFor(model => model.IsRemindByEmail)
+            @Html.LabelFor(model => model.IsRemindByEmail)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.EditorFor(model => model.IsReminderDone)
+            @Html.LabelFor(model => model.IsReminderDone)
+        </div>
+      
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarID,
+                                new List<SelectListItem>()
+                                {
+                                    new SelectListItem()
+                                    {
+                                        Selected = true,
+                                        Text = "-Выберите автомобиль-",
+                                        Value = ""
+                                    }
+                                }.Concat(Model.AllUserCars))
+            @Html.ValidationMessageFor(model => model.CarID)
+        </div>
+
+        <p>
+            <input type="submit" class="button" value="Сохранить изменения" />
+        </p>
+}
+
+

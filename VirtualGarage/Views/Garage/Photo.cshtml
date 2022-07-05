@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Фото";
+    Layout = "~/Views/Shared/_Layout_Garage.cshtml";
+}
+@section GarageContent
+{
+    <div class="actions">
+        <div class="action">@Html.ActionLink("Изменить", "")</div>        
+        <div class="action">@Html.ActionLink("Удалить", "")</div>
+    </div>
+    <div class="photo">
+        <img src="../../Content/Samples/car-5.jpg" alt="" />
+    </div>
+}

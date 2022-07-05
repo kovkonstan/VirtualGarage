@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TmpLabs.DataEngine</name>
+    </assembly>
+    <members>
+        <member name="T:TmpLabs.DataEngine.DefaultSessionFactory">
+            <summary>
+            Default session factory
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.ISessionFactory">
+            <summary>
+            Session factory
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.ISessionFactory.OpenSession">
+            <summary>
+            Opens the session.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.ISessionFactory.GetSession">
+            <summary>
+            Gets the session.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.ISessionFactory.CloseSession">
+            <summary>
+            Closes the session.
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.DefaultSessionFactory.#ctor(TmpLabs.DataEngine.ISessionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.DataEngine.DefaultSessionFactory"/> class.
+            </summary>
+            <param name="provider">The provider.</param>
+        </member>
+        <member name="M:TmpLabs.DataEngine.DefaultSessionFactory.TmpLabs#DataEngine#ISessionFactory#OpenSession">
+            <summary>
+            Opens the session.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.DefaultSessionFactory.TmpLabs#DataEngine#ISessionFactory#GetSession">
+            <summary>
+            Gets the session.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.DefaultSessionFactory.TmpLabs#DataEngine#ISessionFactory#CloseSession">
+            <summary>
+            Closes the session.
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.DefaultSessionFactory.CurrentThreadID">
+            <summary>
+            ID of current thread (System.Threading.ManagedThreadId)
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.BLL.Initialization.IDataInitProvider">
+            <summary>
+            Data initialization provider
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.Initialization.IDataInitProvider.Init">
+            <summary>
+            Initialize data
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.Initialization.IDataInitProvider.Priority">
+            <summary>
+            Gets the priority.
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.BLL.Initialization.EnumTitleAttribute">
+            <summary>
+            Enum title
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.Initialization.EnumTitleAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.DataEngine.BLL.Initialization.EnumTitleAttribute"/> class.
+            </summary>
+            <param name="title">The title.</param>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.Initialization.EnumTitleAttribute.Title">
+            <summary>
+            Gets the title.
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.IDataSession">
+            <summary>
+            Data session
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.IDataSession.SetUser(System.Security.Principal.IPrincipal)">
+            <summary>
+            Set the User
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="P:TmpLabs.DataEngine.IDataSession.User">
+            <summary>
+            Logged user (null if anonymous)
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.IDataSession.IsLoggedUser">
+            <summary>
+            True if personalized session
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.BLL.Initialization.AbstractDataInitProvider">
+            <summary>
+            Abstract data initialization provider
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.Initialization.AbstractDataInitProvider.#ctor(TmpLabs.DataEngine.Repo.AbstractRepoFactory,TmpLabs.DataEngine.IDataSession)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="repoFactory"></param>
+            <param name="session"></param>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.Initialization.AbstractDataInitProvider.Init">
+            <summary>
+            Initialize
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.Initialization.AbstractDataInitProvider.GetRepo``1">
+            <summary>
+            Get repository
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.Initialization.AbstractDataInitProvider.Priority">
+            <summary>
+            Gets the priority.
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Repo.IUserRepoBase`1">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Repo.IRepo`1">
+            <summary>
+            Generic repository interface
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Repo.IRepo">
+            <summary>
+            Base repository interface
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.IRepo`1.Get(System.Int32)">
+            <summary>
+            Get entity by ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.IRepo`1.GetAll">
+            <summary>
+            Get all entities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.IRepo`1.Save(`0)">
+            <summary>
+            Save entity
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.IRepo`1.Delete(`0)">
+            <summary>
+            Delete entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.IUserRepoBase`1.GetByLogin(System.String)">
+            <summary>
+            Get user by login
+            </summary>
+            <param name="login"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TmpLabs.DataEngine.Configuration.UseDataUpdate">
+            <summary>
+            Use data update
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Listeners.IDeleteEventListener">
+            <summary>
+            Entity with external delete event handler
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Listeners.IDeleteEventListener.AfterDelete">
+            <summary>
+            After delete event handler
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.BLL.Initialization.EnumUtils">
+            <summary>
+            Enumerable utils
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.Initialization.EnumUtils.GetTitle(System.Type,System.String)">
+            <summary>
+            Gets the title.
+            </summary>
+            <param name="enumType">Type of the enum.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Repo.AbstractRepoFactory">
+            <summary>
+            Abstract repository factory. Mast be singleton
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.AbstractRepoFactory.#ctor(TmpLabs.DataEngine.ISessionFactory)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="sessionFactory">The session factory.</param>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.AbstractRepoFactory.GetRepo``1">
+            <summary>
+            Create new instance of repository by its interface
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.AbstractRepoFactory.GetRepo``1(TmpLabs.DataEngine.IDataSession)">
+            <summary>
+            Internal create repository object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.AbstractRepoFactory.FillMap">
+            <summary>
+            Fill repository map
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.AbstractRepoFactory.GetInitProviders(TmpLabs.DataEngine.IDataSession)">
+            <summary>
+            Get Initialization providers 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TmpLabs.DataEngine.Repo.AbstractRepoFactory.RepoMap">
+            <summary>
+            Map of repository interfaces and implementations
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Listeners.SaveEventType">
+            <summary>
+            Save event type
+            </summary>
+        </member>
+        <member name="F:TmpLabs.DataEngine.Listeners.SaveEventType.Insert">
+            <summary>
+            Insert event type
+            </summary>
+        </member>
+        <member name="F:TmpLabs.DataEngine.Listeners.SaveEventType.Update">
+            <summary>
+            Update event type
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Exceptions.EntityNotFoundException">
+            <summary>
+            Entity not found Exception (Throws when entity with ID={0} isn't in database)
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Exceptions.EntityNotFoundException.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Exceptions.EntityNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:TmpLabs.DataEngine.BLL.AbstractUser">
+            <summary>
+            Abstract user
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.IEntity">
+            <summary>
+            Base entity interface
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.IEntity.ID">
+            <summary>
+            Unique identifier
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.AbstractUser.#ctor">
+            <summary>
+            Default constructor for ORM
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.AbstractUser.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor for fake objects
+            </summary>
+            <param name="login"></param>
+            <param name="password"></param>
+            <param name="email"></param>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.AbstractUser.System#Security#Principal#IPrincipal#IsInRole(System.String)">
+            <summary>
+            Check user in role
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.BLL.AbstractUser.CheckPassword(System.String)">
+            <summary>
+            Check password
+            </summary>
+            <param name="password">entered password</param>
+            <returns>true, if entered password is correct</returns>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.AbstractUser.System#Security#Principal#IPrincipal#Identity">
+            <summary>
+            User identity
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.AbstractUser.ID">
+            <summary>
+            Unique identifier
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.AbstractUser.Login">
+            <summary>
+            User login
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.AbstractUser.Email">
+            <summary>
+            User email
+            </summary>
+        </member>
+        <member name="P:TmpLabs.DataEngine.BLL.AbstractUser.Password">
+            <summary>
+            Current password
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.ISessionProvider">
+            <summary>
+            Session provider
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.ISessionProvider.CreateSession">
+            <summary>
+            Creates the session.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.ISessionProvider.CloseSession(TmpLabs.DataEngine.IDataSession)">
+            <summary>
+            Closes the session.
+            </summary>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Repo.IWeakRepo`1">
+            <summary>
+            Weak entity repository
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.IWeakRepo`1.Get(System.Int32)">
+            <summary>
+            Get entity by ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Repo.IWeakRepo`1.GetAll">
+            <summary>
+            Get all entities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TmpLabs.DataEngine.Listeners.ISaveEventListener">
+            <summary>
+            Entity with save event handling
+            </summary>
+        </member>
+        <member name="M:TmpLabs.DataEngine.Listeners.ISaveEventListener.AfterSave(TmpLabs.DataEngine.Listeners.SaveEventType)">
+            <summary>
+            After save event handler
+            </summary>
+        </member>
+    </members>
+</doc>

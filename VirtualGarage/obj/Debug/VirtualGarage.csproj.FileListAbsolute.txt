@@ -1,0 +1,90 @@
+D:\Коваленко\SVN\VirtualGarage\bin\VirtualGarage.dll
+D:\Коваленко\SVN\VirtualGarage\bin\VirtualGarage.pdb
+D:\Коваленко\SVN\VirtualGarage\bin\AutoMapper.dll
+D:\Коваленко\SVN\VirtualGarage\bin\InostudioSolutions.Data.dll
+D:\Коваленко\SVN\VirtualGarage\bin\Recaptcha.dll
+D:\Коваленко\SVN\VirtualGarage\bin\TmpLabs.DataEngine.dll
+D:\Коваленко\SVN\VirtualGarage\bin\TmpLabs.WebEngine.dll
+D:\Коваленко\SVN\VirtualGarage\bin\VirtualGarage.Logic.dll
+D:\Коваленко\SVN\VirtualGarage\bin\InostudioSolutions.Data.pdb
+D:\Коваленко\SVN\VirtualGarage\bin\VirtualGarage.Logic.pdb
+D:\Коваленко\SVN\VirtualGarage\bin\TmpLabs.DataEngine.pdb
+D:\Коваленко\SVN\VirtualGarage\bin\TmpLabs.DataEngine.xml
+D:\Коваленко\SVN\VirtualGarage\bin\TmpLabs.WebEngine.pdb
+D:\Коваленко\SVN\VirtualGarage\bin\TmpLabs.WebEngine.xml
+D:\Коваленко\SVN\VirtualGarage\obj\Debug\ResolveAssemblyReference.cache
+D:\Коваленко\SVN\VirtualGarage\obj\Debug\VirtualGarage.dll
+D:\Коваленко\SVN\VirtualGarage\obj\Debug\VirtualGarage.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\VirtualGarage.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\VirtualGarage.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\AutoMapper.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\InostudioSolutions.Data.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\Recaptcha.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\TmpLabs.DataEngine.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\TmpLabs.WebEngine.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\VirtualGarage.Logic.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\InostudioSolutions.Data.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\VirtualGarage.Logic.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\TmpLabs.DataEngine.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\TmpLabs.DataEngine.xml
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\TmpLabs.WebEngine.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage\bin\TmpLabs.WebEngine.xml
+C:\Users\Kokos\Desktop\Project\VirtualGarage\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kokos\Desktop\Project\VirtualGarage\obj\Debug\VirtualGarage.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage\obj\Debug\VirtualGarage.pdb
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.pdb
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\AutoMapper.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\InostudioSolutions.Data.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\Recaptcha.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.DataEngine.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.WebEngine.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.Logic.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\InostudioSolutions.Data.pdb
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.Logic.pdb
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.DataEngine.pdb
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.DataEngine.xml
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.WebEngine.pdb
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.WebEngine.xml
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\obj\Debug\VirtualGarage.dll
+C:\Users\Kokos\Desktop\vg_svn\VirtualGarage\obj\Debug\VirtualGarage.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\obj\Debug\VirtualGarage.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\AutoMapper.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\InostudioSolutions.Data.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\Recaptcha.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.DataEngine.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.WebEngine.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.Logic.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\InostudioSolutions.Data.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\VirtualGarage.Logic.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.DataEngine.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.DataEngine.xml
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.WebEngine.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\bin\TmpLabs.WebEngine.xml
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage\obj\Debug\VirtualGarage.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\VirtualGarage.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\VirtualGarage.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\AutoMapper.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\EntityFramework.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\InostudioSolutions.Data.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\Recaptcha.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\TmpLabs.DataEngine.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\TmpLabs.WebEngine.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\VirtualGarage.Logic.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\InostudioSolutions.Data.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\VirtualGarage.Logic.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\EntityFramework.xml
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\TmpLabs.DataEngine.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\TmpLabs.DataEngine.xml
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\TmpLabs.WebEngine.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\bin\TmpLabs.WebEngine.xml
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.csprojResolveAssemblyReference.cache
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.csprojResolveAssemblyReference.cache
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage\obj\Debug\VirtualGarage.pdb

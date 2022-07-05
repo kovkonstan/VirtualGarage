@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "_Garage_Layot";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ваз 2111</h2>
+
+<div id="garage_wrapper">
+    <div id="car_menu">
+        <div class="car_menu_item_current"> @Html.ActionLink("Информация", "CarInfo")</div>
+        <div class="car_menu_item"> @Html.ActionLink("События", "Events")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Статистика", "Statistics")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Расход топлива", "Consumption")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Стоимость авто", "CarCost")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Фото", "Photo")</div>
+    </div>
+    <div id="garage_content">
+        @RenderSection("GarageContent")
+    </div>
+</div>

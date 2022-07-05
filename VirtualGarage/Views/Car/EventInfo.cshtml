@@ -1,0 +1,44 @@
+﻿@model VirtualGarage.Models.EventInfoModel
+
+@{
+    ViewBag.Title = "Информация о событии";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+
+
+@section GarageContent
+{
+    <h2>Информация о событии</h2>
+
+    @Html.HiddenFor(model => model.BaseModel.CarID)
+
+    @if (Model.BaseModel.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Own ||
+            Model.BaseModel.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Manage)
+    {
+        <div class="actions">
+            <div class="action">
+                @Html.ActionLink("Редактировать", "EditEvent", new RouteValueDictionary() { {"eventID", Model.EventID} })
+            </div>
+            <div class="action">
+                @Ajax.ActionLink("Удалить",
+                                "DeleteEvent",
+                                "Car",
+                                new RouteValueDictionary() { { "eventID", Model.EventID } },
+                                new AjaxOptions() 
+                                {
+                                    Confirm = "Вы действительно хотите удалить событие?",
+                                    HttpMethod = "Post",
+                                    UpdateTargetId = "success_delete"
+                                },
+                                null)
+            </div>
+            <div id="success_delete">
+
+            </div>
+        </div>
+    }
+            
+    @{
+        Html.RenderAction("GetEventDiv", "Car", new RouteValueDictionary() { { "eventID", Model.EventID } });
+     }    
+}

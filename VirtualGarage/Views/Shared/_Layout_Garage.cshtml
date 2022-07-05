@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @if (@Model.CarName != null)
+    {
+        <h2>@Model.CarName</h2>        
+    }    
+
+    @if (Model.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Own)
+    {
+        <div class="actions">
+            <div class="action">@Html.ActionLink("Редактировать", "EditCar", "Garage",
+                                    new RouteValueDictionary() 
+                                    {
+                                        {"carID", (Model != null ? Model.CarID : 1)}
+                                    },
+                                    null)</div>
+            <div class="action">@Html.ActionLink("Доверить", "TrustCar", "Car",
+                                    new RouteValueDictionary() 
+                                    {
+                                        {"carID", (Model != null ? Model.CarID : 1)}
+                                    },
+                                    null)</div>
+            <div class="action">@Html.ActionLink("Передать", "TransmitCar", "Car",
+                                    new RouteValueDictionary() 
+                                    {
+                                        {"carID", (Model != null ? Model.CarID : 1)}
+                                    },
+                                    null)</div>
+            <div class="action">@Html.ActionLink("Удалить", "DeleteCar", "Garage",
+                                    new RouteValueDictionary() 
+                                    {
+                                        {"carID", (Model != null ? Model.CarID : 1)}
+                                    },
+                                    null)</div>
+        </div>
+    }
+
+            <div id="tab_wrapper">
+                <div id="tab_menu">
+                    <div class="@(Model.PageName == "CarInfo" ? "tab_menu_item_current" : "tab_menu_item")"> 
+                        @Html.ActionLink("Информация", "CarInfo", "Car",
+                                new RouteValueDictionary() 
+                                {
+                                    {"carID", Model.CarID}
+                                },
+                                null)
+                    </div>
+                    <div class="@(Model.PageName == "Events" ? "tab_menu_item_current" : "tab_menu_item")"> 
+                        @Html.ActionLink("События", "Events", "Car",
+                                                    new RouteValueDictionary() { { "CarID", Model.CarID } }, null)
+                    </div>
+                    <div class="@(Model.PageName == "Statistics" ? "tab_menu_item_current" : "tab_menu_item")"> 
+                        @Html.ActionLink("Статистика", "Statistics", "Car",
+                                                    new RouteValueDictionary() { { "CarID", Model.CarID } }, null)
+                    </div>
+                    <div class="@(Model.PageName == "Consumption" ? "tab_menu_item_current" : "tab_menu_item")"> 
+                        @Html.ActionLink("Расход топлива", "Consumption", "Car",
+                                                    new RouteValueDictionary() { { "CarID", Model.CarID } }, null)
+                    </div>
+                    <div class="@(Model.PageName == "CarCost" ? "tab_menu_item_current" : "tab_menu_item")"> 
+                        @Html.ActionLink("Стоимость авто", "CarCost", "Car",
+                                                    new RouteValueDictionary() { { "CarID", Model.CarID } }, null)
+                    </div>
+                    <div class="@(Model.PageName == "Photo" ? "tab_menu_item_current" : "tab_menu_item")"> 
+                        @Html.ActionLink("Фото", "Photo", "Car",
+                                                    new RouteValueDictionary() { { "CarID", Model.CarID } }, null)
+                    </div>
+                </div>
+                <div id="tab_content">
+                    @Html.Hidden("CarID")
+                    @RenderSection("GarageContent")
+                </div>
+            </div>
+    
+
+
+    
+
+
+@section SimilarCars
+{
+    @if (Model.UserAcces != VirtualGarage.Logic.Enums.UserAccesOnCar.Close)
+    {
+
+        <div class="left">
+            <h2>Похожие автомобили</h2>
+            @foreach (var car in (List<VirtualGarage.Models.SimilarCarModel>)Model.SimilarCars)
+            {    
+                <div class="similar_car">
+                    @if (car.IsContainImage)
+                    {
+                        
+                    
+                        <img class="small_img" src="@Url.Action("GetImage", "Car",
+                                                    new RouteValueDictionary()
+                                                    {
+                                                        {"carID", car.CarID }
+                                                    })" alt="" />
+                    }
+                    else
+                    {
+                        <img class="small_img" src="@Url.Content("/Content/Samples/sample_img.jpg")" alt="" />
+                    }
+                    @Html.ActionLink(car.CarName, "CarInfo", "Car",
+                                        new RouteValueDictionary 
+                                        {
+                                            {"carID", car.CarID}
+                                        }, null)
+                    <br />
+                    @Html.ActionLink(car.UserName, "UserInfo", "Default",
+                                        new RouteValueDictionary 
+                                        {
+                                            {"userID", car.UserID}
+                                        }, null)
+                </div>
+            }    
+        </div>
+    }
+    
+}
+

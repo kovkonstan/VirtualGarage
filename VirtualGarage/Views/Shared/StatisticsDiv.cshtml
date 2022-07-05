@@ -1,0 +1,29 @@
+﻿@model VirtualGarage.Models.StatisticsModel
+@{
+    Boolean statisticIsExist = false;
+    }
+<div class="table_left_header" id="statistic_table">
+    <table>
+        
+        @if (Model.GeneralCostsByCurrency != null && Model.GeneralCostsByCurrency.Count != 0)
+        {            
+
+            statisticIsExist = true;              
+            <tr>
+                <th>Всего затрачено: </th>
+                <td>                        
+                    @foreach (var item in Model.GeneralCostsByCurrency)
+                    {
+                        @Html.Label("GeneralCost", item)  
+                        <br />                      
+                    }                        
+                </td>
+            </tr>
+        }               
+    </table>
+
+    @if (!statisticIsExist)
+	{
+        <p>Недостаточно данных для подсчета статистики</p>		 
+	}
+</div>

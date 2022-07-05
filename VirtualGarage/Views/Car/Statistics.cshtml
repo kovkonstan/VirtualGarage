@@ -1,0 +1,177 @@
+﻿@model VirtualGarage.Models.MileageStatisticsModel
+
+@{
+    ViewBag.Title = "Статистика";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+
+@section GarageContent
+{
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawMonthMileageChart);
+
+        function drawMonthMileageChart(year) {
+            $.ajax(
+            {
+                type: "POST",
+                url: "/Car/GetMonthMileages",
+                data: "carID=" + @(Model.BaseModel.CarID) + "&year=" + year,
+                success: function (markData) {
+
+                    data = markData;
+
+                    var points = new Array(data.length + 1);
+                    points[0] = ['Месяц', 'Пробег'];
+                    $.each(data, function (index, itemData) {
+                        points[index + 1] = [itemData.Month, itemData.Value];
+                    });
+
+                    var data = google.visualization.arrayToDataTable(points);
+
+                    var options = {
+                        title: 'Пробег, км',
+                        hAxis: { title: 'Месяц', titleTextStyle: { color: 'red'} },
+                        chartArea: { left: 50, top: 50 }
+                    };
+
+                    var chart = new google.visualization.ColumnChart(document.getElementById('chart_month_mileage_div'));
+                    chart.draw(data, options);
+                }
+            });            
+        }
+
+        $(window).load(function () {
+
+            $("#MonthMileageYear").change(function () {
+                drawMonthMileageChart($(this).val());    
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+    function StartLoader() {
+        $("#ajax_loader_div").css('display', 'block');
+    };
+
+    function FinishLoader() {
+        $("#ajax_loader_div").css('display', 'none');
+    };
+        
+        $(document).ready(function () {
+
+            $("#ddlEventType").change(function () {
+                if ($(this).val() != "") {
+                    var idEvent = $(this).val();
+                    StartLoader();
+                    $("#ddlEventType").attr("disabled", true);
+
+                    $.ajax(
+                {
+                    type: "GET",
+                    url: "/Car/GetPartialStatistics",
+                    data: "carID=" + @(Model.BaseModel.CarID) + "&eventTypeID=" + idEvent,
+                    dataType: "html",
+                    success: function (result) {
+
+                        var domElement = $(result);
+                        $("#statistic_table").replaceWith(domElement);
+
+                            
+                    },
+                    complete: function () {
+                        FinishLoader();
+                        $("#ddlEventType").attr("disabled", false);
+                    }
+                });
+                }
+            });
+    });
+</script>
+
+    <h2>Статистика пробега</h2>
+    <ul class="MileageStatistic">
+        <li>
+            <h4> Средний пробег в месяц</h4> @Html.DisplayFor(model => model.MileageInMonth)<span> км.</span>
+        </li>
+        <li>
+            <h4>Пробег по годам</h4>
+            <p>Год:                
+                @Html.DropDownList("MonthMileageYear", 
+                                        Model.EventsYears)
+            </p>
+            <div id="chart_month_mileage_div" style="width: 600px; height: 500px;"></div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+    <h2>Статистика расходов</h2>
+    <div class="actions">   
+        <div class="action_ddl">
+            <span>Показать события:</span>
+        
+            @Html.DropDownListFor(model => model.EventTypeID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = "Все",
+                        Value = "0"
+                    }    
+                }.Concat(Model.AllEventTypes),
+                new Dictionary<String, Object>() 
+                {
+                    {"id", "ddlEventType"}
+                })               
+                           
+            <div id="ajax_loader_div">
+                <img src="@Url.Content("/Content/images/ajax_loader.gif")" alt="" id="ajax_loader_gif" />
+            </div>
+
+        </div>    
+    </div>
+    
+    @Html.HiddenFor(model => model.BaseModel.CarID)
+
+    @if (Model.BaseModel.UserAcces != VirtualGarage.Logic.Enums.UserAccesOnCar.Close)
+    {
+        Boolean statisticIsExist = false;
+        <div class="table_left_header" id="statistic_table">
+            <table>
+                
+                @if (Model.GeneralCostsByCurrency != null && Model.GeneralCostsByCurrency.Count != 0)
+                {
+                    statisticIsExist = true;          
+                    <tr>
+                        <th>Всего затрачено: </th>
+                        <td>                        
+                            @foreach (var item in Model.GeneralCostsByCurrency)
+                            {
+                                @Html.Label("GeneralCost", item)  
+                                <br />                      
+                            }                        
+                        </td>
+                    </tr>
+                }
+                               
+            </table>
+
+            @if (!statisticIsExist)
+	        {
+                <p>Недостаточно данных для подсчета статистики</p>		 
+	        }
+        </div>
+    }
+    else
+    {
+        <span>Доступ к этому автомобилю запрещен владельцем</span>
+    }
+}

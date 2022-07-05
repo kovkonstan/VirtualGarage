@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Test</h2>
+
+<p>
+    Page Rendered: @DateTime.Now.ToLongTimeString()
+</p>
+<span id="status">No Status</span>
+<br />   
+@Ajax.ActionLink("Update Status", "GetStatus", new AjaxOptions{UpdateTargetId="status" })
+<br /><br />
+@using(Ajax.BeginForm("UpdateForm", new AjaxOptions{UpdateTargetId="textEntered"})) 
+{
+  @Html.TextBox("textBox1","Enter text")  
+  <input type="submit" value="Submit"/><br />
+  <span id="textEntered">Nothing Entered</span>
+}

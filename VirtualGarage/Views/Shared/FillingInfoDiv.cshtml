@@ -1,0 +1,80 @@
+﻿@model VirtualGarage.Models.FillingModel
+
+ @Html.HiddenFor(model => model.EventID)
+
+    <div class="table_left_header">
+        <table>
+
+            <tr>
+                <th>Тип события: </th>
+                <td>@Html.DisplayFor(model => model.EventTypeName)</td>
+            </tr>
+            <tr>
+                <th>Дата:</th>
+                <td>
+                    @Html.Label("Date", Model.Date.ToLongDateString())                    
+                </td>
+            </tr>
+            
+
+            @if (Model.Mileage != null)
+            {                      
+                <tr>
+                    <th>Пробег:</th>
+                    <td>@Html.DisplayFor(model => model.Mileage)</td>
+                </tr>
+            }
+
+            <tr>
+                <th>Место проведения:</th>
+                <td>@Html.DisplayFor(model => model.PlaceName)</td>
+            </tr>
+
+            <tr>
+                <th>Валюта:</th>
+                <td>@Html.DisplayFor(model => model.CurrencyName)</td>
+            </tr>
+
+            @if (Model.GeneralCost != null)
+            { 
+                <tr>
+                    <th>Общая стоимость:</th>
+                    <td>@Html.DisplayFor(model => model.GeneralCost)</td>
+                </tr>
+            }
+                
+            @if (Model.EventComments != String.Empty && Model.EventComments != null)
+            { 
+                <tr>
+                    <th>Комментарий:</th>
+                    <td>@Html.DisplayFor(model => model.EventComments)</td>
+                </tr>
+            }
+            
+            <tr>
+                <th>Тип топлива:</th>
+                <td>@Html.DisplayFor(model => model.FuelTypeName)</td>
+            </tr>
+
+            @if (Model.FuelCount != null)
+            { 
+                <tr>
+                    <th>Количество:</th>
+                    <td>@Html.DisplayFor(model => model.FuelCount)</td>
+                </tr>
+            }
+
+            @if (Model.UnitCost != null)
+            { 
+                <tr>
+                    <th>Цена за единицу(@Model.CurrencyName):</th>
+                    <td>@Html.DisplayFor(model => model.UnitCost)</td>
+                </tr>
+            }
+            
+        </table>
+    </div>  
+
+    <p class="back_to_list">
+        @Html.ActionLink("Вернуться к списку событий", "Events", new RouteValueDictionary() { {"carID", Model.CarID} })
+    </p>

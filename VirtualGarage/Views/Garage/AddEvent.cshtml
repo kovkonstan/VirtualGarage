@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Добавить событие";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Добавить событие</h2>
+
+@using(Html.BeginForm()) {
+           
+            <div class="editor-label">
+                Тип события:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Year", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Заправка",Value=""},
+                                    new SelectListItem() {Text="Ремонт/Обслуживание",Value=""},
+                                    new SelectListItem() {Text="Стоянка",Value=""},
+                                    new SelectListItem() {Text="Страховка",Value=""},
+                                    new SelectListItem() {Text="Кредит",Value=""},
+                                    new SelectListItem() {Text="Мойка",Value=""},
+                                    new SelectListItem() {Text="Штраф",Value=""},
+                                    new SelectListItem() {Text="Без типа",Value=""}
+                                }
+                )                        
+            </div>
+
+            <div class="editor-label">
+                Дата:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Date")
+            </div> 
+
+            <div class="editor-label">
+                Пробег:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Millage")
+            </div> 
+
+            <div class="editor-label">
+                Тип топлива:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("FuelType", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите тип топлива",Value=""},
+                                    new SelectListItem() {Text="АИ-80",Value=""},
+                                    new SelectListItem() {Text="АИ-92",Value=""},
+                                    new SelectListItem() {Text="АИ-95",Value=""}
+                                }
+                )                         
+            </div>
+
+            <div class="editor-label">
+                АЗС:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("FuelType", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите АЗС",Value=""},
+                                    new SelectListItem() {Text="Лукойл",Value=""},
+                                    new SelectListItem() {Text="Роснефть",Value=""},
+                                    new SelectListItem() {Text="Газпром",Value=""}
+                                }
+                )                             
+            </div>
+
+            <div class="editor-label">
+                Количество литров:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("LitrCount")
+            </div> 
+
+            <div class="editor-label">
+                Цена за 1 литр:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("LitrCost")
+            </div> 
+
+            <div class="editor-label">
+                Общая стоимость:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("GeneralCost")    
+            </div> 
+
+            <div class="editor-field">
+                @Html.CheckBox("IsFullTank")  
+                Уехал с полным баком  
+            </div> 
+
+            <div class="editor-field">
+                @Html.CheckBox("IsForgot")  
+                Забыл записать предыдущую заправку  
+            </div> 
+
+            <div class="editor-field">
+                @Html.CheckBox("IsPrivate")  
+                Закрыть от других пользователей  
+            </div> 
+
+            <div class="editor-label">
+                Заметки/комментарии:
+            </div>
+            <div class="editor-field">
+                @Html.TextArea("Comments")    
+            </div> 
+                        
+            <br />
+
+            <p>
+                <input class="button" type="submit" value="Добавить событие" />
+            </p>
+    }

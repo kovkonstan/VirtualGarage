@@ -1,0 +1,154 @@
+﻿@model VirtualGarage.Models.CarModel
+
+@{
+    ViewBag.Title = "AddCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddCar</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>CarModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CarID)
+            @Html.ValidationMessageFor(model => model.CarID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mark)
+            @Html.ValidationMessageFor(model => model.Mark)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CarModel)
+            @Html.ValidationMessageFor(model => model.CarModel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Color)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Color)
+            @Html.ValidationMessageFor(model => model.Color)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuelType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FuelType)
+            @Html.ValidationMessageFor(model => model.FuelType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarcaseType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CarcaseType)
+            @Html.ValidationMessageFor(model => model.CarcaseType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BoxType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BoxType)
+            @Html.ValidationMessageFor(model => model.BoxType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EngineVolume)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EngineVolume)
+            @Html.ValidationMessageFor(model => model.EngineVolume)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BuyDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BuyDate)
+            @Html.ValidationMessageFor(model => model.BuyDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Currency)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Currency)
+            @Html.ValidationMessageFor(model => model.Currency)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mileage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mileage)
+            @Html.ValidationMessageFor(model => model.Mileage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MonthMileage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MonthMileage)
+            @Html.ValidationMessageFor(model => model.MonthMileage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdditionalFeatures)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AdditionalFeatures)
+            @Html.ValidationMessageFor(model => model.AdditionalFeatures)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Visible)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Visible)
+            @Html.ValidationMessageFor(model => model.Visible)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReadOnly)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReadOnly)
+            @Html.ValidationMessageFor(model => model.ReadOnly)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Year)
+            @Html.ValidationMessageFor(model => model.Year)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

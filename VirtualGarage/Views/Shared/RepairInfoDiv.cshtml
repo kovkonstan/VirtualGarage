@@ -1,0 +1,106 @@
+﻿@model VirtualGarage.Models.RepairModel
+
+@Html.HiddenFor(model => model.EventID)
+
+
+
+    <div class="table_left_header">
+        <table>
+
+            <tr>
+                <th>Тип события: </th>
+                <td>@Html.DisplayFor(model => model.EventTypeName)</td>
+            </tr>
+            <tr>
+                <th>Дата:</th>
+                <td>
+                    @Html.Label("Date", Model.Date.ToLongDateString())                    
+                </td>
+            </tr>
+            
+
+            @if (Model.Mileage != null)
+            {                      
+                <tr>
+                    <th>Пробег:</th>
+                    <td>@Html.DisplayFor(model => model.Mileage)</td>
+                </tr>
+            }
+
+            <tr>
+                <th>Место проведения:</th>
+                <td>@Html.DisplayFor(model => model.PlaceName)</td>
+            </tr>
+
+            <tr>
+                <th>Валюта:</th>
+                <td>@Html.DisplayFor(model => model.CurrencyName)</td>
+            </tr>
+
+            @if (Model.GeneralCost != null)
+            { 
+                <tr>
+                    <th>Общая стоимость:</th>
+                    <td>@Html.DisplayFor(model => model.GeneralCost)</td>
+                </tr>
+            }
+                
+            @if (Model.EventComments != String.Empty && Model.EventComments != null)
+            { 
+                <tr>
+                    <th>Комментарий:</th>
+                    <td>@Html.DisplayFor(model => model.EventComments)</td>
+                </tr>
+            }            
+        </table>
+    </div>  
+    <h3>Запчасти</h3>
+    @foreach (var item in Model.SpareParts)
+    {
+        <div class="table_left_header">
+            <table>
+                <tr>
+                    <th>Тип запчасти: </th>
+                    <td>@Html.Label("SparePartType", item.SparePartTypeName)</td>
+                </tr>
+
+                @if (item.Producer != null)
+                { 
+                    <tr>
+                        <th>Производитель:</th>
+                        <td>@Html.Label("Producer", item.Producer)</td>
+                    </tr>
+                }   
+
+                @if (item.Model != null)
+                { 
+                    <tr>
+                        <th>Модель:</th>
+                        <td>@Html.Label("Model", item.Model)</td>
+                    </tr>
+                }
+                
+                @if (item.SparePartCost != null)
+                { 
+                    <tr>
+                        <th>Цена:</th>
+                        <td>@Html.Label("SparePartCost", item.SparePartCost.ToString().Substring(0, item.SparePartCost.ToString().Length - 2))</td>
+                    </tr>
+                }
+                
+                @if (item.WorkCost != null)
+                { 
+                    <tr>
+                        <th>Цена за работу:</th>
+                        <td>@Html.Label("WorkCost", item.WorkCost.ToString().Substring(0, item.WorkCost.ToString().Length - 2))</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        
+    }
+    
+
+    <p class="back_to_list">
+        @Html.ActionLink("Вернуться к списку событий", "Events", new RouteValueDictionary() { { "carID", Model.CarID } })
+    </p>

@@ -1,0 +1,34 @@
+﻿@model VirtualGarage.Models.SendMessageModel
+
+@{
+    ViewBag.Title = "Новое сообщение";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Новое сообщение</h2>
+
+<div class="editor-label">
+    Получатель
+</div>
+
+<div class="editor-field">
+    @Html.TextBox("MessageRecepient")
+</div>
+
+<div class="editor-label">
+    Тема
+</div>
+
+<div class="editor-field">
+    @Html.TextBox("MessageTheme")
+</div>
+
+<div class="editor-label">
+    Сообщение
+</div>
+
+<div class="editor-field">
+    @Html.TextArea("Message")
+</div>
+
+<input class="button" type="button" value="Отправить" />

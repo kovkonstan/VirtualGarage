@@ -1,0 +1,154 @@
+﻿@model VirtualGarage.Models.EventsModel
+           
+@{
+    ViewBag.Title = "События автомобиля";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+
+
+
+@section GarageContent
+{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/calendar/jquery-ui-1.8.16.custom.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.16.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.ui.datepicker-ru.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/DatepickerFunctions.js")"></script>
+    
+    <script type="text/javascript">
+         $(document).ready(function () {
+             datepickerInit();
+               
+
+             $("#ddlEventType").change(function () {
+                 if ($(this).val() != "") {
+                     var idEvent = $(this).val();
+                     var startDate = $("#startDate").val();
+                     var finishDate = $("#finishDate").val();
+                     StartLoader();
+                     $("#ddlEventType").attr("disabled", true);
+
+                     $.ajax(
+                    {
+                        type: "GET",
+                        url: "/Car/GetEventsPartialView",
+                        data: "carID=" + @(Model.BaseModel.CarID) + "&eventTypeID=" + idEvent + "&startDate=" + startDate + "&finishDate=" + finishDate,
+                        dataType: "html",
+                        success: function (result) {
+
+                            var domElement = $(result);
+                            $("#table_top_header").replaceWith(domElement);
+
+                            
+                        },
+                        complete: function () {
+                            FinishLoader();
+                            $("#ddlEventType").attr("disabled", false);
+                        }
+                    });
+                 }
+             });
+
+            $("#show_button").click(function () {
+                var idEvent = $("#ddlEventType").val();
+                var startDate = $("#startDate").val();
+                var finishDate = $("#finishDate").val();
+                if (startDate > finishDate) {
+                    $("#finishDate").attr("value", "");    
+                }
+                StartLoader();
+
+                $.ajax(
+                    {
+                        type: "GET",
+                        url: "/Car/GetEventsPartialView",
+                        data: "carID=" + @(Model.BaseModel.CarID) + "&eventTypeID=" + idEvent + "&startDate=" + startDate + "&finishDate=" + finishDate,
+                        dataType: "html",
+                        success: function (result) {
+
+                            var domElement = $(result);
+                            $("#table_top_header").replaceWith(domElement);
+
+                            
+                        },
+                        complete: function () {
+                            FinishLoader();
+                            $("#ddlEventType").attr("disabled", false);
+                    }
+                });
+            });
+    });
+    </script>
+
+    @Html.HiddenFor(model => model.BaseModel.CarID)
+
+    <div class="actions">
+        @if (Model.BaseModel.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Own ||
+             Model.BaseModel.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Manage)
+        {    
+            <div class="action">
+                @Html.ActionLink("Добавить событие", "AddEvent", "Car",
+                                    new RouteValueDictionary() 
+                                    {
+                                        {"carID", Model.BaseModel.CarID}
+                                    },
+                                    null)
+            </div>
+        }
+    </div>
+
+    <div class="actions">   
+        <div class="action_ddl">
+            <span>Показать события:</span>
+        
+            @Html.DropDownListFor(model => model.EventTypeID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = "Все",
+                        Value = "0"
+                    }    
+                }.Concat(Model.AllEventTypes),
+                new Dictionary<String, Object>() 
+                {
+                    {"id", "ddlEventType"}
+                }) 
+            <br />
+
+            <span>Показать события по дате с </span>
+            @Html.TextBox("StartDate", 
+                        null,
+                        new Dictionary<String, Object>() 
+                                { 
+                                    { "class", "datepicker" },
+                                    {"id", "startDate"}
+                                })
+            <span>по</span> 
+            @Html.TextBox("FinishDate", 
+                            null,
+                            new Dictionary<String, Object>() 
+                                    { 
+                                        { "class", "datepicker" },
+                                        {"id", "finishDate"}
+                                    })
+                                
+            <span id="show_button">Показать</span>                
+                           
+            <div id="ajax_loader_div">
+                <img src="@Url.Content("/Content/images/ajax_loader.gif")" alt="" id="ajax_loader_gif" />
+            </div>
+
+        </div>    
+    </div>
+
+    
+    @{
+        Html.RenderAction("GetEventsPartialView", "Car", 
+                            new RouteValueDictionary()
+                            {
+                                {"carID", Model.BaseModel.CarID}                                
+                            });
+        }        
+
+}

@@ -1,0 +1,712 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TmpLabs.WebEngine</name>
+    </assembly>
+    <members>
+        <member name="T:TmpLabs.WebEngine.IUserSessionBase">
+            <summary>
+            User session
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.IUserSessionBase.DoLogin(System.Security.Principal.IPrincipal)">
+            <summary>
+            Login user
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.IUserSessionBase.Logout">
+            <summary>
+            Logout user
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.IUserSessionBase.UserID">
+            <summary>
+            ID of current session user (0 if anonymus)
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.IUserSessionBase.User">
+            <summary>
+            Current session user
+            </summary>
+        </member>
+        <member name="T:TmpLabs.WebEngine.AbstractSecureCookie">
+            <summary>
+            Abstract secure cookie
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.#ctor(System.Web.HttpContextBase,TmpLabs.DataEngine.ISessionFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.AbstractUserCookie"/> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="dataSessionFactory">The data session factory.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.#ctor(System.Web.HttpContextBase,System.Int32,TmpLabs.DataEngine.ISessionFactory)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context">The context.</param>
+            <param name="expiresMin">expire cookies in min</param>
+            <param name="dataSessionFactory">The data session factory.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.DoLogin(System.Security.Principal.IPrincipal)">
+            <summary>
+            User LogIn
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.Logout">
+            <summary>
+            User LogOut
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.GetCookie(System.String)">
+            <summary>
+            Get cookie
+            </summary>
+            <param name="key">cookie name</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.GetCookieNotEncrypt(System.String)">
+            <summary>
+            Get cookie
+            </summary>
+            <param name="key">cookie name</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.SetCookie(System.String,System.String,System.DateTime)">
+            <summary>
+            Set cookie
+            </summary>
+            <param name="key">cookie name</param>
+            <param name="value">cookie value</param>
+            <param name="expireDate">The expire date.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.SetCookie(System.String,System.String)">
+            <summary>
+            Set cookie 
+            </summary>
+            <param name="key">cookie name</param>
+            <param name="value">cookie value</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.GetUser(System.Int32)">
+            <summary>
+            get user
+            </summary>
+            <param name="id">user id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.OnLogin(System.Security.Principal.IPrincipal)">
+            <summary>
+            Called when [login].
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractSecureCookie.OnLogout">
+            <summary>
+            Called when [logout].
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.AbstractSecureCookie.UserID">
+            <summary>
+            Id of user
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.AbstractSecureCookie.User">
+            <summary>
+            User
+            </summary>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Mvc.ViewPage">
+            <summary>
+            View page
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Mvc.ViewPage.Session">
+            <summary>
+            Gets the current Session object provided by ASP.NET.
+            </summary>
+            <returns>
+            The current session-state data.
+              </returns>
+              
+            <exception cref="T:System.Web.HttpException">
+            Occurs when the session information is set to null.
+              </exception>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Mvc.ViewPage`1">
+            <summary>
+            View page
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Mvc.ViewPage`1.Session">
+            <summary>
+            Gets the current Session object provided by ASP.NET.
+            </summary>
+            <returns>
+            The current session-state data.
+              </returns>
+              
+            <exception cref="T:System.Web.HttpException">
+            Occurs when the session information is set to null.
+              </exception>
+        </member>
+        <member name="T:TmpLabs.WebEngine.AbstractUserSession">
+            <summary>
+            Abstract user session
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserSession.#ctor(System.Web.HttpSessionStateBase,TmpLabs.DataEngine.ISessionFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.AbstractUserSession"/> class.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="dataSessionFactory">The data session factory.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserSession.#ctor(System.Web.SessionState.HttpSessionState,TmpLabs.DataEngine.ISessionFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.AbstractUserSession"/> class.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="dataSessionFactory">The data session factory.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserSession.DoLogin(System.Security.Principal.IPrincipal)">
+            <summary>
+            Login user
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserSession.Logout">
+            <summary>
+            Logout user
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserSession.GetUser(System.Int32)">
+            <summary>
+            Gets the user.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserSession.OnLogin(System.Security.Principal.IPrincipal)">
+            <summary>
+            Called when [login].
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserSession.OnLogout">
+            <summary>
+            Called when [logout].
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.AbstractUserSession.UserID">
+            <summary>
+            ID of current session user (0 if anonymus)
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.AbstractUserSession.User">
+            <summary>
+            Current session user
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.AbstractUserSession.HttpSession">
+            <summary>
+            Gets the HTTP session.
+            </summary>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Paging.PagedList`1">
+            <summary>
+            Paged list implementation
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Paging.IPagedList">
+            <summary>
+            Paged list interface
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.TotalCount">
+            <summary>
+            Total No of items
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.PageIndex">
+            <summary>
+            Current page index
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.PageSize">
+            <summary>
+            Page size
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.TotalPages">
+            <summary>
+            Number of pages
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.HasPreviousPage">
+            <summary>
+            Does prev page exist?
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.HasNextPage">
+            <summary>
+            Does next page exist?
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.ActionName">
+            <summary>
+            Action name for URLs
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.IPagedList.RouteValues">
+            <summary>
+            Additional route values
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.PagedList`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.Core.Paging.PagedList`1"/> class.
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.PagedList`1.#ctor(System.Linq.IQueryable{`0},System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.Core.Paging.PagedList`1"/> class.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="index">The index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.PagedList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.Core.Paging.PagedList`1"/> class.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="index">The index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.PagedList`1.#ctor(System.Linq.IQueryable{`0},System.Int32,System.Int32,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.Core.Paging.PagedList`1"/> class.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="index">The index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="routeValues">The route values.</param>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.TotalCount">
+            <summary>
+            Total No of items
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.PageIndex">
+            <summary>
+            Current page index
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.PageSize">
+            <summary>
+            Page size
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.TotalPages">
+            <summary>
+            Number of pages
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.HasPreviousPage">
+            <summary>
+            Does prev page exist?
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.HasNextPage">
+            <summary>
+            Does next page exist?
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.ActionName">
+            <summary>
+            Action name for URLs
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Paging.PagedList`1.RouteValues">
+            <summary>
+            Additional route values
+            </summary>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Mvc.AbstractController">
+            <summary>
+            Abstract controller
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Mvc.AbstractController.Session">
+            <summary>
+            Gets the <see cref="T:TmpLabs.WebEngine.IUserSessionBase"/> object for the current HTTP request.
+            </summary>
+            <returns>The HTTP session-state object for the current HTTP request.</returns>
+        </member>
+        <member name="T:TmpLabs.WebEngine.AbstractUserCookie">
+            <summary>
+            Abstract user session
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.#ctor(TmpLabs.DataEngine.ISessionFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.AbstractUserCookie"/> class.
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.#ctor(System.Int32,TmpLabs.DataEngine.ISessionFactory)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="expiresMin">expire cookies in min</param>
+            <param name="dataSessionFactory">The data session factory.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.DoLogin(System.Security.Principal.IPrincipal)">
+            <summary>
+            User LogIn
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.Logout">
+            <summary>
+            User LogOut
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.GetCookie(System.String)">
+            <summary>
+            Get cookie
+            </summary>
+            <param name="key">cookie name</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.SetCookie(System.String,System.String,System.DateTime)">
+            <summary>
+            Set cookie
+            </summary>
+            <param name="key">cookie name</param>
+            <param name="value">cookie value</param>
+            <param name="expireDate">The expire date.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.SetCookie(System.String,System.String)">
+            <summary>
+            Set cookie 
+            </summary>
+            <param name="key">cookie name</param>
+            <param name="value">cookie value</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.GetUser(System.Int32)">
+            <summary>
+            get user
+            </summary>
+            <param name="id">user id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.OnLogin(System.Security.Principal.IPrincipal)">
+            <summary>
+            Called when [login].
+            </summary>
+            <param name="user">The user.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractUserCookie.OnLogout">
+            <summary>
+            Called when [logout].
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.AbstractUserCookie.UserID">
+            <summary>
+            Id of user
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.AbstractUserCookie.User">
+            <summary>
+            User
+            </summary>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Mvc.ViewUserControl">
+            <summary>
+            View user control
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Mvc.ViewUserControl.Session">
+            <summary>
+            Gets the <see cref="T:TmpLabs.WebEngine.IUserSessionBase"/> object for the current Web request.
+            </summary>
+            <returns>
+            An <see cref="T:TmpLabs.WebEngine.IUserSessionBase"/> object associated with the <see cref="T:System.Web.UI.Page"/> that contains the <see cref="T:System.Web.UI.UserControl"/> instance.
+              </returns>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Mvc.ViewUserControl`1">
+            <summary>
+            View user control
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Mvc.ViewUserControl`1.Session">
+            <summary>
+            Gets the <see cref="T:TmpLabs.WebEngine.IUserSessionBase"/> object for the current Web request.
+            </summary>
+            <returns>
+            An <see cref="T:TmpLabs.WebEngine.IUserSessionBase"/> object associated with the <see cref="T:System.Web.UI.Page"/> that contains the <see cref="T:System.Web.UI.UserControl"/> instance.
+              </returns>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Paging.Pagination">
+            <summary>
+            Pagination helper
+            </summary>
+        </member>
+        <member name="F:TmpLabs.WebEngine.Core.Paging.Pagination.DefaultPageSize">
+            <summary>
+            Default page size
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.Pagination.ToPagedList``1(System.Linq.IQueryable{``0},System.Nullable{System.Int32},System.Int32,System.String)">
+            <summary>
+            Create paged list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">Source items list</param>
+            <param name="index">Page index to get</param>
+            <param name="pageSize">Page size</param>
+            <param name="actionName">Action name for links</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.Pagination.ToPagedList``1(System.Linq.IQueryable{``0},System.Nullable{System.Int32},System.String)">
+            <summary>
+            Create paged list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">Source items list</param>
+            <param name="index">Page index to get</param>
+            <param name="actionName">Action name for links</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.Pagination.ToPagedList``1(System.Linq.IQueryable{``0},System.Nullable{System.Int32},System.String,System.Object)">
+            <summary>
+            Create paged list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">Source items list</param>
+            <param name="index">Page index to get</param>
+            <param name="actionName">Action name for links</param>
+            <param name="routeValues">Additional route values</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.Pagination.ToPagedList``1(System.Linq.IQueryable{``0},System.Nullable{System.Int32},System.Int32,System.String,System.Object)">
+            <summary>
+            Create paged list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">Source items list</param>
+            <param name="index">Page index to get</param>
+            <param name="pageSize">Page size</param>
+            <param name="actionName">Action name for links</param>
+            <param name="routeValues">Additional route values</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Paging.Pagination.JoinParameters(System.String,System.Object,System.Web.Routing.RouteValueDictionary)">
+            <summary>
+            Create action parameter dictionary
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="defaultValues"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Attributes.EmailAttribute">
+            <summary>
+            Email validation attribute
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.Core.Attributes.EmailAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TmpLabs.WebEngine.Core.Attributes.EmailAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:TmpLabs.WebEngine.AbstractDataModule">
+            <summary>
+            Abstract data module
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.Dispose">
+            <summary>
+            Disposes of the resources (other than memory) used by the module that implements <see cref="T:System.Web.IHttpModule"/>.
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Initializes a module and prepares it to handle requests.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpApplication"/> that provides access to the methods, properties, and events common to all application objects within an ASP.NET application</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.CreateDataSession">
+            <summary>
+            Creates the data session.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.OnDataSessionCreated(TmpLabs.WebEngine.IUserSessionBase,TmpLabs.DataEngine.IDataSession)">
+            <summary>
+            Called when [data session created].
+            </summary>
+            <param name="userSession">The user session.</param>
+            <param name="dataSession">The data session.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.OnError(System.Exception)">
+            <summary>
+            Called when [error].
+            </summary>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.OnPostRequest">
+            <summary>
+            Called when [end request].
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.OnError(System.Object,System.EventArgs)">
+            <summary>
+            Handle exception
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.OnPreRequestHandlerExecute(System.Object,System.EventArgs)">
+            <summary>
+            Handle PreRequest
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.AbstractDataModule.OnPostRequest(System.Object,System.EventArgs)">
+            <summary>
+            Called when [end request].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Core.Mvc.ViewMasterPage">
+            <summary>
+            View master page
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Core.Mvc.ViewMasterPage.Session">
+            <summary>
+            Gets the <see cref="T:System.Web.SessionState.HttpSessionState"/> object for the current Web request.
+            </summary>
+            <returns>
+            An <see cref="T:System.Web.SessionState.HttpSessionState"/> object associated with the <see cref="T:System.Web.UI.Page"/> that contains the <see cref="T:System.Web.UI.UserControl"/> instance.
+              </returns>
+        </member>
+        <member name="T:TmpLabs.WebEngine.SecureCookieHelper">
+            <summary>
+            Secure cookie
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.Set(System.Web.HttpResponseBase,System.String,System.String,System.DateTime,System.String)">
+            <summary>
+            Sets the specified response.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="expire">The expire.</param>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.Set(System.Web.HttpResponseBase,System.String,System.String,System.String)">
+            <summary>
+            Sets the specified response.
+            </summary>
+            <param name="response">The response.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.Get(System.Web.HttpRequestBase,System.String)">
+            <summary>
+            Gets the specified request.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.GetNotEncrypt(System.Web.HttpRequestBase,System.String)">
+            <summary>
+            Gets the specified request.
+            </summary>
+            <param name="request">The request.</param>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.Encrypt(System.String)">
+            <summary>
+            Encrypts the specified plain.
+            </summary>
+            <param name="plain">The plain.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.Decrypt(System.String)">
+            <summary>
+            Decrypts the specified cipher.
+            </summary>
+            <param name="cipher">The cipher.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.CreateCrypto">
+            <summary>
+            Creates the crypto.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TmpLabs.WebEngine.SecureCookieHelper.Read(System.Security.Cryptography.ICryptoTransform,System.Byte[])">
+            <summary>
+            Reads the specified transformer.
+            </summary>
+            <param name="transformer">The transformer.</param>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="T:TmpLabs.WebEngine.UserSessionFactory">
+            <summary>
+            User Session factory
+            </summary>
+        </member>
+        <member name="M:TmpLabs.WebEngine.UserSessionFactory.Init(System.Func{TmpLabs.WebEngine.IUserSessionBase})">
+            <summary>
+            Inits the UserSession constructor.
+            </summary>
+            <param name="func">The func.</param>
+        </member>
+        <member name="M:TmpLabs.WebEngine.UserSessionFactory.CrateUserSession">
+            <summary>
+            Crates the user session.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TmpLabs.WebEngine.UserSessionFactory.Instance">
+            <summary>
+            Instance of SessionFactory (Singleton)
+            </summary>
+        </member>
+        <member name="T:TmpLabs.WebEngine.Configuration">
+            <summary>
+            Configuration 
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Configuration.AuthCookieExpiresMinutes">
+            <summary>
+            Cookie expiration period
+            </summary>
+        </member>
+        <member name="P:TmpLabs.WebEngine.Configuration.CookieSecureKey">
+            <summary>
+            Gets the cookie secure key.
+            </summary>
+        </member>
+    </members>
+</doc>

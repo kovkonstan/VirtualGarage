@@ -1,0 +1,87 @@
+﻿@model VirtualGarage.Models.SparePartModel
+
+
+<div class="sparePart-container" id="@("SparePartContainer" + Model.NumberInPage.ToString())">
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.SparePartTypeID)
+    </div>
+    <div class="editor-field">
+        @{
+            IEnumerable<SelectListItem> sparePartTypes;
+            if (Model.SparePartTypeID != null)
+            {
+                sparePartTypes = new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = false, 
+                        Text = " - Выберите тип запчасти - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllSparePartTypes);
+
+                foreach (var item in sparePartTypes)
+                {
+                    if (item.Value == Model.SparePartTypeID.ToString())
+                    {
+                        item.Selected = true;
+                        break;
+                    }
+                }              
+            }
+            else
+            {
+                sparePartTypes = new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите тип запчасти - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllSparePartTypes);
+            }
+            }
+        @Html.DropDownList("SpareParts["+ Model.NumberInPage +"].SparePartTypeID", sparePartTypes)                
+        @Html.ValidationMessage("SpareParts["+ Model.NumberInPage +"].SparePartTypeID")
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Producer)
+    </div>
+    <div class="editor-field">
+        @Html.TextBox("SpareParts[" + Model.NumberInPage + "].Producer", Model.Producer) 
+       
+        @Html.ValidationMessage("SpareParts[" + Model.NumberInPage + "].Producer")
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model)
+    </div>
+    <div class="editor-field">
+        @Html.TextBox("SpareParts[" + Model.NumberInPage + "].Model", Model.Model)
+        @Html.ValidationMessage("SpareParts[" + Model.NumberInPage + "].Model")
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.SparePartCost)
+    </div>
+    <div class="editor-field">
+        @Html.TextBox("SpareParts[" + Model.NumberInPage + "].SparePartCost", Model.SparePartCost)
+        @Html.ValidationMessage("SpareParts[" + Model.NumberInPage + "].SparePartCost")
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.WorkCost)
+    </div>
+    <div class="editor-field">
+        @Html.TextBox("SpareParts[" + Model.NumberInPage + "].WorkCost", Model.WorkCost)
+        @Html.ValidationMessage("SpareParts[" + Model.NumberInPage + "].WorkCost")
+    </div>
+
+    <div class="editor-field">
+        @Html.CheckBox("SpareParts[" + Model.NumberInPage + "].IsRepair", Model.IsRepair)
+        <span>Проведен ремонт текущей запчасти</span>         
+    </div>
+ </div>

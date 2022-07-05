@@ -1,0 +1,50 @@
+﻿@model VirtualGarage.Models.MonthMileageGraphModel
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type='text/javascript'>
+    var data;
+
+    $.ajax(
+    {
+        type: "POST",
+        url: "/Car/GetMonthMileages",
+        data: "carID=" + @(Model.CarID) + "&year=" + @(Model.Year),
+        success: function (markData) {
+                    
+            data = markData;
+
+            var points = new Array(data.length);
+            $.each(data, function (index, itemData) {
+                points[index] =
+                    {
+                        month: itemData.Month,
+                        value: itemData.Value
+                    };
+            });
+
+            google.load("visualization", "1", { packages: ["corechart"] });
+            google.setOnLoadCallback(drawMonthMileageChart);
+
+            function drawMonthMileageChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Месяц', 'Пробег'],
+                points
+            ]);
+
+                var options = {
+                    title: 'Пробег, км',
+                    hAxis: { title: 'Месяц', titleTextStyle: { color: 'red'} },
+                    chartArea: { left: 50, top: 50 }
+                };
+
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart_month_mileage_div'));
+                chart.draw(data, options);
+            }
+        }
+    });
+
+
+</script>
+
+<div id="chart_month_mileage_div" style="width: 600px; height: 500px;"></div>
+

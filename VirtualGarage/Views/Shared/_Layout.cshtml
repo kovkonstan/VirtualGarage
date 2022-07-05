@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="@Url.Content("~/Content/favicon.ico")" type="image/x-icon" />  
+    <script src="@Url.Content("~/Scripts/jquery-1.5.1.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/MicrosoftAjax.js")" 
+		type="text/javascript"></script>  
+    <script src="@Url.Content("~/Scripts/MicrosoftMvcAjax.js")" 
+		type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/MainStyles.css")" media="screen" />
+    @RenderSection("Head", false)
+</head>
+
+<body>
+    <div id="wrap">
+
+        <div id="header">
+            <div class="headerleft">
+                <h1><a href="@Url.Content("~/")">Виртуальный гараж</a></h1>
+            </div>
+            <div class="headerright">
+                @if (ViewBag.Title != "Ошибка при входе")
+                {                
+                    @Html.Partial("LoginDiv", new VirtualGarage.Models.LoginModel())                
+                }
+            </div>
+            
+        </div>
+
+    <div id="menu">
+        <ul>
+            <li>@Html.ActionLink("Главная", "Index", "Default")</li>
+            <li>@Html.ActionLink("Поиск", "Search", "Default")</li>     
+     
+        </ul>
+    </div>
+
+    <div id="content">
+
+        <div class="right">
+
+            @RenderBody()
+            
+        </div>
+
+        <div class="left">
+            @if (Request.IsAuthenticated)
+            {
+                <h2><a href="@Url.Content("~/Garage")">Гараж</a></h2>
+                if (Model.LoginUserModel.UserCars.Count != 0)
+                {                
+                    <ul>
+                        @foreach (var userCar in (List<VirtualGarage.Models.CarInLeftMenuModel>)Model.LoginUserModel.UserCars)
+                        {
+                                            
+                            <li>
+                                @Html.ActionLink(userCar.CarName, "CarInfo", "Car",
+                                                new RouteValueDictionary() 
+                                                {
+                                                    {"carID", userCar.CarID}
+                                                }, null)
+                            </li> 
+                        }
+                    </ul>
+                }
+                else
+                {
+                        <span>
+                            В Вашем гараже пока
+                            <br />
+                            нет автомобилей
+                        </span>
+                        @Html.ActionLink("Добавить автомобиль", "AddCar", "Garage")
+
+
+                }
+
+                <h2>
+                    @Html.ActionLink("Календарь", "Calendar", "Default")
+                    (@(((VirtualGarage.Models.LoginUserModel)Model.LoginUserModel).CountOfReminders.ToString()))
+                </h2>            
+                <h2>@Html.ActionLink("Сообщения", "IncomingMessages", "Default") </h2>
+                <h2>@Html.ActionLink("Настройки", "Settings", "Default")</h2>                
+            }
+            else
+            {
+                <h2>Начните пользоваться системой:</h2>
+                <h3>1. @Html.ActionLink("Зарегистрируйтесь", "Register", "Account")</h3>
+                <h3>2. Добавьте свой автомобиль</h3>
+                <h3>3. Добавьте событие</h3>
+            }
+            
+        </div>
+
+        @RenderSection("SimilarCars", false)        
+
+        <div style="clear: both;"> </div>
+
+    </div>
+
+    <div id="footer">
+        &copy; Copyright 2011-@DateTime.Now.Year.ToString() by <a href="http://inostudio.com/">Inostudio</a></div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

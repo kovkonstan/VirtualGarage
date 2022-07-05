@@ -1,0 +1,281 @@
+﻿@model VirtualGarage.Models.AddCarModel
+
+@{
+    ViewBag.Title = "Добавить автомобиль";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Добавить автомобиль</h2>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/calendar/jquery-ui-1.8.16.custom.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.16.custom.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.ui.datepicker-ru.js")"></script>
+@*<script src="@Url.Content("~/Scripts/datepicker/jquery.datepick-ru.js")" type="text/javascript"></script>*@
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#ddlMarks").change(function () {
+            $("#ddlModels").attr("disabled", false);
+            if ($(this).val() != "") {
+                var idMark = $(this).val();
+
+                $.getJSON("/Garage/GetModelsByMark", { markId: idMark },
+                function (markData) {
+                    var select = $("#ddlModels");
+                    select.empty();
+                    select.append($('<option/>', {
+                        value: 0,
+                        text: " - Выберите модель - "
+                    }));
+                    $.each(markData, function (index, itemData) {
+                        select.append($('<option/>', {
+                            value: itemData.Value,
+                            text: itemData.Text
+                        }));
+                    });
+                });
+            }
+            else {
+                $("#ddlModels :first").attr("selected", "selected");
+                $("#ddlModels").attr("disabled", true);
+            }
+        });
+
+
+
+        $.datepicker.setDefaults(
+            $.extend($.datepicker.regional["ru"])
+			  );
+
+        $(".datepicker").datepicker({
+            changeMonth: "true",
+            changeYear: "true",
+            maxDate: new Date(),
+            showOn: "button",
+            buttonImage: "/Scripts/datepicker/calendar.gif",
+            buttonImageOnly: true
+        });
+
+        if ($(".datepicker").val() == "01.01.0001 0:00:00") {
+            $(".datepicker").attr("value", "");
+        }
+
+        if ($("#ddlMarks").val() != "") {
+            $("#ddlModels").attr("disabled", false);
+        }
+
+
+
+    });
+
+</script>
+
+
+@using (Html.BeginForm("AddCar", "Garage", FormMethod.Post, new { enctype="multipart/form-data" } ))
+{
+    @Html.ValidationSummary(true)
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.MarkID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarModel.MarkID, 
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите марку - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllMarks), 
+                new Dictionary<String, Object>() 
+                {
+                    {"id", "ddlMarks"}
+                })
+            @Html.ValidationMessageFor(model => model.CarModel.MarkID)
+        </div>                
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.ModelID)
+        </div>
+        <div class="editor-field">            
+            @Html.DropDownListFor(model => model.CarModel.ModelID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите модель - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllModels), 
+            
+                new Dictionary<String, Object>() 
+                {
+                    {"id", "ddlModels"},
+                    {"disabled", "true"}
+                })
+            @Html.ValidationMessageFor(model => model.CarModel.ModelID)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.Year)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarModel.Year,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите год выпуска - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.GetAllYears()) )
+
+            @Html.ValidationMessageFor(model => model.CarModel.Year)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.ColorID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarModel.ColorID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите цвет - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllColors) )
+            @Html.ValidationMessageFor(model => model.CarModel.ColorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.FuelTypeID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarModel.FuelTypeID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите тип топлива - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllFuelTypes))
+            @Html.ValidationMessageFor(model => model.CarModel.FuelTypeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.CarcaseTypeID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarModel.CarcaseTypeID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите тип кузова - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllCarcaseTypes))
+            @Html.ValidationMessageFor(model => model.CarModel.CarcaseTypeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.BoxTypeID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarModel.BoxTypeID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите тип КП - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllGearBoxTypes))
+            @Html.ValidationMessageFor(model => model.CarModel.BoxTypeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.EngineVolume)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CarModel.EngineVolume)
+            <span>куб. см.</span> 
+            @Html.ValidationMessageFor(model => model.CarModel.EngineVolume)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.BuyDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CarModel.BuyDate,
+                new RouteValueDictionary() { { "class", "datepicker" } })
+            @Html.ValidationMessageFor(model => model.CarModel.BuyDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.CurrencyID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CarModel.CurrencyID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите валюту - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllCurrences))                
+            @Html.ValidationMessageFor(model => model.CarModel.CurrencyID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.Mileage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CarModel.Mileage)
+            @Html.ValidationMessageFor(model => model.CarModel.Mileage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.MonthMileage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CarModel.MonthMileage)
+            @Html.ValidationMessageFor(model => model.CarModel.MonthMileage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CarModel.AdditionalFeatures)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CarModel.AdditionalFeatures)
+            @Html.ValidationMessageFor(model => model.CarModel.AdditionalFeatures)
+        </div>
+
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.CarModel.Visible) 
+            <span>Виден всем пользователям</span> 
+            @Html.ValidationMessageFor(model => model.CarModel.Visible)
+        </div>
+    
+        <p>
+        Фотография:
+            <input type="file" name="photo" />          
+        </p>
+
+        <p>
+            <input type="submit" value="Создать автомобиль" class="button" />
+        </p>
+}

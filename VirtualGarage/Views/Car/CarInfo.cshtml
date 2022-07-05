@@ -1,0 +1,123 @@
+﻿@model VirtualGarage.Models.CarInfoModel
+@using VirtualGarage.Logic.Enums
+
+@{
+    ViewBag.Title = "Информация об автомобиле";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+
+@section GarageContent
+{
+    @if (Model.BaseModel.UserAcces != UserAccesOnCar.Close)
+    {
+        <div class="info_photo">
+        @if (Model.CarModel.ImageType != null)
+        {
+            <img class="info_img" src="@Url.Action("GetImage", "Car", new { carID = Model.CarModel.CarID })" alt="" />                
+        }
+        else
+        {
+            <img class="info_img" src="@Url.Content("/Content/Samples/sample_img.jpg")" alt="" />                
+        }
+                
+        </div>
+
+        <div class="table_left_header">
+            <table>
+                @Html.HiddenFor(model => model.CarModel.CarID)
+
+                <tr>
+                    <th>Марка: </th>
+                    <td>@Html.DisplayFor(model => model.CarModel.MarkName)</td>
+                </tr>
+                <tr>
+                    <th>Модель:</th>
+                    <td>@Html.DisplayFor(model => model.CarModel.ModelName)</td>
+                </tr>
+                <tr>
+                    <th>Год выпуска:</th>
+                    <td>@Html.DisplayFor(model => model.CarModel.Year)</td>
+                </tr>
+                @if (Model.CarModel.ColorName != String.Empty)
+                {                      
+                    <tr>
+                        <th>Цвет</th>
+                        <td>@Html.DisplayFor(model => model.CarModel.ColorName)</td>
+                    </tr>
+                }
+
+                <tr>
+                    <th>Тип топлива:</th>
+                    <td>@Html.DisplayFor(model => model.CarModel.FuelTypeName)</td>
+                </tr>
+
+                @if (Model.CarModel.CarcaseTypeName != String.Empty)
+                { 
+                    <tr>
+                        <th>Тип кузова:</th>
+                        <td>@Html.DisplayFor(model => model.CarModel.CarcaseTypeName)</td>
+                    </tr>
+                }
+                
+                @if (Model.CarModel.BoxTypeName != String.Empty)
+                { 
+                    <tr>
+                        <th>Тип коробки передач:</th>
+                        <td>@Html.DisplayFor(model => model.CarModel.BoxTypeName)</td>
+                    </tr>
+                }
+                
+                @if (!String.IsNullOrEmpty(Model.CarModel.EngineVolume))
+                { 
+                    <tr>
+                        <th>Объем двигателя:</th>
+                        <td>@Html.DisplayFor(model => model.CarModel.EngineVolume) см<sup>3</sup></td>
+                    </tr>
+                }
+                    
+                <tr>
+                    <th>Дата покупки:</th>
+                    <td>@Html.Label("BuyDate", Convert.ToDateTime(Model.CarModel.BuyDate).ToString("dd/MM/yyyy­"))</td>
+                </tr>
+
+                <tr>
+                    <th>Валюта:</th>
+                    <td>@Html.DisplayFor(model => model.CarModel.CurrencyName)</td>
+                </tr>
+                @if (!String.IsNullOrEmpty(Model.CarModel.Mileage))
+                { 
+                    <tr>
+                        <th>Текущий пробег:</th>
+                        <td>@Html.DisplayFor(model => model.CarModel.Mileage) км.</td>
+                    </tr>
+                }
+                
+                @if (!String.IsNullOrEmpty(Model.CarModel.MonthMileage))
+                { 
+                    <tr>
+                        <th>Средний пробег в месяц:</th>
+                        <td>@Html.DisplayFor(model => model.CarModel.MonthMileage) км.</td>
+                    </tr>
+                }
+                
+                @if (!String.IsNullOrWhiteSpace(Model.CarModel.AdditionalFeatures))
+                { 
+                    <tr>
+                        <th>Дополнительные характеристики:</th>
+                        <td>@Html.DisplayFor(model => model.CarModel.AdditionalFeatures)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+    else
+    {
+        <span>Доступ к этому автомобилю запрещен владельцем</span>
+    }
+}
+
+
+
+
+
+

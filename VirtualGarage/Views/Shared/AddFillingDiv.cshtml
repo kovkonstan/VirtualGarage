@@ -1,0 +1,289 @@
+﻿@model VirtualGarage.Models.AddFillingDivModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/FuelCostCalculate.js")"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#GeneralCost").change(function () {
+            if ($("#GeneralCost").val() != "" && $("#FuelCount").val() != "" && $("#UnitCost").val() != "") {
+                var generalCost = ReplacePoint($("#GeneralCost").val());
+                var fuelCount = ReplacePoint($("#FuelCount").val());
+                if (!isNaN(generalCost / fuelCount)) {
+                    var result = (generalCost / fuelCount).toString();
+
+                    $("#UnitCost").attr("value",
+                                ReplaceComma((result.indexOf(".") == -1 ? result : result.substring(0, (result.indexOf(".") + 3)))));
+                }
+            }
+            else if (!($("#GeneralCost").val() == "" && $("#FuelCount").val() != "" && $("#UnitCost").val() != "")) {
+                Calculate();
+            }
+        }
+        );
+
+        $("#FuelCount").change(function () {
+            if ($("#GeneralCost").val() != "" && $("#FuelCount").val() != "" && $("#UnitCost").val() != "") {
+                var fuelCount = ReplacePoint($("#FuelCount").val());
+                var unitCost = ReplacePoint($("#UnitCost").val());
+                if (!isNaN(fuelCount * unitCost)) {
+                    var result = (fuelCount * unitCost).toString();
+                    $("#GeneralCost").attr("value",
+                            ReplaceComma((result.indexOf(".") == -1 ? result : result.substring(0, (result.indexOf(".") + 3)))));
+                }
+            }
+            else if (!($("#GeneralCost").val() != "" && $("#FuelCount").val() == "" && $("#UnitCost").val() != "")) {
+                Calculate();
+            }
+        }
+        );
+
+        $("#UnitCost").change(function () {
+            if ($("#GeneralCost").val() != "" && $("#FuelCount").val() != "" && $("#UnitCost").val() != "") {
+                var fuelCount = ReplacePoint($("#FuelCount").val());
+                var unitCost = ReplacePoint($("#UnitCost").val());
+                if (!isNaN(fuelCount * unitCost)) {
+                    var result = (fuelCount * unitCost).toString();
+                    $("#GeneralCost").attr("value",
+                            ReplaceComma((result.indexOf(".") == -1 ? result : result.substring(0, (result.indexOf(".") + 3)))));
+                }
+            }
+            else if (!($("#GeneralCost").val() != "" && $("#FuelCount").val() != "" && $("#UnitCost").val() == "")) {
+                Calculate();
+            }
+        }
+        );
+
+        //--------------------------------
+
+        $("#GeneralCost").keypress(function (e) {
+            if (e.which == 8 ||  // Backspace
+                    e.which == 27 ||  // Esc                    
+                    e.which == 44 ||  //,
+                    e.which == 0 ||  //Del, стрелки
+                    (e.which >= 48 && e.which <= 57)) // Цифры
+            {
+                return true;
+
+            }
+            else if (e.which == 46) {
+                $("#GeneralCost").attr("value", $("#GeneralCost").val() + ",");
+
+                return false;
+            }
+            else {
+                return false;
+            };
+        });
+
+        $("#FuelCount").keypress(function (e) {
+            if (e.which == 8 ||  // Backspace
+                    e.which == 27 ||  // Esc                    
+                    e.which == 44 ||  //,
+                    e.which == 0 ||  //Del, стрелки
+                    (e.which >= 48 && e.which <= 57)) // Цифры
+            {
+                return true;
+
+            }
+            else if (e.which == 46) {
+                $("#FuelCount").attr("value", $("#FuelCount").val() + ",");
+
+                return false;
+            }
+            else {
+                return false;
+            };
+        });
+
+        $("#UnitCost").keypress(function (e) {
+            if (e.which == 8 ||  // Backspace
+                    e.which == 27 ||  // Esc                    
+                    e.which == 44 ||  //,
+                    e.which == 0 ||  //Del, стрелки
+                    (e.which >= 48 && e.which <= 57)) // Цифры
+            {
+                return true;
+
+            }
+            else if (e.which == 46) {
+                $("#UnitCost").attr("value", $("#UnitCost").val() + ",");
+
+                return false;
+            }
+            else {
+                return false;
+            };
+        });
+
+
+    });
+</script>
+
+<div id="addEventContainer">
+    @using (Ajax.BeginForm("AddFilling", "Car",
+                                        null,
+                                        new AjaxOptions()
+                                        {
+                                            HttpMethod = "Post",
+                                            InsertionMode = InsertionMode.Replace,
+                                            UpdateTargetId = "addEventContainer",
+
+                                        }))
+    {    
+        @Html.ValidationSummary(true)  
+        @Html.HiddenFor(model => model.EventTypeID)
+        @Html.HiddenFor(model => model.CarID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Date,
+                new Dictionary<String, Object>() 
+                        { 
+                            { "class", "datepicker" }
+                        })
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlaceID)
+        </div>
+        <div class="editor-field">
+            <span>Введите название заправки </span>
+            @Html.EditorFor(model => model.NewPlaceName)
+            <br />
+            <span> или выберите из списка </span>
+            @Html.DropDownListFor(model => model.PlaceID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите место проведения - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllEventPlaces))                 
+            <br />      
+            @Html.ValidationMessageFor(model => model.PlaceID)
+            @Html.ValidationMessageFor(model => model.NewPlaceName)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mileage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mileage)
+            @Html.ValidationMessageFor(model => model.Mileage)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrencyID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CurrencyID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите валюту - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllCurrences))                
+            @Html.ValidationMessageFor(model => model.CurrencyID)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GeneralCost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GeneralCost)
+            @Html.ValidationMessageFor(model => model.GeneralCost)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EventComments)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EventComments)
+            @Html.ValidationMessageFor(model => model.EventComments)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuelTypeID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.FuelTypeID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите тип топлива - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllFuelTypes))                
+            @Html.ValidationMessageFor(model => model.FuelTypeID)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FuelCount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FuelCount)
+            <span>куб. см.</span> 
+            @Html.ValidationMessageFor(model => model.FuelCount)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitCost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitCost)
+            @Html.ValidationMessageFor(model => model.UnitCost)
+        </div>
+    
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.IsFullTank) 
+            <span>Полный бак</span> 
+            @Html.ValidationMessageFor(model => model.IsFullTank)
+        </div>
+    
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.IsForgotPreviousFilling) 
+            <span>Забыл записать предыдущую заправку</span> 
+            @Html.ValidationMessageFor(model => model.IsForgotPreviousFilling)
+        </div>        
+        
+        <div class="editor-label">
+            <p>Добавить напоминание, связанное с событием</p>
+        </div>
+       
+        <div class="editor-field">            
+            @Html.EditorFor(model => model.IsAddReminderByDays)
+            @Html.LabelFor(model => model.IsAddReminderByDays)
+            @Html.EditorFor(model => model.CountOfDaysForRemind)
+            <span> дней</span>
+            @Html.ValidationMessageFor(model => model.CountOfDaysForRemind)
+        </div>
+        
+       if (Model.IsKnownMileage)
+       {        
+            <div class="editor-field">            
+                @Html.EditorFor(model => model.IsAddReminderByMileage)
+                @Html.LabelFor(model => model.IsAddReminderByMileage)
+                @Html.EditorFor(model => model.CountOfMileageForRemind)
+                <span> км</span>
+                @Html.ValidationMessageFor(model => model.CountOfMileageForRemind)
+            </div>
+        
+            <p class="red_text">*Выполнится первое сработавшее напоминание</p>
+       }
+    
+        <p>
+            <input type="submit" value="Добавить заправку" class="button" />
+        </p>
+    }
+</div>

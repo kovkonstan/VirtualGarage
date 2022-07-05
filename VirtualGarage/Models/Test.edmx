@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VirtualGarageModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="VirtualGarageModelStoreContainer">
+          <EntitySet Name="CarcaseTypes" EntityType="VirtualGarageModel.Store.CarcaseTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CarInGarage" EntityType="VirtualGarageModel.Store.CarInGarage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CarMarks" EntityType="VirtualGarageModel.Store.CarMarks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CarModels" EntityType="VirtualGarageModel.Store.CarModels" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cars" EntityType="VirtualGarageModel.Store.Cars" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Colors" EntityType="VirtualGarageModel.Store.Colors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currencies" EntityType="VirtualGarageModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Events" EntityType="VirtualGarageModel.Store.Events" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventTypes" EntityType="VirtualGarageModel.Store.EventTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Fillings" EntityType="VirtualGarageModel.Store.Fillings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GearBoxTypes" EntityType="VirtualGarageModel.Store.GearBoxTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Messages" EntityType="VirtualGarageModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Places" EntityType="VirtualGarageModel.Store.Places" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PlaceTypes" EntityType="VirtualGarageModel.Store.PlaceTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reminders" EntityType="VirtualGarageModel.Store.Reminders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Repairs" EntityType="VirtualGarageModel.Store.Repairs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SparePartTypes" EntityType="VirtualGarageModel.Store.SparePartTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRoles" EntityType="VirtualGarageModel.Store.UserRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="VirtualGarageModel.Store.Users" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="CarcaseTypes">
+          <Key>
+            <PropertyRef Name="CarcaseTypeID" />
+          </Key>
+          <Property Name="CarcaseTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CarcaseTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CarInGarage">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="IsOwner" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarMarks">
+          <Key>
+            <PropertyRef Name="CarMarkID" />
+          </Key>
+          <Property Name="CarMarkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CarMarkName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="IsUserMark" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarModels">
+          <Key>
+            <PropertyRef Name="CarModelID" />
+          </Key>
+          <Property Name="CarModelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CarMarkID" Type="int" Nullable="false" />
+          <Property Name="IsUserModel" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cars">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CarModelID" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="ColorID" Type="int" />
+          <Property Name="FuelTypeID" Type="int" Nullable="false" />
+          <Property Name="CarcaseTypeID" Type="int" />
+          <Property Name="GearBoxID" Type="int" />
+          <Property Name="EngineVolume" Type="int" />
+          <Property Name="BuyDate" Type="date" Nullable="false" />
+          <Property Name="CurrencyID" Type="int" Nullable="false" />
+          <Property Name="Mileage" Type="int" />
+          <Property Name="MonthMileage" Type="int" />
+          <Property Name="Comment" Type="varchar" MaxLength="500" />
+          <Property Name="CarPhoto" Type="varbinary(max)" />
+          <Property Name="CarVisible" Type="bit" Nullable="false" />
+          <Property Name="CarIsReadOnly" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colors">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ColorName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="CurrencyID" />
+          </Key>
+          <Property Name="CurrencyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Mileage" Type="int" />
+          <Property Name="GeneralCost" Type="int" Nullable="false" />
+          <Property Name="EventComments" Type="varchar" MaxLength="500" />
+          <Property Name="PlaceID" Type="int" Nullable="false" />
+          <Property Name="CarID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventTypes">
+          <Key>
+            <PropertyRef Name="EventTypeID" />
+          </Key>
+          <Property Name="EventTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="IsUserEventType" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fillings">
+          <Key>
+            <PropertyRef Name="FillingID" />
+          </Key>
+          <Property Name="FillingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FuelTypeID" Type="int" Nullable="false" />
+          <Property Name="FuelCount" Type="int" Nullable="false" />
+          <Property Name="UnitCost" Type="int" Nullable="false" />
+          <Property Name="IsFullTank" Type="bit" Nullable="false" />
+          <Property Name="IsForgotPreviousFilling" Type="bit" Nullable="false" />
+          <Property Name="EventID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GearBoxTypes">
+          <Key>
+            <PropertyRef Name="GearBoxID" />
+          </Key>
+          <Property Name="GearBoxID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GearBoxName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Theme" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ChainID" Type="int" Nullable="false" />
+          <Property Name="SenderID" Type="int" Nullable="false" />
+          <Property Name="IsDeleteBySender" Type="bit" Nullable="false" />
+          <Property Name="RecipientID" Type="int" Nullable="false" />
+          <Property Name="IsDeleteByRecipient" Type="bit" Nullable="false" />
+          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Places">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Name="PlaceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="PlaceTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlaceTypes">
+          <Key>
+            <PropertyRef Name="PlaceTypeID" />
+          </Key>
+          <Property Name="PlaceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceTypeName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Reminders">
+          <Key>
+            <PropertyRef Name="ReminderID" />
+          </Key>
+          <Property Name="ReminderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="ReminderName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="StartTime" Type="time" Precision="0" />
+          <Property Name="FinishTime" Type="time" Precision="0" />
+          <Property Name="IsRemindByEmail" Type="bit" Nullable="false" />
+          <Property Name="ReminderCountOfMileage" Type="int" />
+          <Property Name="ReminderCountOfDays" Type="int" />
+          <Property Name="IsReminderDone" Type="bit" Nullable="false" />
+          <Property Name="CarID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Repairs">
+          <Key>
+            <PropertyRef Name="RepairID" />
+          </Key>
+          <Property Name="RepairID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SparePartTypeID" Type="int" Nullable="false" />
+          <Property Name="SparePartProducer" Type="varchar" MaxLength="100" />
+          <Property Name="SparePartModel" Type="varchar" MaxLength="100" />
+          <Property Name="SparePartCost" Type="int" Nullable="false" />
+          <Property Name="WorkCost" Type="int" Nullable="false" />
+          <Property Name="IsRepair" Type="bit" Nullable="false" />
+          <Property Name="EventID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SparePartTypes">
+          <Key>
+            <PropertyRef Name="SparePartTypeID" />
+          </Key>
+          <Property Name="SparePartTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SparePartTypeName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserRoleName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserNick" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserEmail" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserPassword" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserRoleID" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VirtualGarageModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="VirtualGarageEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CarcaseTypes" EntityType="VirtualGarageModel.CarcaseType" />
+          <EntitySet Name="CarInGarages" EntityType="VirtualGarageModel.CarInGarage" />
+          <EntitySet Name="CarMarks" EntityType="VirtualGarageModel.CarMark" />
+          <EntitySet Name="CarModels" EntityType="VirtualGarageModel.CarModel" />
+          <EntitySet Name="Cars" EntityType="VirtualGarageModel.Car" />
+          <EntitySet Name="Colors" EntityType="VirtualGarageModel.Color" />
+          <EntitySet Name="Currencies" EntityType="VirtualGarageModel.Currency" />
+          <EntitySet Name="Events" EntityType="VirtualGarageModel.Event" />
+          <EntitySet Name="EventTypes" EntityType="VirtualGarageModel.EventType" />
+          <EntitySet Name="Fillings" EntityType="VirtualGarageModel.Filling" />
+          <EntitySet Name="GearBoxTypes" EntityType="VirtualGarageModel.GearBoxType" />
+          <EntitySet Name="Messages" EntityType="VirtualGarageModel.Message" />
+          <EntitySet Name="Places" EntityType="VirtualGarageModel.Place" />
+          <EntitySet Name="PlaceTypes" EntityType="VirtualGarageModel.PlaceType" />
+          <EntitySet Name="Reminders" EntityType="VirtualGarageModel.Reminder" />
+          <EntitySet Name="Repairs" EntityType="VirtualGarageModel.Repair" />
+          <EntitySet Name="SparePartTypes" EntityType="VirtualGarageModel.SparePartType" />
+          <EntitySet Name="UserRoles" EntityType="VirtualGarageModel.UserRole" />
+          <EntitySet Name="Users" EntityType="VirtualGarageModel.User" />
+        </EntityContainer>
+        <EntityType Name="CarcaseType">
+          <Key>
+            <PropertyRef Name="CarcaseTypeID" />
+          </Key>
+          <Property Name="CarcaseTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarcaseTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CarInGarage">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="IsOwner" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarMark">
+          <Key>
+            <PropertyRef Name="CarMarkID" />
+          </Key>
+          <Property Name="CarMarkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarMarkName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IsUserMark" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CarModel">
+          <Key>
+            <PropertyRef Name="CarModelID" />
+          </Key>
+          <Property Name="CarModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarMarkID" Type="Int32" Nullable="false" />
+          <Property Name="IsUserModel" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarModelID" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="ColorID" Type="Int32" />
+          <Property Name="FuelTypeID" Type="Int32" Nullable="false" />
+          <Property Name="CarcaseTypeID" Type="Int32" />
+          <Property Name="GearBoxID" Type="Int32" />
+          <Property Name="EngineVolume" Type="Int32" />
+          <Property Name="BuyDate" Type="DateTime" Nullable="false" />
+          <Property Name="CurrencyID" Type="Int32" Nullable="false" />
+          <Property Name="Mileage" Type="Int32" />
+          <Property Name="MonthMileage" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="CarPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CarVisible" Type="Boolean" Nullable="false" />
+          <Property Name="CarIsReadOnly" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColorName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyID" />
+          </Key>
+          <Property Name="CurrencyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Mileage" Type="Int32" />
+          <Property Name="GeneralCost" Type="Int32" Nullable="false" />
+          <Property Name="EventComments" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="PlaceID" Type="Int32" Nullable="false" />
+          <Property Name="CarID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="EventTypeID" />
+          </Key>
+          <Property Name="EventTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IsUserEventType" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Filling">
+          <Key>
+            <PropertyRef Name="FillingID" />
+          </Key>
+          <Property Name="FillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FuelTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FuelCount" Type="Int32" Nullable="false" />
+          <Property Name="UnitCost" Type="Int32" Nullable="false" />
+          <Property Name="IsFullTank" Type="Boolean" Nullable="false" />
+          <Property Name="IsForgotPreviousFilling" Type="Boolean" Nullable="false" />
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GearBoxType">
+          <Key>
+            <PropertyRef Name="GearBoxID" />
+          </Key>
+          <Property Name="GearBoxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GearBoxName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Theme" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ChainID" Type="Int32" Nullable="false" />
+          <Property Name="SenderID" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleteBySender" Type="Boolean" Nullable="false" />
+          <Property Name="RecipientID" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleteByRecipient" Type="Boolean" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Name="PlaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PlaceTypeID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlaceType">
+          <Key>
+            <PropertyRef Name="PlaceTypeID" />
+          </Key>
+          <Property Name="PlaceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Reminder">
+          <Key>
+            <PropertyRef Name="ReminderID" />
+          </Key>
+          <Property Name="ReminderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="ReminderName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="StartTime" Type="Time" />
+          <Property Name="FinishTime" Type="Time" />
+          <Property Name="IsRemindByEmail" Type="Boolean" Nullable="false" />
+          <Property Name="ReminderCountOfMileage" Type="Int32" />
+          <Property Name="ReminderCountOfDays" Type="Int32" />
+          <Property Name="IsReminderDone" Type="Boolean" Nullable="false" />
+          <Property Name="CarID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Repair">
+          <Key>
+            <PropertyRef Name="RepairID" />
+          </Key>
+          <Property Name="RepairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SparePartTypeID" Type="Int32" Nullable="false" />
+          <Property Name="SparePartProducer" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SparePartModel" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SparePartCost" Type="Int32" Nullable="false" />
+          <Property Name="WorkCost" Type="Int32" Nullable="false" />
+          <Property Name="IsRepair" Type="Boolean" Nullable="false" />
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SparePartType">
+          <Key>
+            <PropertyRef Name="SparePartTypeID" />
+          </Key>
+          <Property Name="SparePartTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SparePartTypeName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserRoleName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserNick" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserEmail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserRoleID" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VirtualGarageModelStoreContainer" CdmEntityContainer="VirtualGarageEntities">
+          <EntitySetMapping Name="CarcaseTypes"><EntityTypeMapping TypeName="VirtualGarageModel.CarcaseType"><MappingFragment StoreEntitySet="CarcaseTypes">
+            <ScalarProperty Name="CarcaseTypeID" ColumnName="CarcaseTypeID" />
+            <ScalarProperty Name="CarcaseTypeName" ColumnName="CarcaseTypeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CarInGarages"><EntityTypeMapping TypeName="VirtualGarageModel.CarInGarage"><MappingFragment StoreEntitySet="CarInGarage">
+            <ScalarProperty Name="CarID" ColumnName="CarID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="IsOwner" ColumnName="IsOwner" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CarMarks"><EntityTypeMapping TypeName="VirtualGarageModel.CarMark"><MappingFragment StoreEntitySet="CarMarks">
+            <ScalarProperty Name="CarMarkID" ColumnName="CarMarkID" />
+            <ScalarProperty Name="CarMarkName" ColumnName="CarMarkName" />
+            <ScalarProperty Name="IsUserMark" ColumnName="IsUserMark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CarModels"><EntityTypeMapping TypeName="VirtualGarageModel.CarModel"><MappingFragment StoreEntitySet="CarModels">
+            <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+            <ScalarProperty Name="CarMarkID" ColumnName="CarMarkID" />
+            <ScalarProperty Name="IsUserModel" ColumnName="IsUserModel" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Cars"><EntityTypeMapping TypeName="VirtualGarageModel.Car"><MappingFragment StoreEntitySet="Cars">
+            <ScalarProperty Name="CarID" ColumnName="CarID" />
+            <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+            <ScalarProperty Name="Year" ColumnName="Year" />
+            <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+            <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+            <ScalarProperty Name="CarcaseTypeID" ColumnName="CarcaseTypeID" />
+            <ScalarProperty Name="GearBoxID" ColumnName="GearBoxID" />
+            <ScalarProperty Name="EngineVolume" ColumnName="EngineVolume" />
+            <ScalarProperty Name="BuyDate" ColumnName="BuyDate" />
+            <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+            <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+            <ScalarProperty Name="MonthMileage" ColumnName="MonthMileage" />
+            <ScalarProperty Name="Comment" ColumnName="Comment" />
+            <ScalarProperty Name="CarPhoto" ColumnName="CarPhoto" />
+            <ScalarProperty Name="CarVisible" ColumnName="CarVisible" />
+            <ScalarProperty Name="CarIsReadOnly" ColumnName="CarIsReadOnly" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Colors"><EntityTypeMapping TypeName="VirtualGarageModel.Color"><MappingFragment StoreEntitySet="Colors">
+            <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+            <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Currencies"><EntityTypeMapping TypeName="VirtualGarageModel.Currency"><MappingFragment StoreEntitySet="Currencies">
+            <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+            <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Events"><EntityTypeMapping TypeName="VirtualGarageModel.Event"><MappingFragment StoreEntitySet="Events">
+            <ScalarProperty Name="EventID" ColumnName="EventID" />
+            <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+            <ScalarProperty Name="GeneralCost" ColumnName="GeneralCost" />
+            <ScalarProperty Name="EventComments" ColumnName="EventComments" />
+            <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+            <ScalarProperty Name="CarID" ColumnName="CarID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EventTypes"><EntityTypeMapping TypeName="VirtualGarageModel.EventType"><MappingFragment StoreEntitySet="EventTypes">
+            <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+            <ScalarProperty Name="EventTypeName" ColumnName="EventTypeName" />
+            <ScalarProperty Name="IsUserEventType" ColumnName="IsUserEventType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Fillings"><EntityTypeMapping TypeName="VirtualGarageModel.Filling"><MappingFragment StoreEntitySet="Fillings">
+            <ScalarProperty Name="FillingID" ColumnName="FillingID" />
+            <ScalarProperty Name="FuelTypeID" ColumnName="FuelTypeID" />
+            <ScalarProperty Name="FuelCount" ColumnName="FuelCount" />
+            <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+            <ScalarProperty Name="IsFullTank" ColumnName="IsFullTank" />
+            <ScalarProperty Name="IsForgotPreviousFilling" ColumnName="IsForgotPreviousFilling" />
+            <ScalarProperty Name="EventID" ColumnName="EventID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="GearBoxTypes"><EntityTypeMapping TypeName="VirtualGarageModel.GearBoxType"><MappingFragment StoreEntitySet="GearBoxTypes">
+            <ScalarProperty Name="GearBoxID" ColumnName="GearBoxID" />
+            <ScalarProperty Name="GearBoxName" ColumnName="GearBoxName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Messages"><EntityTypeMapping TypeName="VirtualGarageModel.Message"><MappingFragment StoreEntitySet="Messages">
+            <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+            <ScalarProperty Name="Theme" ColumnName="Theme" />
+            <ScalarProperty Name="ChainID" ColumnName="ChainID" />
+            <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+            <ScalarProperty Name="IsDeleteBySender" ColumnName="IsDeleteBySender" />
+            <ScalarProperty Name="RecipientID" ColumnName="RecipientID" />
+            <ScalarProperty Name="IsDeleteByRecipient" ColumnName="IsDeleteByRecipient" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Places"><EntityTypeMapping TypeName="VirtualGarageModel.Place"><MappingFragment StoreEntitySet="Places">
+            <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+            <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+            <ScalarProperty Name="PlaceTypeID" ColumnName="PlaceTypeID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PlaceTypes"><EntityTypeMapping TypeName="VirtualGarageModel.PlaceType"><MappingFragment StoreEntitySet="PlaceTypes">
+            <ScalarProperty Name="PlaceTypeID" ColumnName="PlaceTypeID" />
+            <ScalarProperty Name="PlaceTypeName" ColumnName="PlaceTypeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Reminders"><EntityTypeMapping TypeName="VirtualGarageModel.Reminder"><MappingFragment StoreEntitySet="Reminders">
+            <ScalarProperty Name="ReminderID" ColumnName="ReminderID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="ReminderName" ColumnName="ReminderName" />
+            <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+            <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
+            <ScalarProperty Name="IsRemindByEmail" ColumnName="IsRemindByEmail" />
+            <ScalarProperty Name="ReminderCountOfMileage" ColumnName="ReminderCountOfMileage" />
+            <ScalarProperty Name="ReminderCountOfDays" ColumnName="ReminderCountOfDays" />
+            <ScalarProperty Name="IsReminderDone" ColumnName="IsReminderDone" />
+            <ScalarProperty Name="CarID" ColumnName="CarID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Repairs"><EntityTypeMapping TypeName="VirtualGarageModel.Repair"><MappingFragment StoreEntitySet="Repairs">
+            <ScalarProperty Name="RepairID" ColumnName="RepairID" />
+            <ScalarProperty Name="SparePartTypeID" ColumnName="SparePartTypeID" />
+            <ScalarProperty Name="SparePartProducer" ColumnName="SparePartProducer" />
+            <ScalarProperty Name="SparePartModel" ColumnName="SparePartModel" />
+            <ScalarProperty Name="SparePartCost" ColumnName="SparePartCost" />
+            <ScalarProperty Name="WorkCost" ColumnName="WorkCost" />
+            <ScalarProperty Name="IsRepair" ColumnName="IsRepair" />
+            <ScalarProperty Name="EventID" ColumnName="EventID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SparePartTypes"><EntityTypeMapping TypeName="VirtualGarageModel.SparePartType"><MappingFragment StoreEntitySet="SparePartTypes">
+            <ScalarProperty Name="SparePartTypeID" ColumnName="SparePartTypeID" />
+            <ScalarProperty Name="SparePartTypeName" ColumnName="SparePartTypeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserRoles"><EntityTypeMapping TypeName="VirtualGarageModel.UserRole"><MappingFragment StoreEntitySet="UserRoles">
+            <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+            <ScalarProperty Name="UserRoleName" ColumnName="UserRoleName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="VirtualGarageModel.User"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="UserNick" ColumnName="UserNick" />
+            <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+            <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+            <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Test" ZoomLevel="47">
+        <EntityTypeShape EntityType="VirtualGarageModel.CarcaseType" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.CarInGarage" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.CarMark" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.CarModel" Width="1.5" PointX="2.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Car" Width="1.5" PointX="4.75" PointY="0.75" Height="4.0956022135416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Color" Width="1.5" PointX="4.75" PointY="5.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Currency" Width="1.5" PointX="6.75" PointY="0.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Event" Width="1.5" PointX="0.75" PointY="6.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.EventType" Width="1.5" PointX="6.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Filling" Width="1.5" PointX="6.75" PointY="6.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.GearBoxType" Width="1.5" PointX="8.75" PointY="0.75" Height="1.4033821614583353" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Message" Width="1.5" PointX="2.75" PointY="8.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Place" Width="1.5" PointX="8.75" PointY="3.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.PlaceType" Width="1.5" PointX="8.75" PointY="6.75" Height="1.4033821614583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Reminder" Width="1.5" PointX="8.75" PointY="9.75" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.Repair" Width="1.5" PointX="10.75" PointY="0.75" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.SparePartType" Width="1.5" PointX="10.75" PointY="4.75" Height="1.4033821614583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.UserRole" Width="1.5" PointX="4.75" PointY="10.75" Height="1.4033821614583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualGarageModel.User" Width="1.5" PointX="10.75" PointY="7.75" Height="1.9802864583333388" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

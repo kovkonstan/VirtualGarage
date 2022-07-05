@@ -1,0 +1,85 @@
+﻿@model VirtualGarage.Models.AddEventModel
+
+@{
+    ViewBag.Title = "Добавить событие";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+
+
+
+
+
+@section GarageContent
+{
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/calendar/jquery-ui-1.8.16.custom.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.16.custom.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.ui.datepicker-ru.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/DatepickerFunctions.js")"></script>
+
+<script type="text/javascript">
+
+     $(document).ready(function () {
+
+         $("#ddlEventType").change(function () {
+             if ($(this).val() != "") {
+                 var idEvent = $(this).val();
+                 $("#ajax_loader_div").css('display', 'block');
+                 $("#ddlEventType").attr("disabled", true);
+
+                 $.ajax(
+                {
+                    type: "GET",
+                    url: "/Car/GetAddEventPartialView",
+                    data: "eventTypeID=" + idEvent + "&carID=" + @(Model.BaseModel.CarID),
+                    dataType: "html",
+                    success: function (result) {
+
+                        var domElement = $(result);
+                        $("#addEventContainer").replaceWith(domElement);
+
+                        datepickerInit();
+                    },
+                    complete: function () {
+                        $("#ajax_loader_div").css('display', 'none');
+                        $("#ddlEventType").attr("disabled", false);
+                    }
+                });
+             }
+         });
+     });
+</script>
+
+
+
+    <h2>Добавить событие</h2>
+
+        @Html.ValidationSummary(true)
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EventTypeID)
+            </div>
+            <div class="editor-field">            
+                @Html.DropDownListFor(model => model.EventTypeID,
+                    new List<SelectListItem>() 
+                    { 
+                        new SelectListItem()
+                        { 
+                            Selected = true, 
+                            Text = " - Выберите тип события - ",
+                            Value = ""
+                        }    
+                    }.Concat(Model.AllEventTypes),
+                    new Dictionary<String, Object>() 
+                    {
+                        {"id", "ddlEventType"}
+                    })                
+                @Html.ValidationMessageFor(model => model.EventTypeID)
+            </div>
+            <div id="ajax_loader_div">
+                <img src="@Url.Content("/Content/images/ajax_loader.gif")" alt="" id="ajax_loader_gif" />
+            </div>
+        
+            <div id="addEventContainer">
+            </div>
+    
+}

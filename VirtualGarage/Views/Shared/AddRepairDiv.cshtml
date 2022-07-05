@@ -1,0 +1,169 @@
+﻿@model VirtualGarage.Models.AddRepairDivModel
+           
+           
+<script type="text/javascript">
+
+    var SparePartsCount = @(Model.SpareParts == null ? 1 : Model.SpareParts.Count);
+
+    $(document).ready(function () {
+
+        $("#add_sparePart").click(function () {
+            $.ajax(
+            {
+                type: "GET",
+                url: "/Car/GetSparePartDiv",
+                data: "numberInPage=" + SparePartsCount,
+                dataType: "html",
+                success: function (result) {
+                    SparePartsCount++;
+                    var domElement = $(result);
+                    $("#SpareParts").append(domElement);
+
+                } 
+            });
+        });
+    });
+</script>
+
+<div id="addEventContainer">
+            
+    @using (Ajax.BeginForm("AddRepair", "Car",
+                                        null,
+                                        new AjaxOptions()
+                                        {
+                                            HttpMethod = "Post",
+                                            InsertionMode = InsertionMode.Replace,
+                                            UpdateTargetId = "addEventContainer"
+                                        }))
+    {    
+        @Html.ValidationSummary(true)  
+        @Html.HiddenFor(model => model.EventTypeID)
+        @Html.HiddenFor(model => model.CarID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Date,
+                new Dictionary<String, Object>() 
+                        { 
+                            { "class", "datepicker" }
+                        })
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlaceID)
+        </div>
+        <div class="editor-field">
+            <span>Введите новое место </span>
+            @Html.EditorFor(model => model.NewPlaceName)
+            <br />
+            <span> или выберите из списка ранее введенных Вами мест </span>
+            @Html.DropDownListFor(model => model.PlaceID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите место проведения - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllEventPlaces))                 
+            <br />      
+            @Html.ValidationMessageFor(model => model.PlaceID)
+            @Html.ValidationMessageFor(model => model.NewPlaceName)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mileage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mileage)
+            @Html.ValidationMessageFor(model => model.Mileage)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrencyID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CurrencyID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите валюту - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllCurrences))                
+            @Html.ValidationMessageFor(model => model.CurrencyID)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GeneralCost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GeneralCost)
+            @Html.ValidationMessageFor(model => model.GeneralCost)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EventComments)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EventComments)
+            @Html.ValidationMessageFor(model => model.EventComments)
+        </div>
+        
+        <div class="editor-label">
+            <p>Добавить напоминание, связанное с событием</p>
+        </div>
+       
+        <div class="editor-field">            
+            @Html.EditorFor(model => model.IsAddReminderByDays)
+            @Html.LabelFor(model => model.IsAddReminderByDays)
+            @Html.EditorFor(model => model.CountOfDaysForRemind)
+            <span> дней</span>
+            @Html.ValidationMessageFor(model => model.CountOfDaysForRemind)
+        </div>
+        
+       if (Model.IsKnownMileage)
+       {        
+            <div class="editor-field">            
+                @Html.EditorFor(model => model.IsAddReminderByMileage)
+                @Html.LabelFor(model => model.IsAddReminderByMileage)
+                @Html.EditorFor(model => model.CountOfMileageForRemind)
+                <span> км</span>
+                @Html.ValidationMessageFor(model => model.CountOfMileageForRemind)
+            </div>
+        
+            <p class="red_text">*Выполнится первое сработавшее напоминание</p>
+       }   
+        
+        <div id="SpareParts">
+            @if (Model.SpareParts == null || Model.SpareParts.Any())
+            {
+                @Html.Partial("SparePartDiv", new VirtualGarage.Models.SparePartModel(0))                
+            }
+            else
+            {
+                Int32 index = 0;
+                foreach (var item in Model.SpareParts)
+                {
+                    item.NumberInPage = index;
+                    index++;
+                    @Html.Partial("SparePartDiv", item) 
+                }
+            }
+            
+        </div>
+        
+        <span id="add_sparePart"> Еще одна запчасть</span>
+    
+        <p>
+            <input type="submit" value="Добавить событие" class="button" />
+        </p>
+    }
+</div>
+

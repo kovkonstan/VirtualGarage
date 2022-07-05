@@ -1,0 +1,67 @@
+﻿@model VirtualGarage.Models.GarageStatisticModel
+
+@{
+    ViewBag.Title = "Общая статистика пробега и расходов";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Общая статистика пробега и расходов</h2>
+
+    <ul class="MileageStatistic">
+        <li>
+            <h4> Средний пробег в месяц для гаража</h4> @Html.DisplayFor(model => model.MileageInMonth)<span> км.</span>
+        </li>
+@*        <li>
+            <h4>Пробег по годам</h4>
+            <p>Год:                
+                @Html.DropDownList("MonthMileageYear", 
+                                        Model.EventsYears)
+            </p>
+            <div id="chart_month_mileage_div" style="width: 600px; height: 500px;"></div>
+        </li>*@
+    </ul>
+
+    <h2>Статистика расходов</h2>
+    <div class="actions">   
+        <div class="action_ddl">
+            <span>Показать события:</span>
+        
+            @Html.DropDownListFor(model => model.EventTypeID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = "Все",
+                        Value = "0"
+                    }    
+                }.Concat(Model.AllEventTypes),
+                new Dictionary<String, Object>() 
+                {
+                    {"id", "ddlEventType"}
+                })               
+                           
+            <div id="ajax_loader_div">
+                <img src="@Url.Content("/Content/images/ajax_loader.gif")" alt="" id="ajax_loader_gif" />
+            </div>
+
+        </div>    
+    </div>
+    
+
+        <div class="table_left_header" id="statistic_table">
+            <table>       
+                <tr>
+                    <th>Всего затрачено: </th>
+                    <td>                        
+                        @foreach (var item in Model.GeneralCostsByCurrency)
+                        {
+                            @Html.Label("GeneralCost", item)  
+                            <br />                      
+                        }                        
+                    </td>
+                </tr>                               
+            </table>
+
+
+        </div>

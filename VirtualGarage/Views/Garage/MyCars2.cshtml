@@ -1,0 +1,112 @@
+﻿@model IEnumerable<VirtualGarage.Logic.DataModel.Car>
+
+@{
+    ViewBag.Title = "MyCars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MyCars</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            CarModelID
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            ColorID
+        </th>
+        <th>
+            FuelTypeID
+        </th>
+        <th>
+            CarcaseTypeID
+        </th>
+        <th>
+            GearBoxID
+        </th>
+        <th>
+            EngineVolume
+        </th>
+        <th>
+            BuyDate
+        </th>
+        <th>
+            CurrencyID
+        </th>
+        <th>
+            Mileage
+        </th>
+        <th>
+            MonthMileage
+        </th>
+        <th>
+            Comment
+        </th>
+        <th>
+            CarVisible
+        </th>
+        <th>
+            CarIsReadOnly
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarModelID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelTypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarcaseTypeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GearBoxID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EngineVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrencyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthMileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarVisible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarIsReadOnly)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CarID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarID })
+        </td>
+    </tr>
+}
+
+</table>

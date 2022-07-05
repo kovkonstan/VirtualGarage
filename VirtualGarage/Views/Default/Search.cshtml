@@ -1,0 +1,137 @@
+﻿@model VirtualGarage.Models.SearchModel
+
+@{
+    ViewBag.Title = "Поиск";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Поиск</h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#ddlMarks").change(function () {
+            $("#ddlModels").attr("disabled", false);
+            if ($(this).val() != "") {
+                var idMark = $(this).val();
+
+                $.getJSON("/Garage/GetModelsByMark", { markId: idMark },
+                function (markData) {
+                    var select = $("#ddlModels");
+                    select.empty();
+                    select.append($('<option/>', {
+                        value: 0,
+                        text: " - Выберите модель - "
+                    }));
+                    $.each(markData, function (index, itemData) {
+                        select.append($('<option/>', {
+                            value: itemData.Value,
+                            text: itemData.Text
+                        }));
+                    });
+                });
+            }
+            else {
+                $("#ddlModels :first").attr("selected", "selected");
+                $("#ddlModels").attr("disabled", true);
+            }
+        });
+    });
+
+</script>
+
+@*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>*@
+
+@using (Html.BeginForm())
+{
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MarkID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.MarkID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите марку - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllMarks),
+                new Dictionary<String, Object>() 
+                {
+                    {"id", "ddlMarks"}
+                })
+            @Html.ValidationMessageFor(model => model.MarkID)
+        </div>                
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModelID)
+        </div>
+        <div class="editor-field">            
+            @Html.DropDownListFor(model => model.ModelID,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите модель - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.AllModels),
+
+                new Dictionary<String, Object>() 
+                {
+                    {"id", "ddlModels"},
+                    {"disabled", "true"}
+                })
+            @Html.ValidationMessageFor(model => model.ModelID)
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LowYear)
+        </div>
+        <div class="editor-field">
+            От @Html.DropDownListFor(model => model.LowYear,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите год выпуска - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.GetAllYears()))
+            <br />
+            <br />
+            до @Html.DropDownListFor(model => model.HighYear,
+                new List<SelectListItem>() 
+                { 
+                    new SelectListItem()
+                    { 
+                        Selected = true, 
+                        Text = " - Выберите год выпуска - ",
+                        Value = ""
+                    }    
+                }.Concat(Model.GetAllYears()))
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LowMileage)
+        </div>
+        <div class="editor-field">
+            От @Html.EditorFor(model => model.LowMileage)
+            <br />
+            <br />
+            до @Html.EditorFor(model => model.HighMileage)
+        </div>
+
+
+
+        <p class="button">
+            <input type="submit" value="Поиск" />
+        </p>
+}
+

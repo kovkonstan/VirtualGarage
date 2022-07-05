@@ -1,0 +1,118 @@
+﻿@model VirtualGarage.Models.CalendarModel
+
+@{
+    ViewBag.Title = "Календарь";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+@section Head
+{
+    <link rel='stylesheet' type='text/css' href='@Url.Content("~/Scripts/fullcalendar/fullcalendar.css")' />
+    <script type='text/javascript' src='@Url.Content("~/Scripts/jquery-ui-1.8.11.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/fullcalendar/fullcalendar.min.js")'></script>
+
+    <script type='text/javascript'>
+        
+        $(document).ready(function () {
+            var data;
+
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "/Default/GetReminders",
+                    success: function (markData) {
+
+                        data = markData;
+                    
+                        var reminders = new Array(data.length);
+                        $.each(data, function (index, itemData) {
+                            var st = itemData.StartDateTime;
+                            var fin = itemData.FinishDateTime;
+
+                            reminders[index] =
+                                {
+                                    id: itemData.Id,
+                                    title: itemData.Title,
+                                    start: new Date(st[2], st[1] - 1, st[0], st[3], st[4]),
+                                    end: new Date(fin[2], fin[1] - 1, fin[0], fin[3], fin[4]),
+                                    allDay: itemData.AllDay,
+                                    backgroundColor: ( itemData.IsNeedRemind ? "red" : "green")
+                                };
+                        });     
+
+                        var date = new Date();
+                        var d = date.getDate();
+                        var m = date.getMonth();
+                        var y = date.getFullYear();
+
+                        var calendar = $('#calendar').fullCalendar({
+                            firstDay: 1,
+                            header: {
+                                left: 'prev,next today',
+                                center: 'title',
+                                right: 'month,agendaWeek,agendaDay'
+                            },
+
+
+                            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                            monthNamesShort: ['Янв.', 'Фев.', 'Март', 'Апр.', 'Май', 'Июнь', 'Июль', 'Авг.', 'Сент.', 'Окт.', 'Ноя.', 'Дек.'],
+                            dayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+                            dayNamesShort: ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"],
+                            buttonText: {
+                                prev: "&nbsp;&#9668;&nbsp;",
+                                next: "&nbsp;&#9658;&nbsp;",
+                                prevYear: "&nbsp;&lt;&lt;&nbsp;",
+                                nextYear: "&nbsp;&gt;&gt;&nbsp;",
+                                today: "Сегодня",
+                                month: "Месяц",
+                                week: "Неделя",
+                                day: "День"
+                            },
+
+                            disableDragging : true,
+                            disableResizing : true,
+                            selectable: true,
+                            selectHelper: true,
+                            select: function (start, end, allDay) {
+                                window.location.replace("@Url.Action("AddReminder", "Default")" 
+                                                            + "?stTime=" + start 
+                                                            + "&finTime=" + end
+                                                            + "&allDay=" + allDay);
+
+                                calendar.fullCalendar('unselect');
+                            },
+                            eventClick: function( event, jsEvent, view ) {
+                                window.location.replace("@Url.Action("ReminderInfo", "Default")" 
+                                                            + "?reminderID=" + event.id); 
+                            },
+                            editable: true,
+                            events: reminders 
+                        });
+                    }
+                });
+        });
+
+    </script>
+
+
+
+    <style type='text/css'>
+	    #calendar {
+		    width: 675px;
+		    margin: 0 auto;
+		    }
+    </style>
+
+}
+
+<h2>Календарь</h2>
+
+<p>Нажмите на нужную дату, чтобы добавить событие</p>
+<p>
+    <span class="red_text">Красным цветом</span> выделены не выполненные события<br />
+    <span class="green_text">Зеленым цветом</span> выделены выполненные события    
+</p>
+<br />
+
+<div id='calendar'></div>
+

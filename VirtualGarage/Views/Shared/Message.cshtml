@@ -1,0 +1,27 @@
+﻿@model VirtualGarage.Models.MessageWithRedirectModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" href="@Url.Content("~/Content/favicon.ico")" type="image/x-icon" />  
+    <script src="@Url.Content("~/Scripts/jquery-1.5.1.js")" type="text/javascript"></script>
+    <title>Сообщение</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert('@Model.Message');
+            window.location.replace("@Url.Action(Model.ActionName, Model.ControllerName, Model.RouteValueDictionary)");
+            
+        });
+</script>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

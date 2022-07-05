@@ -1,0 +1,296 @@
+*
+{
+    margin: 0;
+    padding:0;
+    }
+    
+a:visited
+{
+    color: inherit;
+    }
+    
+a:hover
+{
+    color: Red;
+    }
+
+#wrapper
+{
+    width:80%;
+    background-color:Gray;
+    margin: 0 auto;
+    }
+    
+#header
+{
+    height: 100px;
+    background-color: #FFFF99;
+    color: #333333;
+    font-size: 50px;
+    font-weight:bold;
+    padding: 30px 0 30px 100px;
+    }
+    
+#login_user_info
+{
+    color: #333333;
+    font-size: 12px;
+    font-weight:normal;
+    float: right;
+    margin-right: 50px;
+    margin-top: -20px;
+    }
+    
+#login
+{
+    background-color:Aqua;
+    padding: 10px;
+    position: relative;
+    overflow: auto;
+    }
+    
+#private_office
+{
+    background-color: Yellow;
+    padding: 10px;
+    position: relative;
+    overflow: auto;    
+    }
+    
+#top_menu
+{
+    background-color: Purple;
+    width: 100%;
+    overflow: auto;
+    }
+    
+#left_menu
+{
+    background-color:Lime;
+    float: left;
+    max-width: 200px;
+    width: 25%;
+    height: 100%;
+    
+    }
+    
+#main_content
+{
+    background-color: Olive;
+    float: left;
+    width: 75%;
+    min-height: 600px;
+    padding: 10px;
+    }
+    
+#footer
+{
+    background-color: Orange;
+    min-height: 50px;
+    }
+    
+#container
+{
+    overflow: auto;
+    }
+    
+#content
+{
+    }
+    
+input#but_login
+{
+    margin: 3px 0 0 0;
+    float:right;
+    }
+    
+.top_menu_item
+{
+    float: left;
+    background-color: White;
+    padding:3px;
+    margin: 0 2px; 
+    }
+    
+ul#car_list
+{
+    padding-left:25px;
+    }
+    
+a.private_office_item
+{
+    padding-left:5px;
+    width: 100%;
+    cursor:pointer;
+    display:block;
+    width:100%;
+    text-decoration:none;
+    }
+    
+.car_item
+{
+    height: 120px;
+    margin: 10px 5px 0 5px;
+    background-color: #CCCCCC;
+    padding: 15px;    
+    }
+    
+.car_img
+{
+    height: 120px;
+    width: 120px;
+    background-color: Lime;
+    float:left;
+    margin-right: 15px;
+    }
+    
+#tab_menu
+{
+    overflow:auto;    
+    }
+    
+.tab_menu_item
+{
+    float:left;
+    margin-right: 3px;
+    padding: 5px;
+    background-color: Gray;
+    }
+    
+.tab_menu_item_current
+{
+    float:left;
+    margin-right: 3px;
+    padding: 5px;
+    background-color: White;
+    }
+    
+#tab_wrapper
+{
+    overflow:auto;
+    margin-top: 10px;
+    }
+    
+#tab_content
+{
+    background-color: White;
+    padding: 7px;
+    
+    }
+    
+fieldset
+{
+    
+    }
+    
+#event_actions
+{
+    overflow: auto;
+    }
+    
+.event_action
+{
+    margin: 3px;
+    padding: 3px;
+    float:left;
+    background-color: Orange;
+    }
+    
+#actions
+{
+    overflow: auto;
+    }
+    
+.action
+{
+    margin: 3px;
+    padding: 3px;
+    float:left;
+    background-color: Orange;
+    }
+
+
+
+
+
+
+/* --------------------------------------------------------
+---Автоматически сгенерированные свойства------------------
+-----------------------------------------------------------*/
+
+
+body
+{
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:20px 1.4em 1.4em 1.4em;
+    margin:0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 3px 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}

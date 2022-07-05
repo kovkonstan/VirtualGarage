@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Сообщения</h2>
+
+    <div class="actions">
+        @Html.DropDownList("Select", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выделить",Value=""},
+                                    new SelectListItem() {Text="Все",Value=""},
+                                    new SelectListItem() {Text="Ни одного",Value=""},
+                                    new SelectListItem() {Text="Прочитанные",Value=""},
+                                    new SelectListItem() {Text="Непрочитанные",Value=""}
+                                }
+                ) 
+        @Html.DropDownList("Action", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите действие",Value=""},
+                                    new SelectListItem() {Text="Удалить",Value=""},
+                                    new SelectListItem() {Text="Отметить как прочитанное",Value=""},
+                                    new SelectListItem() {Text="Отметить как непрочитанное",Value=""}
+                                }
+                ) 
+
+    </div>
+
+    <div id="tab_wrapper">
+        <div id="tab_menu">
+            <div class=@(Model.PageName == "IncomingMessages" ? "tab_menu_item_current" : "tab_menu_item")> 
+                @Html.ActionLink("Полученные", "IncomingMessages", "Default")
+            </div>
+            <div class=@(Model.PageName == "OutgoingMessages" ? "tab_menu_item_current" : "tab_menu_item")> 
+                @Html.ActionLink("Отправленные", "OutgoingMessages", "Default")
+            </div>
+        </div>
+        <div id="tab_content">
+
+            @RenderSection("MessagesContent")
+
+        </div>
+    </div>

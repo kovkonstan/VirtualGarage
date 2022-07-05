@@ -1,0 +1,10 @@
+﻿@model VirtualGarage.Models.MessageWithRedirectModel
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert('@Model.Message');
+        window.location.replace("@Url.Action(Model.ActionName, Model.ControllerName, Model.RouteValueDictionary)");
+        //window.location.replace("@Url.Action("Events", "Car", new RouteValueDictionary() { {"carID", Model} })");
+    });
+</script>
+
+

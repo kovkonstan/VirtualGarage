@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Информация об автомобиле";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ваз 2111</h2>
+
+<div class="actions">
+    <div class="action">@Html.ActionLink("Редактировать", "EditCar", "Garage")</div>
+    <div class="action">@Html.ActionLink("Доверить", "Trust", "Garage")</div>
+    <div class="action">@Html.ActionLink("Передать", "Transmit", "Garage")</div>
+    <div class="action">@Html.ActionLink("Удалить", "DeleteCar", "Garage")</div>
+</div>
+
+<div id="garage_wrapper">
+    <div id="car_menu">
+        <div class="car_menu_item_current"> @Html.ActionLink("Информация", "CarInfo")</div>
+        <div class="car_menu_item"> @Html.ActionLink("События", "Events")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Статистика", "Statistics")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Расход топлива", "Consumption")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Стоимость авто", "CarCost")</div>
+        <div class="car_menu_item"> @Html.ActionLink("Фото", "Photo")</div>
+    </div>
+    <div id="garage_content">
+
+    <div class="photo">
+                <img height="200" width="200" src="../../Content/Samples/sample_img.jpg" alt="" />
+            </div>
+    <div id="table_cars">
+        <table>
+                <tr>
+                    <td>Марка: </td>
+                    <td>Ваз</td>
+                </tr>
+                <tr>
+                    <td>Модель:</td>
+                    <td>2110</td>
+                </tr>
+                <tr>
+                    <td>Год выпуска:</td>
+                    <td>2010</td>
+                </tr>
+                <tr>
+                    <td>Цвет</td>
+                    <td>Белый</td>
+                </tr>
+                <tr>
+                    <td>Тип топлива:</td>
+                    <td>АИ-95</td>
+                </tr>
+                <tr>
+                    <td>Тип кузова:</td>
+                    <td>Седан</td>
+                </tr>
+                <tr>
+                    <td>Тип коробки передач:</td>
+                    <td>Ручная</td>
+                </tr>
+                <tr>
+                    <td>Объем двигателя:</td>
+                    <td>1600 см<sup>3</sup></td>
+                </tr>
+                <tr>
+                    <td>Дата покупки:</td>
+                    <td>21.12.2010</td>
+                </tr>
+                <tr>
+                    <td>Валюта:</td>
+                    <td>Рубль</td>
+                </tr>
+                <tr>
+                    <td>Текущий пробег:</td>
+                    <td>10000 км.</td>
+                </tr>
+                <tr>
+                    <td>Средний пробег в месяц:</td>
+                    <td>1000 км.</td>
+                </tr>
+                <tr>
+                    <td>Дополнительные характеристики:</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "Редактировать автомобиль";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Редактировать автомобиль</h2>
+    
+    @using(Html.BeginForm()) {
+           
+            <div class="editor-label">
+                Марка:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Mark", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите марку",Value=""},
+                                    new SelectListItem() {Text="Другая",Value=""},
+                                    new SelectListItem() {Text="Ваз",Value=""},
+                                    new SelectListItem() {Text="Газ",Value=""}
+                                }
+                )                               
+            </div>
+
+            <div class="editor-label">
+                Модель:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Model", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите модель",Value=""},
+                                    new SelectListItem() {Text="Другая",Value=""},
+                                    new SelectListItem() {Text="2111",Value=""},
+                                    new SelectListItem() {Text="2105",Value=""}
+                                }
+                )                                
+            </div>
+
+            <div class="editor-label">
+                Год выпуска:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Year", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="2008",Value=""},
+                                    new SelectListItem() {Text="2009",Value=""},
+                                    new SelectListItem() {Text="2010",Value=""},
+                                    new SelectListItem() {Text="2011",Value=""}
+                                }
+                )                                
+            </div>
+
+            <div class="editor-label">
+                Цвет:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Color", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите цвет",Value=""},
+                                    new SelectListItem() {Text="Другой",Value=""},
+                                    new SelectListItem() {Text="Белый",Value=""},
+                                    new SelectListItem() {Text="Красный",Value=""}
+                                }
+                )                                
+            </div>
+
+            <div class="editor-label">
+                Тип топлива:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("FuelType", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите тип топлива",Value=""},
+                                    new SelectListItem() {Text="АИ-80",Value=""},
+                                    new SelectListItem() {Text="АИ-92",Value=""},
+                                    new SelectListItem() {Text="АИ-95",Value=""}
+                                }
+                )                         
+            </div>
+
+            <div class="editor-label">
+                Тип кузова:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("CarcaseType", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите тип кузова",Value=""},
+                                    new SelectListItem() {Text="Седан",Value=""},
+                                    new SelectListItem() {Text="Хэчбэк",Value=""},
+                                    new SelectListItem() {Text="Фургон",Value=""}
+                                }
+                )                               
+            </div>
+
+            <div class="editor-label">
+                Тип коробки передач:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Mark", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите тип",Value=""},
+                                    new SelectListItem() {Text="Автомат",Value=""},
+                                    new SelectListItem() {Text="Ручная",Value=""}
+                                }
+                )                             
+            </div>
+
+            <div class="editor-label">
+                Объем двигателя:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("EngineVolume") куб. см.
+            </div> 
+            
+            <div class="editor-label">
+                Дата покупки:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("BuyDate")
+            </div>       
+
+            <div class="editor-label">
+                Валюта:
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Currency", 
+                        new List<SelectListItem>()
+                                {
+                                    new SelectListItem() {Text="Выберите валюту",Value=""},
+                                    new SelectListItem() {Text="Рубли",Value=""},
+                                    new SelectListItem() {Text="Доллары",Value=""},
+                                    new SelectListItem() {Text="Евро",Value=""}
+                                }
+                )                             
+            </div>
+
+            <div class="editor-label">
+                Текущий пробег:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Mileage")
+            </div>    
+
+            <div class="editor-label">
+                Средний пробег в месяц:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("MonthMileage")
+            </div>  
+            
+            <div class="editor-label">
+                Дополнительные характеристики:
+            </div>
+            <div class="editor-field">
+                @Html.TextArea("AdditionalFeatures")
+            </div>    
+            
+            <div class="editor-label">
+                Фото:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Photo")
+            </div>
+            
+            <br />
+
+            <p>
+                <input class="button" type="submit" value="Добавить автомобиль" />
+            </p>
+    }
+
+

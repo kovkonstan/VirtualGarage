@@ -1,0 +1,48 @@
+﻿@model VirtualGarage.Models.PhotoModel
+@{
+    ViewBag.Title = "Фото";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+@section GarageContent
+{
+    @Html.HiddenFor(model => model.BaseModel.CarID)
+    <div class="actions">   
+        @if (Model.BaseModel.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Own)
+        { 
+            using (Html.BeginForm("DeletePhoto", "Car", FormMethod.Post))
+            {
+                @Html.HiddenFor(model => model.BaseModel.CarID)
+                <p>
+                    <input type="submit" value="Удалить фото" class="button" />                         
+                </p>
+            }
+        }
+        <br /> 
+
+    </div>
+        <div class="info_photo">
+        @if (Model.ImageType != null)
+        {
+            <img class="info_img" src="@Url.Action("GetImage", "Car", new { carID = Model.BaseModel.CarID })" alt="" />                
+        }
+        else
+        {
+            <img class="info_img" src="@Url.Content("/Content/Samples/sample_img.jpg")" alt="" />                
+        }
+
+        @if (Model.BaseModel.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Own)
+        {
+            using (Html.BeginForm("Photo", "Car", FormMethod.Post, new { enctype="multipart/form-data" } ))
+            {
+                @Html.ValidationSummary(true);
+                @Html.HiddenFor(model => model.BaseModel.CarID)
+                <p>
+                Изменить фото:
+                    <input type="file" name="photo" />
+                    <input type="submit" value="Изменить" class="button" />          
+                </p>
+            }
+        }
+                
+    </div>
+}

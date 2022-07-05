@@ -1,0 +1,69 @@
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll.config
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.pdb
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.dll
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.dll
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.dll
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.pdb
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.pdb
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.xml
+D:\Коваленко\SVN\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.pdb
+D:\Коваленко\SVN\VirtualGarage.Logic\obj\Debug\ResolveAssemblyReference.cache
+D:\Коваленко\SVN\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.dll
+D:\Коваленко\SVN\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll.config
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.xml
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.pdb
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.dll
+C:\Users\Kokos\Desktop\Project\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll.config
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.xml
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll.config
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\EntityFramework.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\EntityFramework.xml
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.xml
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.csprojResolveAssemblyReference.cache
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.dll
+C:\Users\KOKOS\Desktop\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll.config
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\VirtualGarage.Logic.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\EntityFramework.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\InostudioSolutions.Data.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\EntityFramework.xml
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.xml
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\bin\Debug\TmpLabs.DataEngine.EF.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.csprojResolveAssemblyReference.cache
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\VirtualGarage.Logic\obj\Debug\VirtualGarage.Logic.pdb

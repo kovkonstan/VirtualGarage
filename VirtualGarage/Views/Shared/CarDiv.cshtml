@@ -1,0 +1,79 @@
+﻿@model VirtualGarage.Models.CarModel
+
+
+    <div class="car_item">
+        <div class="car_img">
+            @if (Model.ImageType != null)
+            {
+                <img src="@(Url.Action("GetImage", "Car", new { Model.CarID }))" alt="" />
+            }
+            else
+            {
+                <img src="@Url.Content("/Content/Samples/sample_img.jpg")" alt="" />
+            }
+        </div>
+        <h3> @Html.ActionLink(Model.MarkName + " " + Model.ModelName + " " + Model.Year,
+                        "CarInfo",
+                        "Car",
+                        new RouteValueDictionary()
+                        {
+                            {"carID", Model.CarID}                            
+                        },
+                        new Dictionary<String, Object>() 
+                        {
+                        })
+        </h3>
+        @if (Model.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Transmitted)
+        {
+            <span class="small_text">
+                *Автомобиль был передан другому пользователю. Вы не можете изменять его.
+            </span>            
+        }
+        
+        @if (Model.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Manage)
+        {
+            <span class="small_text">
+                *Автомобиль был доверен Вам. Вы можете редактировать его события.
+            </span>            
+        }
+
+        <br />
+        @Html.ActionLink("События", "Events", "Car", new RouteValueDictionary() { {"carID", Model.CarID} }, null) <br />
+        @Html.ActionLink("Статистика", "Statistics", "Car", new RouteValueDictionary() { { "carID", Model.CarID } }, null) <br />
+
+        @if (Model.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Own)
+        {
+            @Html.ActionLink("Редактировать", "EditCar", "Garage",
+                                new RouteValueDictionary() 
+                                {
+                                    {"carID", Model.CarID}
+                                },
+                                null) <br />
+            @Ajax.ActionLink("Удалить", "DeleteCar", "Garage",
+                             new RouteValueDictionary() { { "carID", Model.CarID }, { "pageStr", Request.Params["page"] } },
+                    new AjaxOptions()
+                    {
+                        Confirm = ("Вы действительно хотите удалить автомобиль?"),
+                        HttpMethod = "Post",
+                        UpdateTargetId = "cars_list"
+                    },
+                    null)
+            <br /> 
+            
+        }
+        else if (Model.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Manage ||
+                 Model.UserAcces == VirtualGarage.Logic.Enums.UserAccesOnCar.Transmitted)
+        {
+            @Ajax.ActionLink("Удалить из гаража", "DeleteCar", "Garage",
+                             new RouteValueDictionary() { { "carID", Model.CarID }, { "pageStr", Request.Params["page"] } },
+                    new AjaxOptions()
+                    {
+                        Confirm = ("Вы действительно хотите удалить автомобиль?"),
+                        HttpMethod = "Post",
+                        UpdateTargetId = "cars_list"
+                    },
+                    null)
+            <br />            
+        }
+
+    </div>

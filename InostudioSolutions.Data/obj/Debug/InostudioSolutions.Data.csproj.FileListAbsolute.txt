@@ -1,0 +1,29 @@
+D:\Коваленко\SVN\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.dll
+D:\Коваленко\SVN\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.pdb
+D:\Коваленко\SVN\InostudioSolutions.Data\obj\Debug\ResolveAssemblyReference.cache
+D:\Коваленко\SVN\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.dll
+D:\Коваленко\SVN\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.pdb
+C:\Users\Kokos\Desktop\Project\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\Kokos\Desktop\Project\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\Kokos\Desktop\Project\InostudioSolutions.Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kokos\Desktop\Project\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.dll
+C:\Users\Kokos\Desktop\Project\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\InostudioSolutions.Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.dll
+C:\Users\Kokos.Kokos-ПК\Desktop\vg_svn\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.dll
+C:\Users\KOKOS\Desktop\Virtual garage\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.pdb
+C:\Users\KOKOS\Desktop\Virtual garage\InostudioSolutions.Data\bin\Debug\EntityFramework.dll
+C:\Users\KOKOS\Desktop\Virtual garage\InostudioSolutions.Data\bin\Debug\EntityFramework.xml
+C:\Users\KOKOS\Desktop\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.csprojResolveAssemblyReference.cache
+C:\Users\KOKOS\Desktop\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.dll
+C:\Users\KOKOS\Desktop\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\bin\Debug\InostudioSolutions.Data.pdb
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\bin\Debug\EntityFramework.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\bin\Debug\EntityFramework.xml
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.csprojResolveAssemblyReference.cache
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.dll
+G:\_ДОКУМЕНТЫ\_ДИПЛОМ\Virtual garage\InostudioSolutions.Data\obj\Debug\InostudioSolutions.Data.pdb

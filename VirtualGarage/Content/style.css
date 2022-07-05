@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+} 
+
+body {
+background: #F2F1E9;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 12px;
+padding: 0;
+margin: 0;
+color: #666;
+line-height: 17px;
+}
+
+img { border: none; }
+a { color: #FF7400; }
+a:hover { text-decoration: none; color : #444; }
+
+#wrap {
+background: #fff;
+width: 920px;
+margin: 5px auto 0 auto;
+padding: 0 10px;
+}
+
+#header {
+height: 130px;
+line-height: 60px;
+}
+#header h1 {
+font-size: 38px;
+font-weight: 600;
+letter-spacing: -4px;
+}
+#header h1 a {
+color: #FF7400;
+text-decoration: none;
+}
+#header h1 a:hover {
+color: #000;
+text-decoration: none;
+}
+.headerleft {
+float: left;
+}
+.headerright {
+float: right;
+font-weight: 600;
+color: #000;
+}
+
+#menu {
+margin-top: 5px;
+height: 30px;
+line-height: 30px;
+background: #FFCC33 url(images/menu.gif) no-repeat;
+}
+#menu li
+{
+float: left;
+list-style-type: none;
+padding-right: 10px;
+}
+#menu li a{ 
+color: #fff;
+font-weight: 600;
+display: block;
+text-decoration: none;
+padding: 0 10px;
+}
+#menu li a:hover {
+background: #FA9C39 url(images/menuover.gif) repeat-x;
+}
+#menu ul { padding-left: 1px;}
+
+#content {
+margin-top: 10px;
+}
+.right {
+float: right;
+width: 700px;
+}
+.right h2 {
+color: #FF7400;
+font-size: 24px;
+letter-spacing: -3px;
+font-weight: 100;
+padding : 10px 0 15px 0;
+}
+.right h2 a {
+color: #FF7400;
+}
+.right h2 a:hover {
+color: #333;
+}
+
+.left {
+float: left; 
+width: 210px;
+border: 1px solid #EBE8DB;
+background: #FAF9F4;
+padding-bottom: 10px;
+}
+.left h2 { color: #FF7400; padding: 15px 0 5px 10px; font-size: 20px; letter-spacing: -1px; font-weight: 100;}
+.left ul { padding: 10px 0 10px 30px; list-style-type: square; }
+.left ul li { padding-bottom: 5px; }
+.left ul li a { color: #777; text-decoration: none;  }
+.left ul li a:hover { color: #FF7400; }
+
+#footer {
+font-size: 11px;
+color: #aaa;
+text-align: center;
+padding: 10px 0;
+margin: 20px 0;
+border-top: 1px solid #ccc;
+}
+#footer a { 
+color: #aaa;
+}
+#footer a:hover {
+color: #aaa; 
+text-decoration: underline; 
+}
+
+/* --------------------------------------------------------
+-----------------------------------------------------------*/
+
+#login
+{
+    line-height: 17px;
+    overflow: auto;
+    position: relative;
+    border-left: 1px solid #FFCC99;
+    border-right: 1px solid #FFCC99;
+    padding: 0 10px;
+    
+    }

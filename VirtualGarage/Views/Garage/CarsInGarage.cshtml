@@ -1,0 +1,31 @@
+﻿@model VirtualGarage.Models.CarsInGarageModel
+
+@{
+    ViewBag.Title = "Гараж";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Гараж</h2>
+<div id="cars_in_garage">
+    @if (Model.IsMyGarage)
+    {
+        <div class="actions">
+            <div class="action">
+                @Html.ActionLink("Добавить автомобиль", "AddCar")
+            </div>
+        </div>
+        
+        <div id="garage-statistic-actions">
+            @Html.ActionLink("Общая статистика пробега и расходов", "GarageStatistic", null,
+                new Dictionary<String, Object>() { {"id", "garage-mileage-statistic"} }) <br />
+            @Html.ActionLink("Общая статистика расхода топлива", "GarageConsumptionStatistic", null,
+                new Dictionary<String, Object>() { {"id", "garage-consumption-statistic"} })
+        </div>
+    }
+    
+    @Html.ValidationSummary(true)
+    <div id="cars_list">
+        @Html.Partial("CarsDiv", Model)
+    </div>
+
+</div>

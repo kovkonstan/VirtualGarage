@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Регистрация</h2>
+    <p>
+        Используйте следующую форму для создания новой учетной записи. 
+    </p>
+    <p>
+        Длина пароля должна составлять не менее 6 знаков.
+    </p>
+
+    @using(Html.BeginForm()) {
+        
+        @Html.ValidationSummary(true, "Не удалось создать учетную запись. Исправьте ошибки и повторите попытку.")
+            
+            <div class="editor-label">
+                Имя пользователя:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("NickName")
+            </div>
+
+            <div class="editor-label">
+                Email:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Email")
+            </div>           
+            
+            <div class="editor-label">
+                Пароль:
+            </div>
+            <div class="editor-field">
+                @Html.Password("Password")
+            </div>
+            
+            <div class="editor-label">
+                Подтверждение пароля:
+            </div>
+            <div class="editor-field">
+                @Html.Password("ConfirmPassword")
+            </div>
+            
+            <div class="editor-label">
+                Введите символы с картинки:
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Captcha")
+            </div>
+
+            <div class="editor-label">
+                @Html.CheckBox("IsReadRules")
+                Я прочитал и обязуюсь соблюдать @Html.ActionLink("Правила сайта", "")
+            </div>
+            
+            <p>
+                <input class="button" type="submit" value="Регистрация" />
+            </p>
+    }

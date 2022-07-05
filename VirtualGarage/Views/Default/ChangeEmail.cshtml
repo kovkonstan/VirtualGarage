@@ -1,0 +1,23 @@
+﻿@model VirtualGarage.Models.ChangeEmailModel
+
+@{
+    ViewBag.Title = "Изменить E-mail";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Изменить E-mail</h2>
+
+@using(Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Не удалось изменить E-mail");
+    <div class="editor-label">
+        Введите новый E-mail:
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.NewEmail)
+        @Html.ValidationMessageFor(model => model.NewEmail)
+    </div>
+
+    <input class="button" type="submit" value="Сменить E-mail" />
+
+}

@@ -1,0 +1,33 @@
+﻿@model VirtualGarage.Models.TransmitCarModel
+
+@{
+    ViewBag.Title = "Передать автомобиль";
+    Layout = "~/Views/Shared/Layouts/_Layout_Garage.cshtml";
+}
+
+@section GarageContent
+{
+<h2>Передать автомобиль</h2>
+
+    @Html.ValidationSummary(true, "Не удалось доверить автомобиль")
+
+    <p>Введите E-mail пользователя, которому вы хотите передать ваш автомобиль. 
+    Если пользователь с таким E-mail'ом существует, в его гараже будет отбражаться 
+    Ваш автомобиль, а Вы потеряете возможность редактировать его.</p>
+
+    @using (Html.BeginForm())
+    {        
+        @Html.HiddenFor(model => model.BaseModel.CarID)
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        
+        <input class="button" type="submit" value="Передать" />
+    }
+
+}

@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "EventInfo";
+    Layout = "~/Views/Shared/_Layout_Garage.cshtml";
+}
+
+@section GarageContent
+{
+    <h2>Заправка</h2>
+    <div class="actions">
+        <div class="action">
+            @Html.ActionLink("Редактировать", "EditEvent")
+        </div>
+        <div class="action">
+            @Html.ActionLink("Удалить", "DeleteEvent")
+        </div>
+    </div>
+            
+    <div id="table_left_header">
+        <table>
+            <tr>
+                <th>Тип события: </th>
+                <td>Заправка</td>
+            </tr>
+            <tr>
+                <th>Дата:</th>
+                <td>11.09.2011</td>
+            </tr>
+            <tr>
+                <th>Пробег:</th>
+                <td>10100</td>
+            </tr>
+            <tr>
+                <th>Тип топлива</th>
+                <td>АИ-95</td>
+            </tr>
+            <tr>
+                <th>АЗС:</th>
+                <td>Лукойл</td>
+            </tr>
+            <tr>
+                <th>Количество литров:</th>
+                <td>20 литров</td>
+            </tr>
+            <tr>
+                <th>Цена за 1 литр:</th>
+                <td>25 рублей</td>
+            </tr>
+            <tr>
+                <th>Общая стоимость:</th>
+                <td>1600 рублей<sup>3</sup></td>
+            </tr>
+            <tr>
+                <th>Видимость:</th>
+                <td>Виден</td>
+            </tr>
+            <tr>
+                <th>Заметки/Комментарии:</th>
+                <td>Заметок нет</td>
+            </tr>                
+        </table>
+    </div>
+
+    @Html.ActionLink("< Вернуться к событиям", "Events", "Garage")
+
+}

@@ -1,0 +1,16 @@
+﻿@model VirtualGarage.Models.UserInfoModel
+
+@{
+    ViewBag.Title = "Информация о пользователе";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}
+
+<h2>Пользователь @Model.UserName</h2>
+
+@Html.ActionLink("Гараж пользователя " + @Model.UserName, "CarsInGarage", "Garage",
+                            new RouteValueDictionary() 
+                            {
+                                {"userID", @Model.UserID}
+                            },
+                            null)
+

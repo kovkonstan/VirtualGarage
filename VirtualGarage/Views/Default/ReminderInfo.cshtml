@@ -1,0 +1,84 @@
+﻿@model VirtualGarage.Models.ReminderInfoModel
+
+@{
+    ViewBag.Title = "Информация о напоминании";
+    Layout = "~/Views/Shared/Layouts/_Layout.cshtml";
+}    
+
+<h2>Информация о напоминании</h2>
+
+    <div class="actions">
+        <div class="action">
+            @Html.ActionLink("Редактировать", "EditReminder", "Default", 
+                                new RouteValueDictionary() { {"reminderID", Model.ReminderID} },
+                                null)
+        </div>
+        <div class="action">
+            @Ajax.ActionLink("Удалить",
+                            "DeleteReminder",
+                            "Default",
+                            new RouteValueDictionary() { { "reminderID", Model.ReminderID } },
+                            new AjaxOptions() 
+                            {
+                                Confirm = "Вы действительно хотите удалить событие?",
+                                HttpMethod = "Post",
+                                UpdateTargetId = "success_delete"
+                            },
+                            null)
+        </div>
+        <div id="success_delete">
+
+        </div>
+    </div>
+
+@Html.HiddenFor(model => model.ReminderID)
+
+    <div class="table_left_header">
+        <table>
+
+            <tr>
+                <th>Имя события: </th>
+                <td>@Html.DisplayFor(model => model.Title)</td>
+            </tr>
+
+            <tr>
+                <th>Дата и время начала:</th>
+                <td>
+                    @Html.DisplayFor(model => model.StartDateTime)                    
+                </td>
+            </tr>
+
+            <tr>
+                <th>Дата и время окончания:</th>
+                <td>
+                    @Html.DisplayFor(model => model.FinishDateTime)                    
+                </td>
+            </tr>
+           
+            <tr>
+                <th>Автомобиль:</th>
+                <td>@Html.DisplayFor(model => model.CarName)</td>
+            </tr>            
+            
+        </table>
+        @if (Model.IsReminderDone)
+        {
+            <div id="reminder_done">
+                <span>Выполнено</span>
+            </div>            
+        }
+        else
+        {
+            <div id="reminder_not_done">
+                <span>Не выполнено</span>
+            </div>            
+        }
+        
+
+    </div>  
+
+    <p class="back_to_list">
+        @Html.ActionLink("Вернуться к календарю", "Calendar", "Default",
+                                        new RouteValueDictionary() { {"carID", Model.CarID} },
+                                        null)
+    </p>

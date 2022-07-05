@@ -1,0 +1,36 @@
+﻿@model VirtualGarage.Models.MyCarsModel
+
+
+@{
+    ViewBag.Title = "Гараж";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<script type="text/javascript">
+    function deletecar(carId) {
+        if (confirm("Вы действительно хотите удалить этот автомобиль?")) {
+            $.post("/Garage/DeleteCar", { carID: carId },
+            function () {
+                window.location.reload()
+            });
+        }
+        
+    }
+
+    
+</script>*@
+
+<h2>Гараж</h2>
+<div id="cars_in_garage">
+    <div class="actions">
+        <div class="action">
+            @Html.ActionLink("Добавить автомобиль", "AddCar")
+        </div>
+    </div>
+
+    @Html.ValidationSummary(true)
+<div id="cars_list">
+    @Html.Partial("CarsDiv", Model)
+</div>
+
+</div>
